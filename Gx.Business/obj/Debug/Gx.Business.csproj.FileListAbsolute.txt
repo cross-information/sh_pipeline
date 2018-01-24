@@ -1,0 +1,5 @@
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Debug\Gx.Business.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Debug\Gx.Business.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\obj\Debug\Gx.Business.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\obj\Debug\Gx.Business.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\obj\Debug\Gx.Business.csprojResolveAssemblyReference.cache

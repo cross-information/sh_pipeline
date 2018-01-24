@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GxModels" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GxEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="gx_dict_config" EntityType="GxModels.gx_dict_config" />
+    <EntitySet Name="gx_gkxx" EntityType="GxModels.gx_gkxx" />
+    <EntitySet Name="gx_gxxx" EntityType="GxModels.gx_gxxx" />
+    <EntitySet Name="gx_LeaveOpinion" EntityType="GxModels.gx_LeaveOpinion" />
+    <EntitySet Name="gx_photogallery" EntityType="GxModels.gx_photogallery" />
+    <EntitySet Name="gx_rjxx" EntityType="GxModels.gx_rjxx" />
+    <EntitySet Name="gx_sys_models" EntityType="GxModels.gx_sys_models" />
+    <EntitySet Name="gx_sys_permissions" EntityType="GxModels.gx_sys_permissions" />
+    <EntitySet Name="gx_sys_role" EntityType="GxModels.gx_sys_role" />
+    <EntitySet Name="gx_sys_rolemenu" EntityType="GxModels.gx_sys_rolemenu" />
+    <EntitySet Name="gx_sys_roleperRelate" EntityType="GxModels.gx_sys_roleperRelate" />
+    <EntitySet Name="gx_sys_user" EntityType="GxModels.gx_sys_user" />
+    <EntitySet Name="gx_sys_userrolerelate" EntityType="GxModels.gx_sys_userrolerelate" />
+    <EntitySet Name="gx_systemlog" EntityType="GxModels.gx_systemlog" />
+    <EntitySet Name="gx_taskwork" EntityType="GxModels.gx_taskwork" />
+    <EntitySet Name="gx_wfactivityinstance" EntityType="GxModels.gx_wfactivityinstance" />
+    <EntitySet Name="gx_wfprocess" EntityType="GxModels.gx_wfprocess" />
+    <EntitySet Name="gx_wfprocessinstance" EntityType="GxModels.gx_wfprocessinstance" />
+    <EntitySet Name="gx_wftask" EntityType="GxModels.gx_wftask" />
+    <EntitySet Name="gx_wftransitionInstance" EntityType="GxModels.gx_wftransitionInstance" />
+    <EntitySet Name="gx_xlzx" EntityType="GxModels.gx_xlzx" />
+    <EntitySet Name="gx_yszlfile" EntityType="GxModels.gx_yszlfile" />
+  </EntityContainer>
+  <EntityType Name="gx_dict_config">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="code" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="parentid" Type="Int32" />
+    <Property Name="sort" Type="Int32" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+    <Property Name="modify" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="modifytime" Type="DateTime" Precision="3" />
+    <Property Name="deleteby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="deletetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="gx_gkxx">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="gkxxid" Type="Int32" Nullable="false" />
+    <Property Name="gkbh" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="gkcl" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="syzt" Type="Int32" />
+    <Property Name="zkhs" Type="Int32" />
+    <Property Name="zkls" Type="Int32" />
+    <Property Name="zksl" Type="Int32" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+    <Property Name="modify" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="modifytime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="gx_gxxx">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="xmysxxid" Type="Int32" Nullable="false" />
+    <Property Name="GCBH" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="gxwz" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="gxcd" Type="Double" />
+    <Property Name="dxlx" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="gxlx" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="jszt" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="ywlx" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="gjz" Type="String" MaxLength="22" Unicode="false" FixedLength="false" />
+    <Property Name="xnzc" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="gkcl" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="syzt" Type="Int32" />
+    <Property Name="gkhs" Type="Int32" />
+    <Property Name="gkls" Type="Int32" />
+    <Property Name="plsx" Type="Int32" />
+    <Property Name="qjwz" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="zjwz" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="gxzt" Type="Boolean" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+    <Property Name="modify" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="modifytime" Type="DateTime" Precision="3" />
+    <Property Name="deleteby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="deletetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="gx_LeaveOpinion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="AppInstanceID" Type="Int32" />
+    <Property Name="ActivityID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ActivityName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Remark" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="ChangedTime" Type="DateTime" Precision="3" />
+    <Property Name="ChangedUserID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ChangedUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="gx_photogallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="parentId" Type="Int32" Nullable="false" />
+    <Property Name="tpbh" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="url" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="tjsj" Type="DateTime" Precision="3" />
+    <Property Name="sfyx" Type="Boolean" />
+    <Property Name="sort" Type="Int32" />
+  </EntityType>
+  <EntityType Name="gx_rjxx">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="xmysxxid" Type="Int32" />
+    <Property Name="gcbh" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="rjbh" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="rjmc" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="gcrjbh" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="jgsl" Type="Int32" />
+    <Property Name="dxlx" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="rsjcc" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="jglx" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="gjz" Type="String" MaxLength="22" Unicode="false" FixedLength="false" />
+    <Property Name="longitude" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="latitude" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="rjzt" Type="Boolean" />
+    <Property Name="modify" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="modifyTime" Type="DateTime" Precision="3" />
+    <Property Name="createTime" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="deletetime" Type="DateTime" Precision="3" />
+    <Property Name="deleteby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gx_sys_models">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="naem" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="desc" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+    <Property Name="deleteby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="deletetime" Type="DateTime" Precision="3" />
+    <Property Name="modify" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="modifytime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="gx_sys_permissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="perName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="perDesc" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="perStatus" Type="Int32" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+    <Property Name="modify" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="modifytime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="gx_sys_role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="roleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="roleDesc" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="roleStatus" Type="Int32" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+    <Property Name="modify" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="modifytime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="gx_sys_rolemenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="roleid" Type="Int32" />
+    <Property Name="menuid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="gx_sys_roleperRelate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="gx__Id" Type="Int32" />
+    <Property Name="roleId" Type="Int32" />
+    <Property Name="perid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="gx_sys_user">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="userCode" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="userName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="userpwd" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="userMobile" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="userEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="userSex" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="userStatus" Type="Int32" />
+    <Property Name="loginIp" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="loginTime" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+    <Property Name="modify" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="modifytime" Type="DateTime" Precision="3" />
+    <Property Name="deleteby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="deletetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="gx_sys_userrolerelate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="gx__Id" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="roleid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="gx_systemlog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="menuurl" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="timeflag" Type="DateTime" Precision="3" />
+    <Property Name="actname" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="contents" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="actusercode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="actresult" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="gx_taskwork">
+    <Key>
+      <PropertyRef Name="Id_任务分配表标识" />
+    </Key>
+    <Property Name="Id_任务分配表标识" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" />
+    <Property Name="gx__Id" Type="Int32" />
+    <Property Name="gx__Id2" Type="Int32" />
+    <Property Name="xmysxxid" Type="Int32" />
+    <Property Name="userid" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="xlzxId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="gx_wfactivityinstance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="gx__Id" Type="Int32" />
+    <Property Name="gx__Id2" Type="Int32" />
+    <Property Name="ProcessInstanceID" Type="Int32" />
+    <Property Name="AppinstanceId" Type="Int32" />
+    <Property Name="AppName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AppInstanceCode" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ProcessGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ActivityGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ActivityName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ActivityType" Type="Int16" />
+    <Property Name="ActivityState" Type="Int16" />
+    <Property Name="AssignedToUserIDs" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="AssignedToUserNames" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="BackwardType_退回类型" Type="Int16" />
+    <Property Name="BackSrcActivityInstanceID" Type="Int32" />
+    <Property Name="GatewayDirectionTypeID" Type="Int16" />
+    <Property Name="CanRenewInstance" Type="Byte" />
+    <Property Name="TokensRequired" Type="Int32" />
+    <Property Name="TokensHad" Type="Int32" />
+    <Property Name="ComplexType" Type="Int16" />
+    <Property Name="MIHostActivityInstanceID" Type="Int32" />
+    <Property Name="CompleteOrder" Type="Double" />
+    <Property Name="SignForwardType" Type="Int16" />
+    <Property Name="CreatedByUserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdatedByUserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdatedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndedByUserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EndedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RecordStatusInvalid" Type="Byte" />
+    <Property Name="RowVersionID" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="gx_wfprocess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="processguid" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="processname" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="version" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="isusing" Type="Boolean" />
+    <Property Name="XmlFileName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="XmlFilePath" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="XmlContent" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Description" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="RowVersionID" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="gx_wfprocessinstance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ProcessGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ProcessName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Version" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="AppinstanceId" Type="Int32" />
+    <Property Name="AppName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AppInstanceCode" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ProcessState" Type="Int16" />
+    <Property Name="ParentProcessInstanceID" Type="Int32" />
+    <Property Name="ParentProcessGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="InvokedActivityInstanceID" Type="Int32" />
+    <Property Name="InvokedActivityGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatedByUserID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdatedByUserID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdatedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EndedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndedByUserID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EndedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RecordStatusInvalid" Type="Byte" />
+    <Property Name="RowVersionID" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="gx_wftask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ActivityInstanceID" Type="Int32" />
+    <Property Name="ProcessInstanceID" Type="Int32" />
+    <Property Name="AppName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AppInstanceId" Type="Int32" />
+    <Property Name="ProcessGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ActivityGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ActivityName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TaskType" Type="Int16" />
+    <Property Name="TaskState" Type="Int16" />
+    <Property Name="AssignedToUserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AssignedToUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedByUserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdatedByUserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdatedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EndedByUserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EndedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EndedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="RecordStatusInvalid" Type="Byte" />
+    <Property Name="RowVersionID" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="gx_wftransitionInstance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TransitionGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ProcessInstanceID" Type="Int32" />
+    <Property Name="ProcessGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TransitionType" Type="Byte" />
+    <Property Name="FlyingType" Type="Byte" />
+    <Property Name="FromActivityInstanceID" Type="Int32" />
+    <Property Name="FromActivityGUID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="FromActivityType" Type="Int16" />
+    <Property Name="FromActivityName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ToActivityInstanceID" Type="Int32" />
+    <Property Name="ToActivityGUID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ToActivityType" Type="Int16" />
+    <Property Name="ToActivityName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ConditionParseResult" Type="Byte" />
+    <Property Name="CreatedByUserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedByUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="RecordStatusInvalid" Type="Byte" />
+    <Property Name="RowVersionID" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+    <Property Name="AppinstanceId" Type="Int32" />
+    <Property Name="AppInstanceCode" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="gx_xlzx">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+    <Property Name="modify" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="modifytime" Type="DateTime" Precision="3" />
+    <Property Name="deleteby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="deletetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="gx_yszlfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="xmysxxid" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="filename" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="fileurl" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="filesize" Type="Int32" />
+    <Property Name="filezt" Type="Boolean" />
+    <Property Name="uploadtime" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="adeleteby" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="deletetime" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

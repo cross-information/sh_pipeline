@@ -1,0 +1,13 @@
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\Gx.DataAccess.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\Gx.DataAccess.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\obj\Debug\Gx.DataAccess.csprojResolveAssemblyReference.cache
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\obj\Debug\Gx.DataAccess.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\obj\Debug\Gx.DataAccess.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\Gx.DataAccess.dll.config
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\EntityFramework.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\Gx.Models.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\Gx.Models.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\EntityFramework.xml
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\JGB.Common.Units.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Debug\Newtonsoft.Json.dll
