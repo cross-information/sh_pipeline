@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>Map</title>
+    <link rel="stylesheet" href="css/PipeMap.css" type="text/css">
+    <style>
+    	html, body, .map { width: 100%; height: 100%; padding: 0px; margin: 0px; }
+    	/* .map {
+	        width: 1000px;
+	        height: 400px;
+	    } */
+    </style>
+  </head>
+<body>
+<div id="map" class="map"></div>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/PipeMap.min.js"></script> -->
+<script type="text/javascript">
+	var map;
+	$(function() {
+		var mapUrl = "http://116.62.209.93/ArcGIS/rest/services/shanghai/MapServer";	// 地图的地址
+		var wsUrl = "http://localhost/shpipe/";	// WebService 的访问路径
+		map = new PipeMap("map", mapUrl, wsUrl);
+		map.setSelectCallback(function(wellId) {	// 设置选中管井的消息回调
+			console.log("selectCallback:" + wellId);
+		});
+		map.setDragCallback(function(wellId, coords) {	// 设置拖动管井的消息回调
+			console.log("dragCallback:" + wellId + " [" + coords + "]");
+		});
+	});
+	
+	/* 在浏览器中用 F12 调出开发人员工具后, 在控制台窗口执行下面的命令对 map 的 API 进行简单测试
+	map.setCenter([-5825.16, 8293.31]);
+	map.setZoom(2);
+	map.getZoom();
+	map.getExtent();
+	map.zoomIn();
+	map.zoomOut();
+	*/
+</script>
+</body>
+</html>

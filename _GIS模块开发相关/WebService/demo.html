@@ -1,0 +1,163 @@
+﻿<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Simple Map</title>
+    <link rel="stylesheet" type="text/css" href="/arcgis_js_v322/library/3.22/3.22/esri/css/esri.css" />
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.2/themes/bootstrap/easyui.css">
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.2/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.2/demo/demo.css">
+	<script type="text/javascript" src="jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	<script src="/arcgis_js_v322/library/3.22/3.22/init.js"></script>
+    <style>
+      html, body, #map {
+        height: 100%; width: 100%; margin: 0; padding: 0;
+      }
+    </style>
+    <script>
+    	var map, featureLayer, draw;
+      require([
+      		"dojo/_base/event",
+      		"esri/map",
+          "esri/layers/ArcGISDynamicMapServiceLayer",
+          "esri/layers/FeatureLayer",
+          "esri/geometry/Point",
+          "esri/graphic",
+          "esri/geometry/Polyline",
+          "esri/symbols/SimpleMarkerSymbol",
+          "esri/symbols/SimpleLineSymbol",
+          "dojo/_base/array",
+          "dojo/_base/Color",
+		  "esri/config",
+          "dojo/domReady!"],
+        function(event, Map, ArcGISDynamicMapServiceLayer, FeatureLayer, Point, Graphic, Polyline, SimpleMarkerSymbol, SimpleLineSymbol, array, Color, Config) {
+          esriConfig.defaults.io.proxyUrl = "/esri-resource-proxy/proxy.ashx";
+		  esriConfig.defaults.io.alwaysUseProxy = true;
+		  
+		  map = new Map("map", {
+          	isDoubleClickZoom: false,
+			scale: 2000
+		    /* center: [-118, 34.5],
+		    zoom: 8,
+		    basemap: "topo" //*/
+		  });
+          //If you do not have Internet access then you will need to point this url to your own locally accessible tiled service.
+          // var tiled = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/arcgis/rest/services/Ocean/World_Ocean_Base/MapServer");
+          var layer = new ArcGISDynamicMapServiceLayer("http://116.62.209.93/ArcGIS/rest/services/shanghai/MapServer");
+          map.addLayer(layer);
+	       map.on("dbl-click", function(evt) {
+	          
+	          var mp = evt.mapPoint;
+	          console.log(mp.x + "," + mp.y);
+	          event.stop(evt);
+	          
+	          $("#longitude").val(mp.x);
+	          $("#latitude").val(mp.y);
+	          
+	          $("#dlgCoord").dialog("open");
+	          
+	          /* if (editingEnabled === false) {
+	            // editingEnabled = true;
+	            // editToolbar.activate(Edit.EDIT_VERTICES , evt.graphic);
+	          } else {
+	            currentLayer = this;
+	            editToolbar.deactivate();
+	            editingEnabled = false;
+	          } */
+	        });
+	        
+	        var featureCollection = {
+	          "layerDefinition": null,
+	          "featureSet": {
+	            "features": [],
+	            "geometryType": "esriGeometryPoint"
+	          }
+	        };
+
+	        /* featureLayer = new FeatureLayer(featureCollection, {
+	          id: 'PipeLayer' //,
+	          // infoTemplate: popupTemplate
+	        });
+	        map.addLayers([featureLayer]); */
+	        
+	        var markerSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, 10, null, new Color([50, 50, 255]));
+	        var lineSymbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255, 50, 50]), 1);
+        
+	        draw = function() {
+	        	$.get("list.ashx", {},
+	      		function(data) {
+	      			map.graphics.clear();
+	      			var response = JSON.parse(data);
+	      			// var features = [];
+			        var line = new Polyline(response);
+			        var graphic = new Graphic(line);
+			        graphic.setSymbol(lineSymbol);
+			        map.graphics.add(graphic);
+			        
+			        array.forEach(response, function(item) {
+			          var geometry = new Point(item);
+			          var graphic = new Graphic(geometry);
+			          graphic.setSymbol(markerSymbol);
+			          // graphic.setAttributes(attr);
+			          // features.push(graphic);
+			          map.graphics.add(graphic);
+			        });
+			        
+			        // map.graphics.applyEdits(features, null, null);
+	      		});
+	        }
+	        
+	        map.on("load", draw);
+		});
+		
+        $(function() {
+        	$("#dlgCoord").dialog({
+		    width: 280,
+		    height: 120,
+		    modal: true,
+		    closed: true,
+		    resizable: true,
+		    buttons: [{
+		      text: "确定",
+		      handler: function () {
+		      	$.post("pnt.ashx", {
+		      		x: $("#longitude").val(),
+		      		y: $("#latitude").val()
+		      	}, draw)
+	          		
+		        /* var m = $("#questionnaire-list").datalist("getSelections");
+		        if (m.length == 0) {
+		          alert("请至少选择一张表进行查询");
+		          return;
+		        }
+		        if (m.length > 1) {
+		          $("#<% =SearchQuestionnaireList.ClientID %>").combobox("setValue", -1);
+		          SearchQuestionnaireList_change(-1, 100);
+		        }
+		        else {
+		          $("#<% =SearchQuestionnaireList.ClientID %>").combobox("setValue", m[0].value);
+		          SearchQuestionnaireList_change(m[0].value);
+		        } */
+
+		        $("#dlgCoord").dialog("close");
+		      }
+		    }, {
+		      text: "取消",
+		      handler: function () {
+		        $("#dlgCoord").dialog("close");
+		      }
+		    }]
+		  });
+        });
+    </script>
+  </head>
+  <body>
+  	<div id="dlgCoord" title="添加点" style="width:240px;height:320px;padding:0px;overflow:hidden; padding:0px">
+  		x: <input type="text" id="longitude"><br/>
+		y: <input type="text" id="latitude">
+	</div>
+    <div id="map"></div>
+  </body>
+</html>
