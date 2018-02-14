@@ -1,0 +1,516 @@
+﻿@{
+    ViewBag.Title = "Gkxx";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Gx.Models.ViewModels.GxRjxxModel
+<style>
+    .border{ border:dashed 1px #f0f8ff; width:15px; height:15px;background-color: #e6e6fa;cursor: pointer;}
+</style>
+<div id="tt_tab" class="easyui-tabs" tabPosition="left" border=true cache=false; fit=true style="width:auto;height:auto;">
+    <div title="基本信息" style="padding:3px;">
+        @using (Html.BeginForm("EditJbxx", "Gxxx", FormMethod.Post, new { name = "nbform", id = "nbform" }))
+        {
+            <div style="width: auto; border: 1px solid #f0f8ff; padding-left: 10px;">
+                <input type="hidden" name="ysid" value="@Model.gcxmid"/>
+                <input type="hidden" name="Gxxxid" value="@Model.ID"/>
+                <ul class="form_ul">
+                    <li>
+                        <label>管线编号：</label>
+                        <input type="text" class="easyui-validatebox" name="GXBH" style="width: 180px;" readonly="readonly" value="@Model.GCBH"/>
+                    </li>
+                    <li>
+                        <label>管线位置：</label>
+                        <input name="GXWZ" id="GXWZ" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=981022075',valueField:'Value',textField:'Text',value:'@Model.GXWZ'" />
+                    </li>
+                    <li>
+                        <label>对象类别：</label>
+                        <input name="DXLX" id="DXLX" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=1802072150140',valueField:'Value',textField:'Text',value:'@Model.GXLX'" />
+                    </li>
+                    <li>
+                        <label>管线类型：</label>
+                        <input name="GXLX" id="GXLX" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=814462078',valueField:'Value',textField:'Text',value:'@Model.GXLX'" />
+                    </li>
+                    <li>
+                        <label>建设状态：</label>
+                        <input name="JSZT" id="JSZT" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=318472099',valueField:'Value',textField:'Text',value:'@Model.JSZT'" />
+                    </li>
+                    <li>
+                        <label>业务类型：</label>
+                        <input name="YWLX" id="YWLX" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=222682087',valueField:'Value',textField:'Text',value:'@Model.YWLX'" />
+                    </li>
+                    <li>
+                        <label>虚拟资产：</label>
+                        <select id="XNZC" class="easyui-combobox" name="XNZC" style="width:151px;">
+                            <option value="1" @Html.Raw(Model.XNZC=="1"?"selected=selected":"")>是</option>
+                            <option value="0" @Html.Raw(Model.XNZC=="0"?"selected=selected":"")>否</option> 
+                        </select>
+                    </li>
+                    <li style="@Html.Raw(ViewData["YsryUserRole"].ToString() == "Ysry"?"":"display:none;")">
+                        <br/>
+                        <strong>验收员提交资料</strong><br/>
+                        <hr/>
+                    </li>
+                    <li style="@Html.Raw(ViewData["YsryUserRole"].ToString() == "Ysry"?"":"display:none;")">
+                        <label>管号：</label>
+                        <input type="text" class="easyui-validatebox" name="GH" style="width: 133px;" value="@Model.GH"/>
+                    </li>
+                    <li style="@Html.Raw(ViewData["YsryUserRole"].ToString() == "Ysry"?"":"display:none;")">
+                        <label>井距：</label>
+                        <input type="text" class="easyui-validatebox" name="JJ" style="width: 126px;" value="@Model.JJ" />米
+                    </li>
+                    <li style="@Html.Raw(ViewData["YsryUserRole"].ToString() == "Ysry"?"":"display:none;")">
+                        <label>试通情况：</label>
+                        <select id="STQK" class="easyui-combobox" name="STQK" style="width:60px;">
+                            <option value="1" @Html.Raw(Model.XNZC=="1"?"selected=selected":"")>是</option>
+                            <option value="0" @Html.Raw(Model.XNZC=="0"?"selected=selected":"")>否</option> 
+                        </select>
+                    </li>
+                    @{
+                        bool visible = (ViewData["YsryUserRole"].ToString() == "Ysry" || ViewData["YsryUserRole"].ToString() == "Sgry") ? true : false;
+                    }
+                    <li style="text-align: center; @Html.Raw(visible == false ? "display:none" : "")">
+                        <a id="btnSearch" onclick="AddGxxxBasic()" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
+                    </li>
+                </ul>
+            </div>
+        }
+    </div>
+    <div title="起止人井" style="padding: 3px;">
+        @using (Html.BeginForm("EditGxxx", "Gxxx", FormMethod.Post, new { name = "qzjform", id = "qzjform" }))
+        {
+            <input type="hidden" name="Gxxxid" value="@Model.ID"/>
+            <div style="width: auto; height: auto; padding-left: 10px;">
+                <input type="hidden" name="id" value="@ViewData["id"]"/>
+                <ul class="form_ul">
+                    <li style="padding-top: 10px; padding-bottom: 6px;">
+                        <div>
+                            起井：<input name="txtQj" value="@ViewData["QjWz"]" id="txtQjEdit" type="text" style="width: 220px;" required onclick="getRjxx('qj')"/>&nbsp;&nbsp;
+                            止井：<input name="txtZj" value="@ViewData["ZjWz"]" id="txtZjEdit" type="text" style="width: 220px;" required onclick="getRjxx('zj')"/>
+                            <a id="btnAddGxxxQzj" onclick="AddQzjxx()" href="javascript:void(0)" style="width: 120px;" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
+                        </div>
+                        <input type="hidden" id="qzjEdit"/>
+                        <input type="hidden" id="QjszwzEdit" name="Qjszwz" value="@Model.QJ"/>
+                        <input type="hidden" id="ZjszwzEdit" name="Zjszwz" value="@Model.ZJ"/>
+                        <hr style="width: 100%; background-color: #BEBEBE"/>
+                    </li>
+                    <li>
+                        <div style="width: auto;">
+                            @*左侧显示管孔行列*@
+                            <div style="float: left; width: 70%;">
+                                <img src="/images/ditu.jpg" style="padding: 0px; border: 0px; width: 100%; height: 380px;"/>
+                            </div>
+                            @*右侧数据录入*@
+                            <div style="float: right; width: 22%; border-left: 1px solid #BEBEBE; padding-left: 20px;">
+                                <div>
+                                    <strong>起井：<span id="gkqjmc"></span></strong>
+                                    <div class="clearLineHeight"><input type="hidden" id="gxszgkqjwz" name="gxszgkqjwz"/></div>
+                                    <table style="height:145px; width:145px; background-image:url(/images/u443.png)">
+                                        <tr><td>&nbsp;</td><td align="center"><div class="border" tip="1" id="gxszgkqjwz1" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td><td align="center"><div class="border" tip="2" id="gxszgkqjwz2" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td><td align="center"><div class="border" tip="3" id="gxszgkqjwz3" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td><td>&nbsp;</td></tr>
+                                        <tr><td align="center"><div class="border" tip="4" id="gxszgkqjwz4" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align="center"><div class="border" tip="5" id="gxszgkqjwz5" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td></tr>
+                                        <tr><td align="center"><div class="border" tip="6" id="gxszgkqjwz6" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align="center"><div class="border" tip="7" id="gxszgkqjwz7" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td></tr>
+                                        <tr><td align="center"><div class="border" tip="8" id="gxszgkqjwz8" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align="center"><div class="border" tip="9" id="gxszgkqjwz9" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td></tr>
+                                        <tr><td>&nbsp;</td><td align="center"><div class="border" tip="10" id="gxszgkqjwz10" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td><td align="center"><div class="border" tip="11" id="gxszgkqjwz11" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td><td align="center"><div class="border" tip="12" id="gxszgkqjwz12" onclick="ChoseGxszgkwz(this)">&nbsp;</div></td><td>&nbsp;</td></tr>
+                                    </table>
+                                    <div style="height:20px; line-height:20px;" >&nbsp;</div>
+                                    <strong>止井：<span id="gkzjmc"></span></strong>
+                                    <div class="clearLineHeight"><input type="hidden" id="gxszgkwz" name="gxszgkwz"/></div>
+                                    <table style="height:145px; width:145px; background-image:url(/images/u443.png)">
+                                        <tr><td>&nbsp;</td><td align="center"><div class="border" tip="1" id="gxszgkwz1" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td><td align="center"><div class="border" tip="2" id="gxszgkwz2" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td><td align="center"><div class="border" tip="3" id="gxszgkwz3" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td><td>&nbsp;</td></tr>
+                                        <tr><td align="center"><div class="border" tip="4" id="gxszgkwz4" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align="center"><div class="border" tip="5" id="gxszgkwz5" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td></tr>
+                                        <tr><td align="center"><div class="border" tip="6" id="gxszgkwz6" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align="center"><div class="border" tip="7" id="gxszgkwz7" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td></tr>
+                                        <tr><td align="center"><div class="border" tip="8" id="gxszgkwz8" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align="center"><div class="border" tip="9" id="gxszgkwz9" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td></tr>
+                                        <tr><td>&nbsp;</td><td align="center"><div class="border" tip="10" id="gxszgkwz10" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td><td align="center"><div class="border" tip="11" id="gxszgkwz11" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td><td align="center"><div class="border" tip="12" id="gxszgkwz12" onclick="ChoseGxszgkzjwz(this)">&nbsp;</div></td><td>&nbsp;</td></tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        } 
+    </div>
+    <div title="管孔" style="padding:3px;">
+        <div>
+            @using (Html.BeginForm("EditGxxxByGkxxPage", "Gxxx", FormMethod.Post, new { name = "gxjbxxform", id = "gxjbxxform" }))
+            {
+                <input type="hidden" name="Gxxxid" value="@Model.ID"/>
+                <div style="width: 100%;  border: 1px solid #f0f8ff;">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>管孔材料：</td>
+                            <td>
+                                <input name="GXXXGKCL" style="width:115px;" id="GXXXGKCL" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=839822070',valueField:'Value',textField:'Text',value:'@Model.GKCL',onSelect: function(rec){
+                                        $('#GKXXGKCL').combobox('setValue', rec.Value);
+                                    } " />
+                            </td>
+                            <td>使用状态：</td>
+                            <td>
+                                <input name="GXXXSYZT" style="width:135px;" id="GXXXSYZT" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=779332045',valueField:'Value',textField:'Text',value:'@Model.SYZT',onSelect:function(rec){
+                                        $('#GKXXSYZT').combobox('setValue', rec.Value);
+                                    }" />
+                            </td>
+                            <td rowspan="2" colspan="3" align="center">
+                                <a id="btnAddGxxx" onclick="Addgxxx()" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存管孔信息</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>管孔行列：</td>
+                            <td>
+                                <input type="text" class="easyui-validatebox" name="GKLS" id="GKLS" style="width: 46px;" value="@Model.GKLS" onblur="CreateGxxxHL('gxxx')" />
+                                X
+                                <input type="text" class="easyui-validatebox" name="GKHS" id="GKHS" style="width: 46px;" value="@Model.GKHS" onblur="CreateGxxxHL('gxxx')"/>
+                            </td>
+                            <td>排列顺序：</td>
+                            <td>
+                                <select id="PLSX" class="easyui-combobox" name="PLSX" style="width:136px;">
+                                    <option value="1" @Html.Raw(Model.PLSX== 1 ? "selected=selected" : "")>横向起步左右-上下</option>
+                                    <option value="2" @Html.Raw(Model.PLSX== 2 ? "selected=selected" : "")>横向起步右左-上下</option>
+                                    <option value="3" @Html.Raw(Model.PLSX== 3 ? "selected=selected" : "")>横向起步左右-下上</option>
+                                    <option value="4" @Html.Raw(Model.PLSX== 4 ? "selected=selected" : "")>横向起步右左-下上</option>
+                                    <option value="5" @Html.Raw(Model.PLSX== 5 ? "selected=selected" : "")>纵向起步上下-左右</option>
+                                    <option value="6" @Html.Raw(Model.PLSX== 6 ? "selected=selected" : "")>纵向起步上下-右左</option>
+                                    <option value="7" @Html.Raw(Model.PLSX== 7 ? "selected=selected" : "")>纵向起步下上-左右</option>
+                                    <option value="8" @Html.Raw(Model.PLSX== 8 ? "selected=selected" : "")>纵向起步下上-右左</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+            <hr style="width: 100%;"/>
+            @using (Html.BeginForm("EditGkxx", "Gxxx", FormMethod.Post, new { name = "gkxxform", id = "gkxxform" }))
+            {
+                <input id="GkxxId" type="hidden" value="@Model.GkxxId"/>
+                <input type="hidden" name="gklsParent" id="gklsParent" value="@Model.GKSZL"/>
+                <input type="hidden" name="gkhsParent" id="gkhsParent" value="@Model.GKSZH"/>
+                <div id="divGk" style="width: auto; border: 1px solid #f0f8ff; padding-top:10px;">
+                    <div>
+                        @*左侧显示管孔行列*@
+                        <div style="float: left; width: 30%;">
+                            <div>
+                                <div style="float: left; color:darkturquoise;">管孔组群显示</div>
+                                <div style="float: right; color: red;">点击选择1个管孔<strong>></strong></div>
+                            </div>
+                            <div id="gkxxList" style="clear: both; overflow:auto ; height: 220px;">
+                                
+                            </div>
+                        </div>
+                        @*右侧数据录入*@
+                        <div style="float: right; width: 66%; padding-left: 3%; border-left: 1px solid #BEBEBE;">
+                            <div style="float: left; width: 59%; border-right: 1px solid #BEBEBE;">
+                                <strong>管孔【 <span class="zkxxpic"></span> 】信息</strong>
+                                <div class="clearLineHeight"></div>
+                                <ul class="form_ul">
+                                    <li>
+                                        <label>管孔编号：</label>
+                                        <input type="text" class="easyui-validatebox" name="GKBH" style="width: 180px;" readonly="readonly" value="@ViewData["GKBH"]" />
+                                    </li>
+                                    <li>
+                                        <label>管孔材料：</label>
+                                        <input readonly="readonly" name="GKXXGKCL" style="width:115px;" id="GKXXGKCL" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=839822070',valueField:'Value',textField:'Text',value:'@Model.GKCL'" />
+                                    </li>
+                                    <li>
+                                        <label>使用状态：</label>
+                                        <input readonly="readonly" name="GKXXSYZT" style="width:115px;" id="GKXXSYZT" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=779332045',valueField:'Value',textField:'Text',value:'@Model.SYZT'" />
+                                    </li>
+                                    <li>
+                                        <label>子孔行列：</label>
+                                        <input type="text" class="easyui-validatebox" name="GKHS1" id="GKHS1" value="@Model.ZKHS" onblur="CreateGxxxHL('gkxx')" style="width: 46px;" />
+                                        X
+                                        <input type="text" class="easyui-validatebox" name="GKLS1" id="GKLS1" value="@Model.ZKLS" onblur="CreateGxxxHL('gkxx')" style="width: 46px;" />
+                                    </li>
+                                    <li>
+                                        <label>子孔数量：</label>
+                                        <input type="text" class="easyui-validatebox" name="GXSL" style="width: 180px;" value="@Model.ZKSL" />
+                                    </li>
+                                    <li style="text-align: center;">
+                                        <a id="btnAddGxxx" onclick="Addgkxx()" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存子孔</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="float: right; width: 38%;">
+                                <strong>管孔【 <span class="zkxxpic"></span> 】信息</strong>
+                                <div class="clearLineHeight"></div>
+                                <div id="gkTable" style="overflow:auto ; height: 220px;">
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div id="window_xzrjxx" class="easyui-dialog" closed="true" buttons="#dlg-buttons" title="标题" style="width:620px;height:376px;">
+    <div style="padding-left: 15px; height: 26px; padding-top: 20px;">
+        人井名称：<input type="text" name="txtRymc" id="txtRymc" style="width:280px;"/>&nbsp;&nbsp;
+        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="searchQyxx()">查询</a>
+    </div>
+    <div style="width: 100%; height: auto; background-color: #00008b">
+        <table id="dgRjxx"></table>
+    </div>
+    <div id="divButton" style="text-align: center; border-top: 1px #eee solid; height: 16px; padding-top: 10px;">
+        <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" onclick="getRjxxAdd()" id="btnAdd">确认</a>
+        <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" onclick="$('#window_xzrjxx').dialog('close');$('#txtRymc').val('');">返回</a>
+    </div>
+</div>
+<input type="hidden" id="hideUnitQjbh"/>
+<input type="hidden" id="hideUnitZjbh"/>
+<script type="text/javascript">
+    $(function() {
+        $(".zkxxpic").html("1");
+        //设置起井位置
+        var qjszwz = '@Model.Qjwz';
+        $("#gxszgkqjwz" + qjszwz).css("background-color", "#66FF99");
+        //设置止井位置
+        var zjszwz = '@Model.Zjwz';
+        $("#gxszgkwz" + zjszwz).css("background-color", "#66FF99");
+        //生成管线坐标图
+        EditGxxxHL();
+    });
+    
+    function ChoseGxszgkwz(obj) {
+        if ($(obj).attr("data-id") != "" && $(obj).attr("data-id") != undefined && $(obj).attr("data-id") == "hasVal") {
+            alertInfo("当前起井管孔已被占用");
+            return;
+        }
+        $("#gxszgkqjwz").val($(obj).attr("tip"));
+        for (var i = 1; i <= 12; i++) {
+            if ($(obj).attr("tip") == i.toString)
+                continue;
+            $("#gxszgkqjwz" + i.toString()).css("background-color", "#e6e6fa");
+        }
+        $(obj).css("background-color", "#66FF99");
+    }
+    
+    function ChoseGxszgkzjwz(obj) {
+        if ($(obj).attr("data-id") != "" && $(obj).attr("data-id") != undefined && $(obj).attr("data-id") == "hasVal") {
+            alertInfo("当前至井管孔已被占用");
+            return;
+        }
+        $("#gxszgkwz").val($(obj).attr("tip"));
+        for (var i = 1; i <= 12; i++) {
+            if ($(obj).attr("tip") == i.toString)
+                continue;
+            $("#gxszgkwz" + i.toString()).css("background-color", "#e6e6fa");
+        }
+        $(obj).css("background-color", "#66FF99");
+    }
+    
+    function CloseWindow() {
+        $("#window_xzrjxx").dialog("close");
+    }
+
+    //保存基本信息
+    function AddGxxxBasic() {
+        $("#nbform").form('submit', {
+            success: function (data) {
+                var t = $.parseJSON(data);
+                if (!t.IsError) {
+                    $("#Gxxxid").val(@ViewData["GxxxId"]);
+                    $.messager.alert('操作提示', t.Message, 'info');
+                } else {
+                    $.messager.alert('操作提示', t.Message, 'error');
+                }
+            }
+        });
+    }
+    
+    //保存起止井信息
+    function AddQzjxx() {
+        $("#qzjform").form('submit', {
+            success: function (data) {
+                var t = $.parseJSON(data);
+                if (!t.IsError) {
+                    $.messager.alert('操作提示', t.Message, 'info');
+                } else {
+                    $.messager.alert('操作提示', t.Message, 'error');
+                }
+            }
+        });
+    }
+    
+    //保存管线信息
+    function Addgxxx() {
+        $("#gxjbxxform").form('submit', {
+            success: function (data) {
+                var t = $.parseJSON(data);
+                if (!t.IsError) {
+                    //显示添加子管孔信息
+                    $("#divGk").show();
+                    $.messager.alert('操作提示', t.Message, 'info');
+                } else {
+                    $.messager.alert('操作提示', t.Message, 'error');
+                }
+            }
+        });
+    }
+    
+    //保存管孔信息
+    function Addgkxx() {
+        $("#gkxxform").form('submit', {
+            success: function (data) {
+                var t = $.parseJSON(data);
+                if (!t.IsError) {
+                    $.messager.alert('操作提示', t.Message, 'info');
+                } else {
+                    $.messager.alert('操作提示', t.Message, 'error');
+                }
+            }
+        });
+    }
+    
+    //弹出人井信息选择页面
+    function getRjxx(obj) {
+        $('#window_xzrjxx').dialog('open');
+        loadQyxxgrid(obj);
+        $("#qzjEdit").val(obj);
+    }
+
+    //加载人井信息列表
+    function loadQyxxgrid(obj) {
+        var urld = '@Url.Action("RjxxList","Gxrjxx")/?ysxmid=@ViewData["ysid"]';
+        $('#dgRjxx').datagrid({
+            url: urld,
+            title: '',
+            queryParams: {
+                rjmc: $("#txtRymc").val(),
+                ran: (new Date()).getTime()
+            },
+            border: false,
+            //fit: true,
+            method: 'get',
+            buttons: '#divButton',
+            fitColumns: true,
+            pageSize: 10,
+            modal: true,
+            pageList: [10, 20, 30, 40, 50],
+            pagination: true,
+            striped: true, //奇偶行是否区分
+            singleSelect: true,
+            checkOnSelect: true,
+            rownumbers: true, //行号 
+            columns: [[
+                {
+                    field: 'ck', checkbox: true, formatter: function (value, row, index) {
+                        var hideUnitbh = "";
+                        if (obj == "qj")
+                            hideUnitbh = $("#hideUnitQjbh").val();
+                        if (obj == "zj")
+                            hideUnitbh = $("#hideUnitZjbh").val();
+                        if (hideUnitbh != undefined) {
+                            if (row.ID == hideUnitbh) {
+                                $("#dgRjxx").datagrid("selectRow", index);
+                            }
+                        }
+                    }
+                },
+                { field: 'RJBH', title: '人井编号', width: 60, align: 'left', halign: 'center' },
+                { field: 'RJMC', title: '人井名称', width: 100, align: 'left', halign: 'center' }
+            ]]
+        });
+    }
+    
+    //获取企业信息 并返回到页面表单
+    function getRjxxAdd() {
+        var selectRow = $('#dgRjxx').datagrid('getSelected');
+        if (selectRow == null) {
+            $.messager.alert('操作提示', '请选择需要返回的人井信息！');
+            return;
+        } else {
+            var rjmc = selectRow.RJBH + "  " + selectRow.RJMC; 
+            $('#window_xzrjxx').dialog('close');
+            if ($("#qzjEdit").val() == "qj") {
+                $("#txtQjEdit").val(rjmc);
+                $("#QjszwzEdit").val(selectRow.ID);
+                $("#gkqjmcEdit").html(rjmc);
+            }
+            if ($("#qzjEdit").val() == "zj") {
+                $("#txtZjEdit").val(rjmc);
+                $("#ZjszwzEdit").val(selectRow.ID);
+                $("#gkzjmcEdit").html(rjmc);
+            }
+        }
+    }
+
+    function CreateGxxxHL(obj) {
+        if (obj == "gxxx") {
+            var index = 0;
+            if ($("#GKLS").val() != "" && $("#GKLS").val() != undefined && $("#GKHS").val() != "" && $("#GKHS").val() != undefined) {
+                var html = "<table class='table'>";
+                for (var i = 0; i < parseInt($("#GKLS").val()) ; i++) {
+                    html += "<tr>";
+                    for (var j = 0; j < parseInt($("#GKHS").val()) ; j++) {
+                        index++;
+                        html += "<td><input class='circle' type='button' data-id='" + i + "' title='" + j + "' tip='" + index + "' onclick = 'ClickChildGkxx(this)' value='" + index + "'/></td>";
+                    }
+                    html += "</tr>";
+                }
+                html += "</table>";
+                $("#gkxxList").html(html);
+            }
+        }
+        
+        if (obj == "gkxx") {
+            var tableIndex = 0;
+            if ($("#GKLS1").val() != "" && $("#GKLS1").val() != undefined && $("#GKHS1").val() != "" && $("#GKHS1").val() != undefined) {
+                var html1 = "<table class='table'>";
+                for (var k = 0; k < parseInt($("#GKLS1").val()) ; k++) {
+                    html1 += "<tr>";
+                    for (var h = 0; h < parseInt($("#GKHS1").val()) ; h++) {
+                        tableIndex++;
+                        html1 += "<td><input class='circle' type='button' tip='" + tableIndex + "' value='" + tableIndex + "'/></td>";
+                    }
+                    html1 += "</tr>";
+                }
+                html1 += "</table>";
+                $("#gkTable").html(html1);
+            }
+        }
+    }
+
+    //生成页面坐标图
+    function EditGxxxHL() {
+        //生成管线坐标图
+        var index = 0;
+        var html = "<table class='table'>";
+        for (var i = 0; i < parseInt(@Model.GKLS); i++) {
+            html += "<tr>";
+            for (var j = 0; j < parseInt(@Model.GKHS); j++) {
+                index++;
+                html += "<td><input class='circle' type='button' data-id='" + i + "' title='" + j + "' tip='" + index + "' onclick = 'ClickChildGkxx(this)' value='" + index + "'/></td>";
+            }
+            html += "</tr>";
+        }
+        html += "</table>";
+        $("#gkxxList").html(html);
+        //生成子孔坐标图
+        var tableIndex = 0;
+        var html1 = "<table class='table'>";
+        for (var k = 0; k < parseInt($("#GKLS1").val()); k++) {
+            html1 += "<tr>";
+            for (var h = 0; h < parseInt($("#GKHS1").val()); h++) {
+                tableIndex++;
+                html1 += "<td><input class='circle' type='button' tip='" + tableIndex + "' value='" + tableIndex + "'/></td>";
+            }
+            html1 += "</tr>";
+        }
+        html1 += "</table>";
+        $("#gkTable").html(html1);
+    }
+
+    function ClickChildGkxx(obj) {
+        $(".zkxxpic").html($(obj).attr("tip"));
+        $("#gklsParent").val($(obj).attr("data-id"));
+        $("#gkhsParent").val($(obj).attr("title"));
+    }
+</script>
+<style type="text/css">
+    .circle {
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        border: 0px;
+    }
+</style>

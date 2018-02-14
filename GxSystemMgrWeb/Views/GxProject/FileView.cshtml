@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "FileView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="tt_tab" class="easyui-tabs" tabposition="left" border="true" cache="false;" fit="true" style="width: auto; height: auto;">
+    <div title="CAD简图" style="padding: 3px;">
+        <div id="mmCAD" style="padding: 10px; height: auto;">
+            <a href="javascript:uploadfile.open('@ViewData["gcxmid"]','1');" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">上传图片</a>
+        </div>
+        <table id="ttCAD" class="easyui-datagrid" data-options="rownumbers:true,title:'CAD简图',url:'@Url.Action("GetFileList", "GxProject")/?type=1&gcxmid=@ViewData["gcxmid"]',iconCls:'icon-search',toolbar:'#mmCAD',singleSelect: true,checkOnSelect: true,pagination:true,idField:'ID',pageList:pageList">
+            <thead>
+                <tr>
+                    <th data-options="field:'ID',width:50,sortable:true">编号</th>
+                    <th data-options="field:'FILENAME',width:170,align:'center',sortable:true">文件名称</th>
+                    <th data-options="field:'CREATEBY',width:100">添加人</th>
+                    <th data-options="field:'UPLOADTIME',width:100,formatter:$date">添加时间</th>
+                    <th data-options="field:'undefined',width:100,formatter:$fun,align:'center'">操作</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div title="试通表" style="padding: 3px;">
+        <div id="mmSTB" style="padding: 10px; height: auto;">
+            <a href="javascript:uploadfile.open('@ViewData["gcxmid"]','2');" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">上传图片</a>
+        </div>
+        <table id="ttSTB" class="easyui-datagrid" data-options="rownumbers:true,title:'试通表',url:'@Url.Action("GetFileList", "GxProject")/?type=2&gcxmid=@ViewData["gcxmid"]',iconCls:'icon-search',singleSelect: true,checkOnSelect: true,toolbar:'#mmSTB',pagination:true,idField:'ID',pageList:pageList">
+            <thead>
+                <tr>
+                    <th data-options="field:'ID',width:50,sortable:true">编号</th>
+                    <th data-options="field:'FILENAME',width:170,align:'center',sortable:true">文件名称</th>
+                    <th data-options="field:'CREATEBY',width:100">添加人</th>
+                    <th data-options="field:'UPLOADTIME',width:100,formatter:$date">添加时间</th>
+                    <th data-options="field:'undefined',width:100,formatter:$fun,align:'center'">操作</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div title="跟测图" style="padding: 3px;">
+        <div id="mmGCT" style="padding: 10px; height: auto;">
+            <a href="javascript:uploadfile.open('@ViewData["gcxmid"]','3');" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">上传图片</a>
+        </div>
+        <table id="ttGCT" class="easyui-datagrid" data-options="rownumbers:true,title:'跟测图',url:'@Url.Action("GetFileList", "GxProject")/?type=3&gcxmid=@ViewData["gcxmid"]',singleSelect: true,checkOnSelect: true,iconCls:'icon-search',toolbar:'#mmGCT',pagination:true,idField:'ID',pageList:pageList">
+            <thead>
+                <tr>
+                    <th data-options="field:'ID',width:50,sortable:true">编号</th>
+                    <th data-options="field:'FILENAME',width:170,align:'center',sortable:true">文件名称</th>
+                    <th data-options="field:'CREATEBY',width:100">添加人</th>
+                    <th data-options="field:'UPLOADTIME',width:100,formatter:$date">添加时间</th>
+                    <th data-options="field:'undefined',width:100,formatter:$fun,align:'center'">操作</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<div id="window_pic"></div>
+<script type="text/javascript">
+    var pageList = [10, 15, 20];
+
+    var $fun = function (v, d, r) {
+        var html = "<a href=\"@Url.Action("DownLoadFile","GxProject")/?id" + d.ID + " class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-add'\">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+        html += "<a href=\"javascript:delpic('" + d.ID + "','" + d.TYPE + "');\" class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-remove'\">删除</a>";
+        return html;
+    };
+
+    var download = function (id) {
+        $.ajax({
+            url: '@Url.Action("FileUpload","GxProject")/?id=' + id
+        });
+    };
+
+    var uploadfile = {
+        open: function (id, obj) {
+            var url = '@Url.Action("FileUpload", "GxProject")/?type=' + obj + '&gcxmid=' + id;
+            $('#window_pic').dialog({
+                title: '添加图片',
+                height: 356,
+                width: 360,
+                modal: true,
+                href: url,
+                buttons: [
+                    {
+                        text: '确认上传',
+                        iconCls: 'icon-ok',
+                        handler: function () {
+                            $("#window_pic form").form('submit', {
+                                success: function (data) {
+                                    var d = JSON.parse(data);
+                                    if (!d.IsError) {
+                                        $("#window_pic").dialog('close');
+                                        alertInfo(d.Message);
+                                        if (obj == "1") {
+                                            $('#ttCAD').datagrid('reload');
+                                            $('#ttCAD').datagrid('unselectAll');
+                                        }
+                                        if (obj == "2") {
+                                            $('#ttSTB').datagrid('reload');
+                                            $('#ttSTB').datagrid('unselectAll');
+                                        }
+                                        if (obj == "3") {
+                                            $('#ttGCT').datagrid('reload');
+                                            $('#ttGCT').datagrid('unselectAll');
+                                        }
+                                    } else {
+                                        alertError(d.Message);
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    {
+                        text: '关闭窗口',
+                        iconCls: 'icon-cancel',
+                        handler: function () {
+                            $("#window_pic").dialog('close');
+                        }
+                    }
+                ]
+            });
+        }
+    };
+
+    var delpic = function (id, obj) {
+        $.messager.confirm('操作提示', '你确定要删除选中的数据？', function (r) {
+            if (r) {
+                $.ajaxRequest('@Url.Action("DeletePic", "GxProject")/?id=' + id, null, function (data) {
+                    if (data.IsError) {
+                        alertError(data.Message);
+                    } else {
+                        alertInfo(data.Message);
+                    }
+                    if (obj == "1") {
+                        $('#ttCAD').datagrid('reload');
+                        $('#ttCAD').datagrid('unselectAll');
+                    }
+                    if (obj == "2") {
+                        $('#ttSTB').datagrid('reload');
+                        $('#ttSTB').datagrid('unselectAll');
+                    }
+                    if (obj == "3") {
+                        $('#ttGCT').datagrid('reload');
+                        $('#ttGCT').datagrid('unselectAll');
+                    }
+                });
+            }
+        });
+    };
+</script>

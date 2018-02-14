@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GxEntitiesStoreContainer" CdmEntityContainer="GxSysEntities">
+    <EntitySetMapping Name="GX_DICT_CONFIG">
+      <EntityTypeMapping TypeName="GxEntities.GX_DICT_CONFIG">
+        <MappingFragment StoreEntitySet="GX_DICT_CONFIG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+          <ScalarProperty Name="SORT" ColumnName="SORT" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+          <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+          <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_GKXX">
+      <EntityTypeMapping TypeName="GxEntities.GX_GKXX">
+        <MappingFragment StoreEntitySet="GX_GKXX">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GKXXID" ColumnName="GKXXID" />
+          <ScalarProperty Name="GKBH" ColumnName="GKBH" />
+          <ScalarProperty Name="GKCL" ColumnName="GKCL" />
+          <ScalarProperty Name="SYZT" ColumnName="SYZT" />
+          <ScalarProperty Name="ZKHS" ColumnName="ZKHS" />
+          <ScalarProperty Name="ZKLS" ColumnName="ZKLS" />
+          <ScalarProperty Name="ZKSL" ColumnName="ZKSL" />
+          <ScalarProperty Name="GKSZH" ColumnName="GKSZH" />
+          <ScalarProperty Name="GKSZL" ColumnName="GKSZL" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_GXRJRELATION">
+      <EntityTypeMapping TypeName="GxEntities.GX_GXRJRELATION">
+        <MappingFragment StoreEntitySet="GX_GXRJRELATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GXXXID" ColumnName="GXXXID" />
+          <ScalarProperty Name="RJXXID" ColumnName="RJXXID" />
+          <ScalarProperty Name="UPS" ColumnName="UPS" />
+          <ScalarProperty Name="ISNEW" ColumnName="ISNEW" />
+          <ScalarProperty Name="JYJGCBH" ColumnName="JYJGCBH" />
+          <ScalarProperty Name="SSGCJH" ColumnName="SSGCJH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_GXXX">
+      <EntityTypeMapping TypeName="GxEntities.GX_GXXX">
+        <MappingFragment StoreEntitySet="GX_GXXX">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="XMYSXXID" ColumnName="XMYSXXID" />
+          <ScalarProperty Name="GCBH" ColumnName="GCBH" />
+          <ScalarProperty Name="GXWZ" ColumnName="GXWZ" />
+          <ScalarProperty Name="GXCD" ColumnName="GXCD" />
+          <ScalarProperty Name="DXLX" ColumnName="DXLX" />
+          <ScalarProperty Name="GXLX" ColumnName="GXLX" />
+          <ScalarProperty Name="JSZT" ColumnName="JSZT" />
+          <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+          <ScalarProperty Name="GJZ" ColumnName="GJZ" />
+          <ScalarProperty Name="XNZC" ColumnName="XNZC" />
+          <ScalarProperty Name="GKCL" ColumnName="GKCL" />
+          <ScalarProperty Name="SYZT" ColumnName="SYZT" />
+          <ScalarProperty Name="GKHS" ColumnName="GKHS" />
+          <ScalarProperty Name="GKLS" ColumnName="GKLS" />
+          <ScalarProperty Name="PLSX" ColumnName="PLSX" />
+          <ScalarProperty Name="GXZT" ColumnName="GXZT" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+          <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+          <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_LEAVEOPINION">
+      <EntityTypeMapping TypeName="GxEntities.GX_LEAVEOPINION">
+        <MappingFragment StoreEntitySet="GX_LEAVEOPINION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="APPINSTANCEID" ColumnName="APPINSTANCEID" />
+          <ScalarProperty Name="ACTIVITYID" ColumnName="ACTIVITYID" />
+          <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="CHANGEDTIME" ColumnName="CHANGEDTIME" />
+          <ScalarProperty Name="CHANGEDUSERID" ColumnName="CHANGEDUSERID" />
+          <ScalarProperty Name="CHANGEDUSERNAME" ColumnName="CHANGEDUSERNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_PHOTOGALLERY">
+      <EntityTypeMapping TypeName="GxEntities.GX_PHOTOGALLERY">
+        <MappingFragment StoreEntitySet="GX_PHOTOGALLERY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+          <ScalarProperty Name="TPBH" ColumnName="TPBH" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="TJSJ" ColumnName="TJSJ" />
+          <ScalarProperty Name="SFYX" ColumnName="SFYX" />
+          <ScalarProperty Name="SORT" ColumnName="SORT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_RJXX">
+      <EntityTypeMapping TypeName="GxEntities.GX_RJXX">
+        <MappingFragment StoreEntitySet="GX_RJXX">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="XMYSXXID" ColumnName="XMYSXXID" />
+          <ScalarProperty Name="GCBH" ColumnName="GCBH" />
+          <ScalarProperty Name="RJBH" ColumnName="RJBH" />
+          <ScalarProperty Name="RJMC" ColumnName="RJMC" />
+          <ScalarProperty Name="GCRJBH" ColumnName="GCRJBH" />
+          <ScalarProperty Name="JGSL" ColumnName="JGSL" />
+          <ScalarProperty Name="DXLX" ColumnName="DXLX" />
+          <ScalarProperty Name="RSJCC" ColumnName="RSJCC" />
+          <ScalarProperty Name="JGLX" ColumnName="JGLX" />
+          <ScalarProperty Name="GJZ" ColumnName="GJZ" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="RJZT" ColumnName="RJZT" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+          <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_SYS_MENU">
+      <EntityTypeMapping TypeName="GxEntities.GX_SYS_MENU">
+        <MappingFragment StoreEntitySet="GX_SYS_MENU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MODELID" ColumnName="MODELID" />
+          <ScalarProperty Name="MENUNAMC" ColumnName="MENUNAMC" />
+          <ScalarProperty Name="MENUURL" ColumnName="MENUURL" />
+          <ScalarProperty Name="MENUBZ" ColumnName="MENUBZ" />
+          <ScalarProperty Name="MENUPARENTID" ColumnName="MENUPARENTID" />
+          <ScalarProperty Name="MENUSTATUS" ColumnName="MENUSTATUS" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+          <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+          <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_SYS_MODELS">
+      <EntityTypeMapping TypeName="GxEntities.GX_SYS_MODELS">
+        <MappingFragment StoreEntitySet="GX_SYS_MODELS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+          <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_SYS_ROLE">
+      <EntityTypeMapping TypeName="GxEntities.GX_SYS_ROLE">
+        <MappingFragment StoreEntitySet="GX_SYS_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ROLENAME" ColumnName="ROLENAME" />
+          <ScalarProperty Name="ROLEDESC" ColumnName="ROLEDESC" />
+          <ScalarProperty Name="ROLESTATUS" ColumnName="ROLESTATUS" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_SYS_USER">
+      <EntityTypeMapping TypeName="GxEntities.GX_SYS_USER">
+        <MappingFragment StoreEntitySet="GX_SYS_USER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="USERCODE" ColumnName="USERCODE" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="USERPWD" ColumnName="USERPWD" />
+          <ScalarProperty Name="USERMOBILE" ColumnName="USERMOBILE" />
+          <ScalarProperty Name="USEREMAIL" ColumnName="USEREMAIL" />
+          <ScalarProperty Name="USERSEX" ColumnName="USERSEX" />
+          <ScalarProperty Name="USERSTATUS" ColumnName="USERSTATUS" />
+          <ScalarProperty Name="LOGINIP" ColumnName="LOGINIP" />
+          <ScalarProperty Name="LOGINTIME" ColumnName="LOGINTIME" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+          <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+          <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_SYS_USERROLERELATE">
+      <EntityTypeMapping TypeName="GxEntities.GX_SYS_USERROLERELATE">
+        <MappingFragment StoreEntitySet="GX_SYS_USERROLERELATE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GX__ID" ColumnName="GX__ID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_SYSTEMLOG">
+      <EntityTypeMapping TypeName="GxEntities.GX_SYSTEMLOG">
+        <MappingFragment StoreEntitySet="GX_SYSTEMLOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MENUURL" ColumnName="MENUURL" />
+          <ScalarProperty Name="TIMEFLAG" ColumnName="TIMEFLAG" />
+          <ScalarProperty Name="ACTNAME" ColumnName="ACTNAME" />
+          <ScalarProperty Name="CONTENTS" ColumnName="CONTENTS" />
+          <ScalarProperty Name="ACTUSERCODE" ColumnName="ACTUSERCODE" />
+          <ScalarProperty Name="ACTRESULT" ColumnName="ACTRESULT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_TASKWORK">
+      <EntityTypeMapping TypeName="GxEntities.GX_TASKWORK">
+        <MappingFragment StoreEntitySet="GX_TASKWORK">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="XMYSXXID" ColumnName="XMYSXXID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="XLZXID" ColumnName="XLZXID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_WFACTIVITYINSTANCE">
+      <EntityTypeMapping TypeName="GxEntities.GX_WFACTIVITYINSTANCE">
+        <MappingFragment StoreEntitySet="GX_WFACTIVITYINSTANCE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROCESSINSTANCEID" ColumnName="PROCESSINSTANCEID" />
+          <ScalarProperty Name="APPINSTANCEID" ColumnName="APPINSTANCEID" />
+          <ScalarProperty Name="APPNAME" ColumnName="APPNAME" />
+          <ScalarProperty Name="APPINSTANCECODE" ColumnName="APPINSTANCECODE" />
+          <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+          <ScalarProperty Name="ACTIVITYGUID" ColumnName="ACTIVITYGUID" />
+          <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+          <ScalarProperty Name="ACTIVITYTYPE" ColumnName="ACTIVITYTYPE" />
+          <ScalarProperty Name="ACTIVITYSTATE" ColumnName="ACTIVITYSTATE" />
+          <ScalarProperty Name="ASSIGNEDTOUSERIDS" ColumnName="ASSIGNEDTOUSERIDS" />
+          <ScalarProperty Name="ASSIGNEDTOUSERNAMES" ColumnName="ASSIGNEDTOUSERNAMES" />
+          <ScalarProperty Name="BACKWARDTYPE" ColumnName="BACKWARDTYPE" />
+          <ScalarProperty Name="BACKSRCACTIVITYINSTANCEID" ColumnName="BACKSRCACTIVITYINSTANCEID" />
+          <ScalarProperty Name="GATEWAYDIRECTIONTYPEID" ColumnName="GATEWAYDIRECTIONTYPEID" />
+          <ScalarProperty Name="CANRENEWINSTANCE" ColumnName="CANRENEWINSTANCE" />
+          <ScalarProperty Name="TOKENSREQUIRED" ColumnName="TOKENSREQUIRED" />
+          <ScalarProperty Name="TOKENSHAD" ColumnName="TOKENSHAD" />
+          <ScalarProperty Name="COMPLEXTYPE" ColumnName="COMPLEXTYPE" />
+          <ScalarProperty Name="MIHOSTACTIVITYINSTANCEID" ColumnName="MIHOSTACTIVITYINSTANCEID" />
+          <ScalarProperty Name="COMPLETEORDER" ColumnName="COMPLETEORDER" />
+          <ScalarProperty Name="SIGNFORWARDTYPE" ColumnName="SIGNFORWARDTYPE" />
+          <ScalarProperty Name="CREATEDBYUSERID" ColumnName="CREATEDBYUSERID" />
+          <ScalarProperty Name="CREATEDBYUSERNAME" ColumnName="CREATEDBYUSERNAME" />
+          <ScalarProperty Name="CREATEDDATETIME" ColumnName="CREATEDDATETIME" />
+          <ScalarProperty Name="LASTUPDATEDBYUSERID" ColumnName="LASTUPDATEDBYUSERID" />
+          <ScalarProperty Name="LASTUPDATEDBYUSERNAME" ColumnName="LASTUPDATEDBYUSERNAME" />
+          <ScalarProperty Name="LASTUPDATEDDATETIME" ColumnName="LASTUPDATEDDATETIME" />
+          <ScalarProperty Name="ENDEDDATETIME" ColumnName="ENDEDDATETIME" />
+          <ScalarProperty Name="ENDEDBYUSERID" ColumnName="ENDEDBYUSERID" />
+          <ScalarProperty Name="ENDEDBYUSERNAME" ColumnName="ENDEDBYUSERNAME" />
+          <ScalarProperty Name="RECORDSTATUSINVALID" ColumnName="RECORDSTATUSINVALID" />
+          <ScalarProperty Name="ROWVERSIONID" ColumnName="ROWVERSIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_WFPROCESS">
+      <EntityTypeMapping TypeName="GxEntities.GX_WFPROCESS">
+        <MappingFragment StoreEntitySet="GX_WFPROCESS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+          <ScalarProperty Name="PROCESSNAME" ColumnName="PROCESSNAME" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="ISUSING" ColumnName="ISUSING" />
+          <ScalarProperty Name="XMLFILENAME" ColumnName="XMLFILENAME" />
+          <ScalarProperty Name="XMLFILEPATH" ColumnName="XMLFILEPATH" />
+          <ScalarProperty Name="XMLCONTENT" ColumnName="XMLCONTENT" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CREATEDDATETIME" ColumnName="CREATEDDATETIME" />
+          <ScalarProperty Name="LASTUPDATEDDATETIME" ColumnName="LASTUPDATEDDATETIME" />
+          <ScalarProperty Name="ROWVERSIONID" ColumnName="ROWVERSIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_WFPROCESSINSTANCE">
+      <EntityTypeMapping TypeName="GxEntities.GX_WFPROCESSINSTANCE">
+        <MappingFragment StoreEntitySet="GX_WFPROCESSINSTANCE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+          <ScalarProperty Name="PROCESSNAME" ColumnName="PROCESSNAME" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="APPINSTANCEID" ColumnName="APPINSTANCEID" />
+          <ScalarProperty Name="APPNAME" ColumnName="APPNAME" />
+          <ScalarProperty Name="APPINSTANCECODE" ColumnName="APPINSTANCECODE" />
+          <ScalarProperty Name="PROCESSSTATE" ColumnName="PROCESSSTATE" />
+          <ScalarProperty Name="PARENTPROCESSINSTANCEID" ColumnName="PARENTPROCESSINSTANCEID" />
+          <ScalarProperty Name="PARENTPROCESSGUID" ColumnName="PARENTPROCESSGUID" />
+          <ScalarProperty Name="INVOKEDACTIVITYINSTANCEID" ColumnName="INVOKEDACTIVITYINSTANCEID" />
+          <ScalarProperty Name="INVOKEDACTIVITYGUID" ColumnName="INVOKEDACTIVITYGUID" />
+          <ScalarProperty Name="CREATEDDATETIME" ColumnName="CREATEDDATETIME" />
+          <ScalarProperty Name="CREATEDBYUSERID" ColumnName="CREATEDBYUSERID" />
+          <ScalarProperty Name="CREATEDBYUSERNAME" ColumnName="CREATEDBYUSERNAME" />
+          <ScalarProperty Name="LASTUPDATEDDATETIME" ColumnName="LASTUPDATEDDATETIME" />
+          <ScalarProperty Name="LASTUPDATEDBYUSERID" ColumnName="LASTUPDATEDBYUSERID" />
+          <ScalarProperty Name="LASTUPDATEDBYUSERNAME" ColumnName="LASTUPDATEDBYUSERNAME" />
+          <ScalarProperty Name="ENDEDDATETIME" ColumnName="ENDEDDATETIME" />
+          <ScalarProperty Name="ENDEDBYUSERID" ColumnName="ENDEDBYUSERID" />
+          <ScalarProperty Name="ENDEDBYUSERNAME" ColumnName="ENDEDBYUSERNAME" />
+          <ScalarProperty Name="RECORDSTATUSINVALID" ColumnName="RECORDSTATUSINVALID" />
+          <ScalarProperty Name="ROWVERSIONID" ColumnName="ROWVERSIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_WFTRANSITIONINSTANCE">
+      <EntityTypeMapping TypeName="GxEntities.GX_WFTRANSITIONINSTANCE">
+        <MappingFragment StoreEntitySet="GX_WFTRANSITIONINSTANCE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TRANSITIONGUID" ColumnName="TRANSITIONGUID" />
+          <ScalarProperty Name="PROCESSINSTANCEID" ColumnName="PROCESSINSTANCEID" />
+          <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+          <ScalarProperty Name="TRANSITIONTYPE" ColumnName="TRANSITIONTYPE" />
+          <ScalarProperty Name="FLYINGTYPE" ColumnName="FLYINGTYPE" />
+          <ScalarProperty Name="FROMACTIVITYINSTANCEID" ColumnName="FROMACTIVITYINSTANCEID" />
+          <ScalarProperty Name="FROMACTIVITYGUID" ColumnName="FROMACTIVITYGUID" />
+          <ScalarProperty Name="FROMACTIVITYTYPE" ColumnName="FROMACTIVITYTYPE" />
+          <ScalarProperty Name="FROMACTIVITYNAME" ColumnName="FROMACTIVITYNAME" />
+          <ScalarProperty Name="TOACTIVITYINSTANCEID" ColumnName="TOACTIVITYINSTANCEID" />
+          <ScalarProperty Name="TOACTIVITYGUID" ColumnName="TOACTIVITYGUID" />
+          <ScalarProperty Name="TOACTIVITYTYPE" ColumnName="TOACTIVITYTYPE" />
+          <ScalarProperty Name="TOACTIVITYNAME" ColumnName="TOACTIVITYNAME" />
+          <ScalarProperty Name="CONDITIONPARSERESULT" ColumnName="CONDITIONPARSERESULT" />
+          <ScalarProperty Name="CREATEDBYUSERID" ColumnName="CREATEDBYUSERID" />
+          <ScalarProperty Name="CREATEDBYUSERNAME" ColumnName="CREATEDBYUSERNAME" />
+          <ScalarProperty Name="CREATEDDATETIME" ColumnName="CREATEDDATETIME" />
+          <ScalarProperty Name="RECORDSTATUSINVALID" ColumnName="RECORDSTATUSINVALID" />
+          <ScalarProperty Name="ROWVERSIONID" ColumnName="ROWVERSIONID" />
+          <ScalarProperty Name="APPINSTANCEID" ColumnName="APPINSTANCEID" />
+          <ScalarProperty Name="APPINSTANCECODE" ColumnName="APPINSTANCECODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_XLZX">
+      <EntityTypeMapping TypeName="GxEntities.GX_XLZX">
+        <MappingFragment StoreEntitySet="GX_XLZX">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+          <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+          <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GX_YSZLFILE">
+      <EntityTypeMapping TypeName="GxEntities.GX_YSZLFILE">
+        <MappingFragment StoreEntitySet="GX_YSZLFILE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="XMYSXXID" ColumnName="XMYSXXID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+          <ScalarProperty Name="FILEURL" ColumnName="FILEURL" />
+          <ScalarProperty Name="FILESIZE" ColumnName="FILESIZE" />
+          <ScalarProperty Name="FILEZT" ColumnName="FILEZT" />
+          <ScalarProperty Name="UPLOADTIME" ColumnName="UPLOADTIME" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="ADELETEBY" ColumnName="ADELETEBY" />
+          <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

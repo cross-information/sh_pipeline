@@ -1,0 +1,25 @@
+﻿@model Gx.Models.GX_SYS_ROLE
+@using (Html.BeginForm("Edit", "GxSysRole", FormMethod.Post))
+{
+    <div style="padding: 10px;">
+        <input type="hidden" name="Id" value="@Model.ID"/>
+        <ul class="form_ul">
+            <li>
+                <label>角色名称：</label>
+                <input type="text" class="easyui-validatebox" name="ROLENAME" style="width: 180px;"  value="@Model.ROLENAME" />
+            </li>
+            <li>
+                <label>角色状态：</label>
+                <select name="ROLESTATUS" id="ROLESTATUS" style="width: 180px;">
+                    <option value="1" @Html.Raw(Model.ROLESTATUS=="1"?"selected=selected":"")>冻结</option>
+                    <option value="0" @Html.Raw(Model.ROLESTATUS=="0"?"selected=selected":"")>启用</option>
+                </select>  
+            </li>
+            <li>
+                <label>描述：</label>
+                <textarea id="ROLEDESC" name="ROLEDESC" rows="5" cols="500">@Html.Raw(Model.ROLEDESC)</textarea>
+            </li>
+        </ul>
+    </div> 
+}
+

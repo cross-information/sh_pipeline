@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "TaskResignView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Gx.Models.GX_XMYSXX
+@using (Html.BeginForm("OprRw", "GxProject", FormMethod.Post))
+{
+    <div style="padding: 10px;">
+        <input type="hidden" name="gcxmid" id="gcxmid" value="@ViewData["gcxmid"]" />
+        <ul class="form_ul">
+            <li>
+                <label>验收人员：</label>
+                <input name="CheckMan" id="CheckMan" class="easyui-combobox"
+                       data-options="url:'@Url.Action("GetCheckManList","GxProject")',valueField:'Value',textField:'Text',value:'@Model.YSRY'" />
+            </li>
+            <li>
+                <label>线路维护中心：</label>
+                <input name="LineServiceCenter" id="LineServiceCenter" class="easyui-combobox"
+                       data-options="url:'@Url.Action("GetLineCenterList","GxProject")',valueField:'Value',textField:'Text',value:'@Model.XLZX'" />
+            </li>
+        </ul>
+    </div>
+}

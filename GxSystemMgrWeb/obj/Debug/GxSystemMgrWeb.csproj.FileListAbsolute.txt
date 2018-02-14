@@ -43,6 +43,10 @@ E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\GxSystemMg
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\GxSystemMgrWeb.pdb
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Antlr3.Runtime.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\EntityFramework.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Gx.Business.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Gx.CommonUnits.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Gx.Models.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\JGB.Common.Units.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Microsoft.Web.Infrastructure.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Newtonsoft.Json.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\System.Net.Http.Formatting.dll
@@ -56,6 +60,10 @@ E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\System.Web
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\System.Web.WebPages.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\System.Web.WebPages.Razor.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\WebGrease.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Gx.DataAccess.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Gx.Business.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Gx.CommonUnits.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Gx.Models.pdb
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\EntityFramework.xml
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Newtonsoft.Json.xml
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\System.Net.Http.Formatting.xml
@@ -66,6 +74,7 @@ E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\System.Web
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\System.Web.WebPages.xml
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\System.Web.WebPages.Deployment.xml
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\System.Web.WebPages.Razor.xml
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\Gx.DataAccess.pdb
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\zh-Hans\EntityFramework.resources.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\zh-Hans\System.Web.Http.resources.dll
@@ -77,6 +86,6 @@ E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\zh-Hans\Sy
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\zh-Hans\System.Web.WebPages.resources.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\obj\Debug\GxSystemMgrWeb.csprojResolveAssemblyReference.cache
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\obj\Debug\GxSystemMgrWeb.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\obj\Debug\GxSystemMgrWeb.pdb
-E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\GxSystemMgrWeb\obj\Debug\GxSystemMgrWeb.csprojResolveAssemblyReference.cache

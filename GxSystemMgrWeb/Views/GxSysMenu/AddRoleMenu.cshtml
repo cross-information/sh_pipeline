@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "AddRoleUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddRoleMenu", "GxSysMenu", FormMethod.Post))
+{
+    <div style="padding: 10px;">
+        <input type="hidden" name="RoleId" id="RoleId" value="@ViewData["RoleId"]"/>
+        <ul class="form_ul">
+            <li>
+                <label>未选择的菜单：</label>
+                <input name="ROLENAME" id="ROLENAME" class="easyui-combobox" 
+                       data-options="url:'@Url.Action("GetNotSelectMenu","GxSysMenu")',valueField:'Value',textField:'Text',value:''" />
+            </li>
+        </ul>
+    </div> 
+}

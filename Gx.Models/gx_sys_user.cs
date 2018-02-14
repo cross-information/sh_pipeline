@@ -12,24 +12,24 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_sys_user
+    public partial class GX_SYS_USER
     {
-        public int Id { get; set; }
-        public string userId { get; set; }
-        public string userCode { get; set; }
-        public string userName { get; set; }
-        public string userpwd { get; set; }
-        public string userMobile { get; set; }
-        public string userEmail { get; set; }
-        public string userSex { get; set; }
-        public Nullable<int> userStatus { get; set; }
-        public string loginIp { get; set; }
-        public Nullable<System.DateTime> loginTime { get; set; }
-        public string createby { get; set; }
-        public Nullable<System.DateTime> createtime { get; set; }
-        public string modify { get; set; }
-        public Nullable<System.DateTime> modifytime { get; set; }
-        public string deleteby { get; set; }
-        public Nullable<System.DateTime> deletetime { get; set; }
+        public decimal ID { get; set; }
+        public string USERID { get; set; }
+        public string USERCODE { get; set; }
+        public string USERNAME { get; set; }
+        public string USERPWD { get; set; }
+        public string USERMOBILE { get; set; }
+        public string USEREMAIL { get; set; }
+        public string USERSEX { get; set; }
+        public Nullable<decimal> USERSTATUS { get; set; }
+        public string LOGINIP { get; set; }
+        public Nullable<System.DateTime> LOGINTIME { get; set; }
+        public string CREATEBY { get; set; }
+        public Nullable<System.DateTime> CREATETIME { get; set; }
+        public string MODIFYBY { get; set; }
+        public Nullable<System.DateTime> MODIFYTIME { get; set; }
+        public string DELETEBY { get; set; }
+        public Nullable<System.DateTime> DELETETIME { get; set; }
     }
 }

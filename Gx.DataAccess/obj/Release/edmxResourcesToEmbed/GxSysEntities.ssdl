@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GxEntities.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GX_DICT_CONFIG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="NAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="STATUS" Type="char" MaxLength="1" />
+    <Property Name="PARENTID" Type="number" Precision="38" Scale="0" />
+    <Property Name="SORT" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+    <Property Name="DICTDESC" Type="nvarchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="GX_GKXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="GXXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="GKCL" Type="nvarchar2" MaxLength="40" />
+    <Property Name="SYZT" Type="number" Precision="38" Scale="0" />
+    <Property Name="ZKHS" Type="number" Precision="38" Scale="0" />
+    <Property Name="ZKLS" Type="number" Precision="38" Scale="0" />
+    <Property Name="ZKSL" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKSZH" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKSZL" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+  </EntityType>
+  <EntityType Name="GX_GXRJRELATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="GXXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="RJXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="UPS" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ISNEW" Type="char" MaxLength="1" />
+    <Property Name="JYJGCBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="SSGCJH" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_GXXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="GCBH" Type="nvarchar2" MaxLength="40" />
+    <Property Name="GXWZ" Type="nvarchar2" MaxLength="40" />
+    <Property Name="GXCD" Type="float" Precision="126" Scale="0" />
+    <Property Name="DXLX" Type="nvarchar2" MaxLength="20" />
+    <Property Name="GXLX" Type="nvarchar2" MaxLength="40" />
+    <Property Name="JSZT" Type="nvarchar2" MaxLength="40" />
+    <Property Name="YWLX" Type="nvarchar2" MaxLength="20" />
+    <Property Name="GJZ" Type="nvarchar2" MaxLength="22" />
+    <Property Name="XNZC" Type="nvarchar2" MaxLength="10" />
+    <Property Name="GKCL" Type="nvarchar2" MaxLength="20" />
+    <Property Name="SYZT" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKHS" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKLS" Type="number" Precision="38" Scale="0" />
+    <Property Name="PLSX" Type="number" Precision="38" Scale="0" />
+    <Property Name="GXZT" Type="char" MaxLength="1" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+    <Property Name="GH" Type="nvarchar2" MaxLength="40" />
+    <Property Name="JJ" Type="number" Precision="38" Scale="0" />
+    <Property Name="STQK" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="GX_LEAVEOPINION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ACTIVITYID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="REMARK" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="CHANGEDTIME" Type="date" />
+    <Property Name="CHANGEDUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CHANGEDUSERNAME" Type="nvarchar2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GX_PHOTOGALLERY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PARENTID" Type="number" Precision="38" Scale="0" />
+    <Property Name="TPBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="URL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="TJSJ" Type="date" />
+    <Property Name="SFYX" Type="number" Precision="38" Scale="0" />
+    <Property Name="SORT" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_RJXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="GCBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="RJBH" Type="nvarchar2" MaxLength="30" />
+    <Property Name="RJMC" Type="nvarchar2" MaxLength="100" />
+    <Property Name="GCRJBH" Type="nvarchar2" MaxLength="40" />
+    <Property Name="JGSL" Type="number" Precision="38" Scale="0" />
+    <Property Name="DXLX" Type="nvarchar2" MaxLength="10" />
+    <Property Name="RSJCC" Type="nvarchar2" MaxLength="40" />
+    <Property Name="JGLX" Type="nvarchar2" MaxLength="40" />
+    <Property Name="GJZ" Type="nvarchar2" MaxLength="22" />
+    <Property Name="LONGITUDE" Type="nvarchar2" MaxLength="20" />
+    <Property Name="LATITUDE" Type="nvarchar2" MaxLength="20" />
+    <Property Name="RJZT" Type="char" MaxLength="1" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="GX_SYS_MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MODELID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MENUNAMC" Type="nvarchar2" MaxLength="50" />
+    <Property Name="MENUURL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="MENUBZ" Type="nvarchar2" MaxLength="200" />
+    <Property Name="MENUPARENTID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MENUSTATUS" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <EntityType Name="GX_SYS_MODELS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="REMARK" Type="nvarchar2" MaxLength="200" />
+    <Property Name="FLAG" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+  </EntityType>
+  <EntityType Name="GX_SYS_PERMISSIONS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="PERDESC" Type="nvarchar2" MaxLength="50" />
+    <Property Name="PERSTATUS" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+  </EntityType>
+  <EntityType Name="GX_SYS_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ROLENAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ROLEDESC" Type="nvarchar2" MaxLength="200" />
+    <Property Name="ROLESTATUS" Type="char" MaxLength="1" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="50" />
+    <Property Name="MODIFYTIME" Type="date" />
+  </EntityType>
+  <EntityType Name="GX_SYS_ROLEMENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MENUID" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_SYS_ROLEPERRELATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PERID" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_SYS_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="USERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="USERCODE" Type="nvarchar2" MaxLength="30" />
+    <Property Name="USERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="USERPWD" Type="nvarchar2" MaxLength="50" />
+    <Property Name="USERMOBILE" Type="nvarchar2" MaxLength="11" />
+    <Property Name="USEREMAIL" Type="nvarchar2" MaxLength="50" />
+    <Property Name="USERSEX" Type="char" MaxLength="1" />
+    <Property Name="USERSTATUS" Type="number" Precision="38" Scale="0" />
+    <Property Name="LOGINIP" Type="nvarchar2" MaxLength="30" />
+    <Property Name="LOGINTIME" Type="date" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <EntityType Name="GX_SYS_USERROLERELATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="GX__ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="USERID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_SYSTEMLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MENUURL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="TIMEFLAG" Type="date" />
+    <Property Name="ACTNAME" Type="nvarchar2" MaxLength="200" />
+    <Property Name="CONTENTS" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="ACTUSERCODE" Type="nvarchar2" MaxLength="40" />
+    <Property Name="ACTRESULT" Type="nvarchar2" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="GX_TASKWORK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="USERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="XLZXID" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_WFACTIVITYINSTANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="APPNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="APPINSTANCECODE" Type="nvarchar2" MaxLength="30" />
+    <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ACTIVITYTYPE" Type="number" Precision="5" Scale="0" />
+    <Property Name="ACTIVITYSTATE" Type="number" Precision="5" Scale="0" />
+    <Property Name="ASSIGNEDTOUSERIDS" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="ASSIGNEDTOUSERNAMES" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="BACKWARDTYPE" Type="number" Precision="5" Scale="0" />
+    <Property Name="BACKSRCACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="GATEWAYDIRECTIONTYPEID" Type="number" Precision="5" Scale="0" />
+    <Property Name="CANRENEWINSTANCE" Type="number" Precision="38" Scale="0" />
+    <Property Name="TOKENSREQUIRED" Type="number" Precision="38" Scale="0" />
+    <Property Name="TOKENSHAD" Type="number" Precision="38" Scale="0" />
+    <Property Name="COMPLEXTYPE" Type="number" Precision="5" Scale="0" />
+    <Property Name="MIHOSTACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="COMPLETEORDER" Type="float" Precision="126" Scale="0" />
+    <Property Name="SIGNFORWARDTYPE" Type="number" Precision="5" Scale="0" />
+    <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDDATETIME" Type="date" />
+    <Property Name="LASTUPDATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="LASTUPDATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="LASTUPDATEDDATETIME" Type="date" />
+    <Property Name="ENDEDDATETIME" Type="date" />
+    <Property Name="ENDEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ENDEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+  </EntityType>
+  <EntityType Name="GX_WFPROCESS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PROCESSNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="VERSION" Type="nvarchar2" MaxLength="20" />
+    <Property Name="ISUSING" Type="char" MaxLength="1" />
+    <Property Name="XMLFILENAME" Type="nvarchar2" MaxLength="200" />
+    <Property Name="XMLFILEPATH" Type="nvarchar2" MaxLength="200" />
+    <Property Name="XMLCONTENT" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="DESCRIPTION" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="CREATEDDATETIME" Type="date" />
+    <Property Name="LASTUPDATEDDATETIME" Type="date" />
+    <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+  </EntityType>
+  <EntityType Name="GX_WFPROCESSINSTANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PROCESSNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="VERSION" Type="nvarchar2" MaxLength="20" />
+    <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="APPNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="APPINSTANCECODE" Type="nvarchar2" MaxLength="30" />
+    <Property Name="PROCESSSTATE" Type="number" Precision="38" Scale="0" />
+    <Property Name="PARENTPROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PARENTPROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="INVOKEDACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="INVOKEDACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDDATETIME" Type="date" />
+    <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="LASTUPDATEDDATETIME" Type="date" />
+    <Property Name="LASTUPDATEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="LASTUPDATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ENDEDDATETIME" Type="date" />
+    <Property Name="ENDEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="ENDEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+  </EntityType>
+  <EntityType Name="GX_WFTASK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="APPNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="TASKTYPE" Type="number" Precision="5" Scale="0" />
+    <Property Name="TASKSTATE" Type="number" Precision="5" Scale="0" />
+    <Property Name="ASSIGNEDTOUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ASSIGNEDTOUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDDATETIME" Type="date" />
+    <Property Name="LASTUPDATEDDATETIME" Type="date" />
+    <Property Name="LASTUPDATEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="LASTUPDATEDBYUSERNAME" Type="nvarchar2" MaxLength="20" />
+    <Property Name="ENDEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="ENDEDBYUSERNAME" Type="nvarchar2" MaxLength="20" />
+    <Property Name="ENDEDDATETIME" Type="date" />
+    <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+  </EntityType>
+  <EntityType Name="GX_WFTRANSITIONINSTANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TRANSITIONGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="TRANSITIONTYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FLYINGTYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FROMACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="FROMACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="FROMACTIVITYTYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FROMACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="TOACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="TOACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="TOACTIVITYTYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="TOACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CONDITIONPARSERESULT" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDDATETIME" Type="date" />
+    <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+    <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="APPINSTANCECODE" Type="nvarchar2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="GX_XLZX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="NAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="STATUS" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <EntityType Name="GX_XMYSXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="HTBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="GCMC" Type="nvarchar2" MaxLength="100" />
+    <Property Name="GCBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="SGDWMC" Type="nvarchar2" MaxLength="100" />
+    <Property Name="JLDWDM" Type="nvarchar2" MaxLength="50" />
+    <Property Name="YSZT" Type="number" Precision="38" Scale="0" />
+    <Property Name="HTSJ" Type="date" />
+    <Property Name="CREATETIME" Type="date" />
+  </EntityType>
+  <EntityType Name="GX_YSZLFILE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="TYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FILENAME" Type="nvarchar2" MaxLength="200" />
+    <Property Name="FILEURL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="FILESIZE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FILEZT" Type="char" MaxLength="1" />
+    <Property Name="UPLOADTIME" Type="date" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="ADELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <EntityContainer Name="GxEntitiesStoreContainer">
+    <EntitySet Name="GX_DICT_CONFIG" EntityType="Self.GX_DICT_CONFIG" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_GKXX" EntityType="Self.GX_GKXX" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_GXRJRELATION" EntityType="Self.GX_GXRJRELATION" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_GXXX" EntityType="Self.GX_GXXX" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_LEAVEOPINION" EntityType="Self.GX_LEAVEOPINION" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_PHOTOGALLERY" EntityType="Self.GX_PHOTOGALLERY" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_RJXX" EntityType="Self.GX_RJXX" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_SYS_MENU" EntityType="Self.GX_SYS_MENU" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_SYS_MODELS" EntityType="Self.GX_SYS_MODELS" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_SYS_PERMISSIONS" EntityType="Self.GX_SYS_PERMISSIONS" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_SYS_ROLE" EntityType="Self.GX_SYS_ROLE" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_SYS_ROLEMENU" EntityType="Self.GX_SYS_ROLEMENU" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_SYS_ROLEPERRELATE" EntityType="Self.GX_SYS_ROLEPERRELATE" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_SYS_USER" EntityType="Self.GX_SYS_USER" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_SYS_USERROLERELATE" EntityType="Self.GX_SYS_USERROLERELATE" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_SYSTEMLOG" EntityType="Self.GX_SYSTEMLOG" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_TASKWORK" EntityType="Self.GX_TASKWORK" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_WFACTIVITYINSTANCE" EntityType="Self.GX_WFACTIVITYINSTANCE" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_WFPROCESS" EntityType="Self.GX_WFPROCESS" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_WFPROCESSINSTANCE" EntityType="Self.GX_WFPROCESSINSTANCE" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_WFTASK" EntityType="Self.GX_WFTASK" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_WFTRANSITIONINSTANCE" EntityType="Self.GX_WFTRANSITIONINSTANCE" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_XLZX" EntityType="Self.GX_XLZX" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_XMYSXX" EntityType="Self.GX_XMYSXX" Schema="GXSYS" store:Type="Tables" />
+    <EntitySet Name="GX_YSZLFILE" EntityType="Self.GX_YSZLFILE" Schema="GXSYS" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

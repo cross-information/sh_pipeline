@@ -12,15 +12,15 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_sys_role
+    public partial class GX_SYS_ROLE
     {
-        public int Id { get; set; }
-        public string roleName { get; set; }
-        public string roleDesc { get; set; }
-        public Nullable<int> roleStatus { get; set; }
-        public string createby { get; set; }
-        public Nullable<System.DateTime> createtime { get; set; }
-        public string modify { get; set; }
-        public Nullable<System.DateTime> modifytime { get; set; }
+        public decimal ID { get; set; }
+        public string ROLENAME { get; set; }
+        public string ROLEDESC { get; set; }
+        public string ROLESTATUS { get; set; }
+        public string CREATEBY { get; set; }
+        public Nullable<System.DateTime> CREATETIME { get; set; }
+        public string MODIFYBY { get; set; }
+        public Nullable<System.DateTime> MODIFYTIME { get; set; }
     }
 }

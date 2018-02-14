@@ -1,0 +1,17 @@
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Gx.Business.dll.config
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Gx.Business.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Gx.Business.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\EntityFramework.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Gx.CommonUnits.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Gx.DataAccess.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Gx.Models.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\JGB.Common.Units.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Newtonsoft.Json.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Gx.CommonUnits.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Gx.DataAccess.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\Gx.Models.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\EntityFramework.xml
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\obj\Release\Gx.Business.csprojResolveAssemblyReference.cache
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\obj\Release\Gx.Business.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Business\obj\Release\Gx.Business.pdb

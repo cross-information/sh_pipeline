@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Add", "DictConfig", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <div style="padding: 10px;">
+        <input type="hidden" name="Id"/>
+        <ul class="form_ul">
+            <li style="@Html.Raw(ViewData["type"].ToString()=="1"?"display:none":"")">
+                <label>字典类型：</label>
+                <input class="easyui-combobox" id="PreId" name="PreId" style="width: 220px;" url="@Url.Action("GetAllDictConfig", "DictConfig")"  data-options="valueField:'Value', textField:'Text',value:'0', panelHeight:'auto'" >
+            </li>
+            <li>
+                <label>字典名称：</label>
+                <input type="text" class="easyui-validatebox w200" name="Name" maxlength="50" style="width: 220px;" />
+            </li>
+            <li>
+                <label>字典备注：</label>
+                <textarea rows="5" cols="50" name="Bz"></textarea>
+            </li>
+            <li>
+                <label>状态：</label>
+                <select name="STATUS" id="STATUS" class="easyui-combobox" style="width: 220px;">
+                    <option value="1">冻结</option>
+                    <option value="0">启用</option>
+                </select>
+             </li>
+        </ul>
+    </div>
+}

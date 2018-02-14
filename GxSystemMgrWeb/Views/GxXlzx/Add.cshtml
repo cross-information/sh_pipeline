@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("AddRoleUser", "GxSysRole", FormMethod.Post))
+{
+    <div style="padding: 10px;">
+        <input type="hidden" name="userid" value="@ViewData["UserId"]"/>
+        <ul class="form_ul">
+            <li>
+                <label>角色名称：</label>
+                <input name="ROLENAME" id="ROLENAME" class="easyui-combobox" data-options="url:'@Url.Action("GetAllModels","GxSysRole")',valueField:'Value',textField:'Text',value:''" />
+            </li>
+             <li>
+                 <label>角色子类：</label>
+                 <input type="text" class="easyui-validatebox" name="NAME" style="width:180px;" required="true" validtype="length[2,60]" />
+            </li>
+        </ul>
+    </div> 
+}

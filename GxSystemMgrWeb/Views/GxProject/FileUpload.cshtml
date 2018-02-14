@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "FileUpload";
+}
+
+@using (Html.BeginForm("FileUpload", "GxProject", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <style type="text/css">
+        body { font-size: 14px; }
+        input {vertical-align: middle;margin: 0;padding: 0}
+        .file-box {position: relative;width: 287px; margin-top: 20px; margin-left: 15px;text-align: center;}
+        .txt {height: 22px;border: 1px solid #cdcdcd;width: 180px; }
+        .btn {background-color: #FFF;border: 1px solid #CDCDCD;height: 30px;width: 75px;background-color: #1e90ff;color: white;}
+        .file {position: absolute;top: 0;right: 100px;height: 30px;filter: alpha(opacity:10);opacity: 0;width: 76px }
+    </style>
+    <input type="hidden" value="@ViewData["type"]" name="type"/>
+    <input type="hidden" value="@ViewData["gcxmid"]" name="gcxmid"/>
+    <div style="width: 100%; padding-top: 10px; margin: 0px auto; text-align: center;">
+        <img id="imgPreView" src="/images/upload.jpg" style="cursor: pointer; width:220px; height:220px;"/>
+    </div>
+    <div class="file-box"> 
+        <a href="javascript:void(0)" class="easyui-linkbutton selimg" iconcls="icon-add">选择图片</a>
+        <input type="file" name="Cover" id="Cover" class="file_hide" />
+    </div>
+    
+    <script type="text/javascript" language="javascript">    
+        $('.selimg').click(function () {
+            var $file = $(this).next(':file');
+            $file.change(function () {
+                picview(this, $file.next());
+            });
+            $file.click();
+        });
+
+        //图片预览
+        function picview(file, $img) {
+            if (file["files"] && file["files"][0]) {
+                var reader = new FileReader();
+                reader.onload = function (evt) {
+                    $("#imgPreView").attr('src', evt.target.result).show();
+                };
+                reader.readAsDataURL(file.files[0]);
+            }
+            else {
+                file.select();
+                var path = document.selection.createRange().text;
+                $("#imgPreView").attr('src', path).show();
+            }
+        }
+    </script>
+}

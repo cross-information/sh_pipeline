@@ -12,14 +12,14 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_photogallery
+    public partial class GX_PHOTOGALLERY
     {
-        public int Id { get; set; }
-        public int parentId { get; set; }
-        public string tpbh { get; set; }
-        public string url { get; set; }
-        public Nullable<System.DateTime> tjsj { get; set; }
-        public Nullable<bool> sfyx { get; set; }
-        public Nullable<int> sort { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> PARENTID { get; set; }
+        public string TPBH { get; set; }
+        public string URL { get; set; }
+        public Nullable<System.DateTime> TJSJ { get; set; }
+        public Nullable<decimal> SFYX { get; set; }
+        public Nullable<decimal> SORT { get; set; }
     }
 }

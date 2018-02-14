@@ -11,7 +11,7 @@ namespace GxSystemApi
         {
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "GxApi/v1/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

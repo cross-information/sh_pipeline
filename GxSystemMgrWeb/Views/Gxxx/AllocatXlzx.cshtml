@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "AllocatXlzx";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="width: 100%; margin: 0px auto; padding: 0px;">
+    <input type="hidden" id="gcxmid" name="gcxmid" value="@ViewData["gcxmid"]"/>
+    <ul class="form_ul">
+        <li>
+            <label>验收人员：</label>
+            <input readonly="readonly" name="YsRy" style="width:115px;" id="GKXXGKCL" class="easyui-combobox" data-options="url:'@Url.Action("GetUserListByRoleId", "Gxxx")/?roleid=',valueField:'Value',textField:'Text',value:'@Model.GKCL'" />
+        </li>
+        <li>
+            <label>线路维护中心：</label>
+            <input readonly="readonly" name="Xlzx" style="width:115px;" id="GKXXSYZT" class="easyui-combobox" data-options="url:'@Url.Action("GetXlzxListByRoleId", "Gxxx")/?roleid=',valueField:'Value',textField:'Text',value:'@Model.SYZT'" />
+        </li>
+    </ul>
+</div>

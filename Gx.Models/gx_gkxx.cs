@@ -12,19 +12,21 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_gkxx
+    public partial class GX_GKXX
     {
-        public int Id { get; set; }
-        public int gkxxid { get; set; }
-        public string gkbh { get; set; }
-        public string gkcl { get; set; }
-        public Nullable<int> syzt { get; set; }
-        public Nullable<int> zkhs { get; set; }
-        public Nullable<int> zkls { get; set; }
-        public Nullable<int> zksl { get; set; }
-        public string createby { get; set; }
-        public Nullable<System.DateTime> createtime { get; set; }
-        public string modify { get; set; }
-        public Nullable<System.DateTime> modifytime { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> GXXXID { get; set; }
+        public string GKBH { get; set; }
+        public string GKCL { get; set; }
+        public Nullable<decimal> SYZT { get; set; }
+        public Nullable<decimal> ZKHS { get; set; }
+        public Nullable<decimal> ZKLS { get; set; }
+        public Nullable<decimal> ZKSL { get; set; }
+        public Nullable<decimal> GKSZH { get; set; }
+        public Nullable<decimal> GKSZL { get; set; }
+        public string CREATEBY { get; set; }
+        public Nullable<System.DateTime> CREATETIME { get; set; }
+        public string MODIFYBY { get; set; }
+        public Nullable<System.DateTime> MODIFYTIME { get; set; }
     }
 }

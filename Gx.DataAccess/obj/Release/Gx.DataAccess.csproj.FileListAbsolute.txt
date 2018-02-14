@@ -1,0 +1,17 @@
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Gx.DataAccess.dll.config
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Gx.DataAccess.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Gx.DataAccess.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\EntityFramework.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Gx.Models.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\JGB.Common.Units.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Oracle.DataAccess.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Oracle.ManagedDataAccess.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Oracle.Web.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Newtonsoft.Json.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\Gx.Models.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\EntityFramework.xml
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\obj\Release\Gx.DataAccess.csprojResolveAssemblyReference.cache
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\obj\Release\Gx.DataAccess.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.DataAccess\obj\Release\Gx.DataAccess.pdb

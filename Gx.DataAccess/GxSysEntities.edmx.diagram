@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1aacbd47f0664755befd05aa0755763a" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="GxEntities.GX_DICT_CONFIG" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_GKXX" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_GXRJRELATION" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_GXXX" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_LEAVEOPINION" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_PHOTOGALLERY" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_RJXX" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_SYS_MENU" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_SYS_MODELS" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_SYS_PERMISSIONS" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_SYS_ROLE" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_SYS_ROLEMENU" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_SYS_ROLEPERRELATE" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_SYS_USER" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_SYS_USERROLERELATE" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_SYSTEMLOG" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_TASKWORK" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_WFACTIVITYINSTANCE" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_WFPROCESS" Width="1.5" PointX="6.75" PointY="12.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_WFPROCESSINSTANCE" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_WFTASK" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_WFTRANSITIONINSTANCE" Width="1.5" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_XLZX" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_XMYSXX" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="GxEntities.GX_YSZLFILE" Width="1.5" PointX="14.75" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

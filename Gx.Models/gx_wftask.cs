@@ -12,30 +12,30 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_wftask
+    public partial class GX_WFTASK
     {
-        public int Id { get; set; }
-        public Nullable<int> ActivityInstanceID { get; set; }
-        public Nullable<int> ProcessInstanceID { get; set; }
-        public string AppName { get; set; }
-        public Nullable<int> AppInstanceId { get; set; }
-        public string ProcessGUID { get; set; }
-        public string ActivityGUID { get; set; }
-        public string ActivityName { get; set; }
-        public Nullable<short> TaskType { get; set; }
-        public Nullable<short> TaskState { get; set; }
-        public string AssignedToUserID { get; set; }
-        public string AssignedToUserName { get; set; }
-        public string CreatedByUserID { get; set; }
-        public string CreatedByUserName { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
-        public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
-        public string LastUpdatedByUserID { get; set; }
-        public string LastUpdatedByUserName { get; set; }
-        public string EndedByUserID { get; set; }
-        public string EndedByUserName { get; set; }
-        public Nullable<System.DateTime> EndedDateTime { get; set; }
-        public Nullable<byte> RecordStatusInvalid { get; set; }
-        public byte[] RowVersionID { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> ACTIVITYINSTANCEID { get; set; }
+        public Nullable<decimal> PROCESSINSTANCEID { get; set; }
+        public string APPNAME { get; set; }
+        public Nullable<decimal> APPINSTANCEID { get; set; }
+        public string PROCESSGUID { get; set; }
+        public string ACTIVITYGUID { get; set; }
+        public string ACTIVITYNAME { get; set; }
+        public Nullable<short> TASKTYPE { get; set; }
+        public Nullable<short> TASKSTATE { get; set; }
+        public string ASSIGNEDTOUSERID { get; set; }
+        public string ASSIGNEDTOUSERNAME { get; set; }
+        public string CREATEDBYUSERID { get; set; }
+        public string CREATEDBYUSERNAME { get; set; }
+        public Nullable<System.DateTime> CREATEDDATETIME { get; set; }
+        public Nullable<System.DateTime> LASTUPDATEDDATETIME { get; set; }
+        public string LASTUPDATEDBYUSERID { get; set; }
+        public string LASTUPDATEDBYUSERNAME { get; set; }
+        public string ENDEDBYUSERID { get; set; }
+        public string ENDEDBYUSERNAME { get; set; }
+        public Nullable<System.DateTime> ENDEDDATETIME { get; set; }
+        public Nullable<decimal> RECORDSTATUSINVALID { get; set; }
+        public Nullable<System.DateTime> ROWVERSIONID { get; set; }
     }
 }

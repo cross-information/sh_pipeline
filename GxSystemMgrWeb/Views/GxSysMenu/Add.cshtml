@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Add", "GxSysMenu", FormMethod.Post))
+{
+    <div style="padding: 10px;">
+        <input type="hidden" name="Id"/>
+        <ul class="form_ul">
+            <li>
+                <label>菜单名称：</label>
+                <input type="text" class="easyui-validatebox" name="MENUNAMC" style="width:250px;" required="true" validtype="length[2,18]" />
+            </li>
+            <li>
+                <label>所属类型：</label>
+                <input name="MODELID" id="MODELID" class="easyui-combobox" data-options="url:'@Url.Action("GetAllModels","GxSysModels")',valueField:'Value',textField:'Text',value:''" />
+            </li>  
+             <li>
+                <label>链接地址：</label>
+                <input type="text" class="easyui-validatebox" name="MENUURL" style="width:250px;" /> 
+             </li>  
+            <li>
+                <label>备注：</label>
+                <textarea id="MENUBZ" name="MENUBZ" rows="5" cols="50"></textarea>
+            </li>
+            <li>
+                <label>状态：</label>
+                <select name="MENUSTATUS" id="MENUSTATUS">
+                    <option value="1">冻结</option>
+                    <option value="0">启用</option>
+                </select>
+             </li>
+        </ul>
+    </div> 
+}
+

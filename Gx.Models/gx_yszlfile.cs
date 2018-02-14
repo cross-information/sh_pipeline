@@ -12,18 +12,18 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_yszlfile
+    public partial class GX_YSZLFILE
     {
-        public int Id { get; set; }
-        public int xmysxxid { get; set; }
-        public int type { get; set; }
-        public string filename { get; set; }
-        public string fileurl { get; set; }
-        public Nullable<int> filesize { get; set; }
-        public Nullable<bool> filezt { get; set; }
-        public Nullable<System.DateTime> uploadtime { get; set; }
-        public string createby { get; set; }
-        public string adeleteby { get; set; }
-        public Nullable<System.DateTime> deletetime { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> XMYSXXID { get; set; }
+        public Nullable<decimal> TYPE { get; set; }
+        public string FILENAME { get; set; }
+        public string FILEURL { get; set; }
+        public Nullable<decimal> FILESIZE { get; set; }
+        public string FILEZT { get; set; }
+        public Nullable<System.DateTime> UPLOADTIME { get; set; }
+        public string CREATEBY { get; set; }
+        public string ADELETEBY { get; set; }
+        public Nullable<System.DateTime> DELETETIME { get; set; }
     }
 }

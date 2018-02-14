@@ -4,17 +4,17 @@ namespace Gx.DataAccess
 {
     public class UnitOfWork
     {
-        private GxEntities _context;
+        private GxSysEntities _context;
         private UnitOfWork _uow;
 
-        public GxEntities Context
+        public GxSysEntities Context
         {
             get { return _context; }
         }
 
         public void Dispose()
         {
-            HttpContext.Current.Items["GxEntities"] = null;
+            HttpContext.Current.Items["GxSysEntities"] = null;
         }
 
         public static UnitOfWork Instance
@@ -26,7 +26,7 @@ namespace Gx.DataAccess
                 {
                     return new UnitOfWork();
                 }
-                var con = HttpContext.Current.Items["GxEntities"];
+                var con = HttpContext.Current.Items["GxSysEntities"];
                 if (con != null)
                 {
                     return con as UnitOfWork;
@@ -34,7 +34,7 @@ namespace Gx.DataAccess
                 else
                 {
                     con = new UnitOfWork();
-                    HttpContext.Current.Items["GxEntities"] = con;
+                    HttpContext.Current.Items["GxSysEntities"] = con;
                     return con as UnitOfWork;
                 }
             }
@@ -45,7 +45,7 @@ namespace Gx.DataAccess
         /// </summary>
         public UnitOfWork()
         {
-            _context = new GxEntities();
+            _context = new GxSysEntities();
         }
 
         /// <summary>

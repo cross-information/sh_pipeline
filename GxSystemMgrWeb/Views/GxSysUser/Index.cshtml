@@ -1,0 +1,235 @@
+﻿@{
+    ViewBag.Title = "管线管理系统首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} 
+<div region="center" style="padding: 10px; border: none;">
+    <div id="mm" style="padding: 10px; height: auto;">
+        <a href="javascript:add.open();" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">添加</a>
+        <a href="javascript:edit();" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">修改</a>
+        <a href="javascript:del();" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</a>
+        <a href="javascript:void(0);" id="AddDataBases">创建数据表</a>
+    </div>
+    <table id="tt" class="easyui-datagrid"
+        data-options="rownumbers:true,title:'用户列表',url:'@Url.Action("List","GxSysUser")',iconCls:'icon-search',toolbar:'#mm',
+            pagination:true,idField:'ID', remoteSort:false,pageList:pageList,onDblClickRow:dbclickEdit">
+        <thead>
+            <tr>
+                <th data-options="field:'ck',checkbox:true"></th>
+                <th data-options="field:'ID',width:120,sortable:true">编号</th>
+                <th data-options="field:'USERID',width:120,sortable:true">登录名</th>
+                <th data-options="field:'USERNAME',width:120,sortable:true">真实姓名</th>
+                <th data-options="field:'USERMOBILE',width:120,sortable:true">手机号码</th>
+                <th data-options="field:'USEREMAIL',width:150,sortable:true">邮箱地址</th>
+                <th data-options="field:'LOGINTIME',width:120,sortable:true,formatter:$date">最后登录时间</th>
+                <th data-options="field:'USERSTATUS',width:100,sortable:true,formatter:$status">状态</th>
+                <th data-options="field:'CREATETIME',width:120,sortable:true,formatter:$date">添加时间</th>
+                <th data-options="field:'undefined',width:80,formatter:$fun">设置角色</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div id="window_add"></div>
+<div id="window_edit"></div>
+<div id="window_role"></div>
+<div id="window_DataBase"></div>
+
+<script type="text/javascript">
+    var $fun = function (v, d, r) {
+        var html = '<a href="javascript:void(0)" onclick="picmgr.open(\'' + d.ID + '\',\'' + d.USERNAME + '\')">设置</a>';
+        return html;
+    };
+    
+    var picmgr = {
+        open: function (id, rolename) {
+            var url = '@Url.Action("SetRole","GxSysRole")/?userid=' + id + '&nme=' + rolename;
+            $('#window_role').dialog({
+                title: '角色权限设置',
+                height: 400,
+                width: 600,
+                modal: true,
+                href: url
+            });
+        }
+    };
+
+    var $status = function (val, data, rownumber) {
+        return val == 10 ? '正常' : val == 2 ? '禁止登录' : '已删除';
+    };
+ 
+    var pageList = [20, 40, 60, 80, 100];
+
+    var edit = function () {
+        var selectRows = $('#tt').datagrid('getSelections');
+        if (selectRows.length == 0) {
+            alertWarning('请选择要编辑的行！');
+        } else if (selectRows.length > 1) {
+            alertWarning('只能选择一行进行编辑！');
+        } else {
+            oneditExpert.open(selectRows[0]);
+        }
+    };
+
+    var dbclickEdit = function (rowIndex, rowData) {
+        $(this).datagrid('unselectAll');
+        $(this).datagrid('selectRow', rowIndex);
+        oneditExpert.open(rowData);
+    };
+
+    var oneditExpert = {
+        open: function (rowData) {
+            var keys = rowData.ID;
+            var url = '@Url.Action("Edit","GxSysUser")/' + keys;
+            $("#window_edit").dialog({
+                title: '编辑系统用户',
+                height: 330,
+                width: 450,
+                modal: true,
+                href: url,
+                buttons: [
+                    {
+                        text: '确认',
+                        iconCls: 'icon-ok',
+                        handler: function () {
+                            $("#window_edit form").form('submit', {
+                                success: function (data) {
+                                    var t = $.parseJSON(data);
+                                    if (t.IsError) {
+                                        alertError(t.Message);
+                                    } else {
+                                        alertInfo(t.Message);
+                                        oneditExpert.close();
+                                    }
+                                }
+                            });
+                        }
+                    }, {
+                        text: '取消',
+                        iconCls: 'icon-cancel',
+                        handler: function () {
+                            oneditExpert.close();
+                        }
+                    }
+                ]
+            });
+        },
+        close: function () {
+            $('#tt').datagrid('reload');
+            $('#window_edit').dialog('close');
+        }
+    };
+
+    var add = {
+        url: '@Url.Action("Add","GxSysUser")',
+        open: function () {
+            $('#window_add').dialog({
+                title: '添加系统用户',
+                height: 330,
+                width: 450,
+                href: add.url,
+                buttons: [
+                    {
+                        text: '确定',
+                        iconCls: 'icon-ok',
+                        handler: function () {
+                            $('#window_add form').form('submit', {
+                                success: function (data) {
+                                    var d = $.parseJSON(data);
+                                    if (d.IsError) {
+                                        alertError(d.Message);
+                                    } else {
+                                        alertInfo('添加成功');
+                                        add.close();
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    {
+                        text: '取消',
+                        iconCls: 'icon-cancel',
+                        handler: function () {
+                            add.close();
+                        }
+                    }
+                ]
+            });
+        },
+        close: function () {
+            $('#tt').datagrid('reload');
+            $('#window_add').dialog('close');
+        }
+    };
+
+    $("#AddDataBases").click(function () {
+        addDataBases.open();
+    });
+
+    var addDataBases = {
+        url: '/SysAdmin/DataBases',
+        open: function () {
+            $('#window_DataBase').dialog({
+                title: '添加数据表',
+                height: 450,
+                width: 650,
+                modal: true,
+                href: addDataBases.url,
+                buttons: [
+                    {
+                        text: '确定',
+                        iconCls: 'icon-ok',
+                        handler: function () {
+                            $('#window_DataBase form').form('submit', {
+                                success: function (data) {
+                                    var d = $.parseJSON(data);
+                                    if (d.IsError) {
+                                        alertError(d.Message);
+                                    } else {
+                                        alertInfo('添加成功');
+                                        addDataBases.close();
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    {
+                        text: '取消',
+                        iconCls: 'icon-cancel',
+                        handler: function () {
+                            addDataBases.close();
+                        }
+                    }
+                ]
+            });
+        },
+        close: function () {
+            $('#window_DataBase').dialog('close');
+        }
+    };
+
+    var del = function () {
+        var selectRows = $('#tt').datagrid('getSelections');
+        if (selectRows.length > 0) {
+            var delKeys = [];
+            for (var i = 0; i < selectRows.length; i++) {
+                delKeys.push(selectRows[i].LoginId);
+            }
+            if (delKeys.length > 0) {
+                $.messager.confirm('操作提示', '你确定要删除选中的数据？', function (r) {
+                    if (r) {
+                        $.ajaxRequest('@Url.Action("Delete","GxSysUser")', $.toJSON(delKeys), function (data) {
+                            if (data.IsError) {
+                                alertError(data.Message);
+                            } else {
+                                alertInfo(data.Message);
+                            }
+                            $('#tt').datagrid('reload');
+                            $('#tt').datagrid('unselectAll');
+                        });
+                    }
+                });
+            }
+        } else {
+            alertWarning('请选择要删除的数据！');
+        }
+    };
+</script>

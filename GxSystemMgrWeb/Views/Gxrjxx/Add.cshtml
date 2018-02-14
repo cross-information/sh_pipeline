@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <div style="border-bottom: 1px solid #bebebe; padding: 10px; text-align: right;">
+        工程编号：@ViewData["gcbh"]  工程名称：@ViewData["gcmc"]
+    </div>
+    <div style="padding-top: 10px;">
+        <div style="width: 50%; float: left;">
+            @using (Html.BeginForm("Add", "Gxrjxx", FormMethod.Post))
+            {
+                <div style="padding: 10px;">
+                    <input type="hidden" name="Id" value="@ViewData["gcxmid"]"/>
+                    <input type="hidden" name="gcbh" value="@ViewData["gcbh"]"/>
+                    <ul class="form_ul">
+                        <li>
+                            <label>人井名称：</label>
+                            <input type="text" class="easyui-validatebox" name="RJMC" style="width: 145px;" required="true" />
+                        </li>
+                        <li>
+                            <label>工程人井号：</label>
+                            <input type="text" class="easyui-validatebox" name="GCRJBH" style="width: 145px;" required="true" />
+                        </li>
+                        <li>
+                            <label>井盖数量：</label>
+                            <input type="number" class="easyui-validatebox" name="JGSL" style="width: 145px;" required="true" />
+                        </li>
+                        <li>
+                            <label>对象类别：</label>
+                            <input name="DXLX" id="DXLX" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=1802072150140',valueField:'Value',textField:'Text',value:'0'" />
+                        </li>
+                        <li>
+                            <label>人手井尺寸：</label>
+                            <input name="RSJCC" id="RSJCC" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=172532064',valueField:'Value',textField:'Text',value:'0'" />
+                        </li>
+                        <li>
+                            <label>井盖类型：</label>
+                            <input name="JGLX" id="JGLX" class="easyui-combobox" data-options="url:'@Url.Action("GetDictConfigByName", "DictConfig")/?name=546512044',valueField:'Value',textField:'Text',value:'0'" />
+                        </li>
+                        <li>
+                            <hr style="width: 100%; border: 1px solid #e6e6fa;" />
+                        </li>
+                        <li>
+                            <label>人井坐标位置：</label>
+                            <input type="text" class="easyui-validatebox" name="LONGITUDE" style="width: 80px;" validtype="length[2,18]" />
+                            <input type="text" class="easyui-validatebox" name="LATITUDE" style="width: 80px;" validtype="length[2,18]" />
+                        </li>
+                        <li id="picList">
+                            <fieldset style="border: 1px solid #bebebe;">
+                                <legend>相册</legend>
+                                <ul>
+                                    
+                                </ul>
+                            </fieldset>
+                        </li>
+                    </ul>
+                </div>
+            }
+        </div>
+        <div style="width: 50%; float: left; height: auto;">
+            <img src="/images/ditu.jpg" style="width: 100%; height: 100%;" />
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    #picList ul li {
+        width: 75px;
+        height: 75px;
+        float: left;
+    }
+</style>

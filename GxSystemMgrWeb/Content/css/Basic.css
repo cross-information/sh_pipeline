@@ -1,0 +1,136 @@
+﻿/************ Table ************/
+.mainContent {width: 98%;margin: 0px auto;padding: 0px;}
+
+.clear { clear: both; width: 100%; }
+.clearLineHeight { clear: both; width: 100%;height: 10px; }
+select::-ms-expand { display: none; }
+
+/*宽度100%*/
+.table {width: 100%;text-align: center;border: 1px solid #dddddd;border-width: 0 0 1px 1px;border-collapse: collapse; margin: 5px 0px;}
+.table th { background: #dedede;}
+.table th, .table td {height: 25px;border: 1px solid #ddd;border-width: 1px 1px 0 0; line-height: 22px;}
+.table td table td { border: 0px;}
+
+/*宽度100%*/
+.table1 { width: 100%;text-align: left;border: 1px solid #ddd;border-width: 0 0 1px 1px; border-collapse: collapse;margin: 5px 0px;}
+.table1 th {text-align: right; font-weight: normal; }
+.table1 th, .table1 td { height: 28px; border: 1px solid #ddd; border-width: 1px 1px 0 0;}
+.table1 td table td {border: 0px;        }
+
+/*宽度100%*/
+.tables { width: 100%; text-align: center; border: 1px solid #828282; border-width: 0 0 1px 1px; border-collapse: collapse; margin: 5px 0px; }
+.tables th { background: #DEDEDE; }
+.tables th, .tables td { height: 24px; border: 1px solid #828282; border-width: 1px 1px 0 0; line-height: 24px; }
+.tables tr td { text-align: left; }
+
+/*左对齐*/
+.table2 { text-align: left; border: 1px solid #ddd; border-width: 0 0 1px 1px; border-collapse: collapse;width: 100%;}
+.table2 th { background: #ececec;}
+.table2 th, .table2 td { height: 22px; border: 1px solid #ddd; border-width: 1px 1px 0 0; line-height: 22px; }
+.table2 td table td { border: 0px;}
+
+.table3{ font-size: 11px; color: #333333; border-width: 1px; border-color: #000; border-collapse: collapse;}
+.tr{ border-width: 1px; border-style: solid; border-color: #d3d3d3; background-color: #f3f3f3; height: 20px; }
+.td_title{ border-width: 1px; padding: 3px;border-style: solid;border-color: #d3d3d3; background-color: #f3f3f3; width: 120px; height: 20px;}
+.td{ border-width: 1px; padding: 3px; border-style: solid; border-color: #d3d3d3; background-color: #f3f3f3; height: 20px;text-align: left;padding-left: 10px; }
+
+div.head { border: 2px solid #ddd; padding: 5px; margin: 10px 0px;}
+/*框*/
+div.split { margin: 5px 0px; }
+/*分割*/
+/*文本框样式*/
+form input[type="text"],
+form input[type="password"]
+form input[type="email"]
+form select {
+    padding: 2px;
+    font-size: 13px;
+    border: 1px solid #d5d5d5;
+    color: #333;
+    height: 18px;
+    background: #fff url('../images/bg-form-field.gif') top left repeat-x;
+}
+
+.text {
+    padding: 2px;
+    font-size: 13px;
+    border: 1px solid #d5d5d5;
+    color: #333; 
+    height: 18px;
+    width: 320px;
+    background: #fff url('../images/bg-form-field.gif') top left repeat-x;
+}
+
+.indexText {
+    padding: 2px;
+    font-size: 13px;
+    border: 1px solid #d5d5d5;
+    color: #333; 
+    height: 16px;
+    width: 180px;
+    background: #fff url('../images/bg-form-field.gif') top left repeat-x;
+}
+
+.select {
+    padding: 2px;
+    font-size: 13px;
+    border: 1px solid #d5d5d5;
+    color: #333;
+    line-height: 18px;
+    width: 151px;
+    /*background: #fff url('../images/bg-form-field.gif') top left repeat-x;*/
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../images/arrow.png") no-repeat scroll right center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+    background-color: #F9F9FF;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.btnLinkButton {
+    /*line-height: 26px;*/
+    text-decoration: none;
+    /*width: 75px;*/
+    height: 26px;
+    border: 0px;
+    margin-right: 10px;
+    text-align: center;
+    color: #666;
+    background-image: url(../images/btn1.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.bottom {
+    width: 100%;
+    padding: 15px 0px 10px 0px;
+    text-align: center;
+    vertical-align: central;
+}
+
+
+.error {
+    border: 1px solid red;
+}
+
+select.error {
+    border: 1px solid red;
+}
+
+/*********************输入框 显示异步加载的数据列表************************/
+#auto_div {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border: 1px #74c0f9 solid;
+    background: #FFF;
+    position: absolute;
+    top: 48px;
+    left: 129px;
+    color: #323232;
+    z-index: 1000998885;
+}

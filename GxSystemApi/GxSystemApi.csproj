@@ -122,11 +122,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\CoordinatesController.cs" />
+    <Compile Include="Controllers\GetGxRjxxController.cs" />
+    <Compile Include="Controllers\GetGxxxController.cs" />
+    <Compile Include="Controllers\GetRjxxController.cs" />
+    <Compile Include="Controllers\GetRjxxPicController.cs" />
+    <Compile Include="Controllers\PassportController.cs" />
+    <Compile Include="Controllers\UploadFileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CoordinatesModel.cs" />
+    <Compile Include="Models\PassPortParamter.cs" />
+    <Compile Include="Models\ViewModels\ViewUserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -141,16 +149,31 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gx.Business\Gx.Business.csproj">
+      <Project>{e8ef980f-a557-4ca4-90b8-da4bb5a29b2b}</Project>
+      <Name>Gx.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gx.CommonUnits\Gx.CommonUnits.csproj">
+      <Project>{d3978c56-702a-4c1a-9df9-1f5fecaa159d}</Project>
+      <Name>Gx.CommonUnits</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gx.Models\Gx.Models.csproj">
+      <Project>{f3715919-d98b-4d2a-ab0f-45056ef4e306}</Project>
+      <Name>Gx.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\GxSystemApi.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

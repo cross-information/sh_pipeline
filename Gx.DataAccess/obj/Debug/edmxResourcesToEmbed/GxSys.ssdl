@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GxEntities.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_DICT_CONFIG”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_DICT_CONFIG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="TYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="CODE" Type="nvarchar2" MaxLength="30" />
+    <Property Name="NAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="STATUS" Type="char" MaxLength="1" />
+    <Property Name="PARENTID" Type="number" Precision="38" Scale="0" />
+    <Property Name="SORT" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_GKXX”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_GKXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="GKXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="GKCL" Type="nvarchar2" MaxLength="40" />
+    <Property Name="SYZT" Type="number" Precision="38" Scale="0" />
+    <Property Name="ZKHS" Type="number" Precision="38" Scale="0" />
+    <Property Name="ZKLS" Type="number" Precision="38" Scale="0" />
+    <Property Name="ZKSL" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKSZH" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKSZL" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_GXRJRELATION”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_GXRJRELATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="GXXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="RJXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="UPS" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ISNEW" Type="char" MaxLength="1" />
+    <Property Name="JYJGCBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="SSGCJH" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_GXXX”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_GXXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="GCBH" Type="nvarchar2" MaxLength="40" />
+    <Property Name="GXWZ" Type="nvarchar2" MaxLength="40" />
+    <Property Name="GXCD" Type="float" Precision="126" Scale="0" />
+    <Property Name="DXLX" Type="nvarchar2" MaxLength="20" />
+    <Property Name="GXLX" Type="nvarchar2" MaxLength="40" />
+    <Property Name="JSZT" Type="nvarchar2" MaxLength="40" />
+    <Property Name="YWLX" Type="nvarchar2" MaxLength="20" />
+    <Property Name="GJZ" Type="nvarchar2" MaxLength="22" />
+    <Property Name="XNZC" Type="nvarchar2" MaxLength="10" />
+    <Property Name="GKCL" Type="nvarchar2" MaxLength="20" />
+    <Property Name="SYZT" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKHS" Type="number" Precision="38" Scale="0" />
+    <Property Name="GKLS" Type="number" Precision="38" Scale="0" />
+    <Property Name="PLSX" Type="number" Precision="38" Scale="0" />
+    <Property Name="GXZT" Type="char" MaxLength="1" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_LEAVEOPINION”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_LEAVEOPINION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ACTIVITYID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="REMARK" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="CHANGEDTIME" Type="date" />
+    <Property Name="CHANGEDUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CHANGEDUSERNAME" Type="nvarchar2" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_PHOTOGALLERY”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_PHOTOGALLERY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="PARENTID" Type="number" Precision="38" Scale="0" />
+    <Property Name="TPBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="URL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="TJSJ" Type="date" />
+    <Property Name="SFYX" Type="number" Precision="38" Scale="0" />
+    <Property Name="SORT" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_RJXX”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_RJXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="GCBH" Type="nvarchar2" MaxLength="50" />
+    <Property Name="RJBH" Type="nvarchar2" MaxLength="30" />
+    <Property Name="RJMC" Type="nvarchar2" MaxLength="100" />
+    <Property Name="GCRJBH" Type="nvarchar2" MaxLength="40" />
+    <Property Name="JGSL" Type="number" Precision="38" Scale="0" />
+    <Property Name="DXLX" Type="nvarchar2" MaxLength="10" />
+    <Property Name="RSJCC" Type="nvarchar2" MaxLength="40" />
+    <Property Name="JGLX" Type="nvarchar2" MaxLength="40" />
+    <Property Name="GJZ" Type="nvarchar2" MaxLength="22" />
+    <Property Name="LONGITUDE" Type="nvarchar2" MaxLength="20" />
+    <Property Name="LATITUDE" Type="nvarchar2" MaxLength="20" />
+    <Property Name="RJZT" Type="char" MaxLength="1" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_SYS_MENU”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_SYS_MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="MODELID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MENUNAMC" Type="nvarchar2" MaxLength="50" />
+    <Property Name="MENUURL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="MENUBZ" Type="nvarchar2" MaxLength="200" />
+    <Property Name="MENUPARENTID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MENUSTATUS" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_SYS_MODELS”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_SYS_MODELS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="REMARK" Type="nvarchar2" MaxLength="200" />
+    <Property Name="FLAG" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“GXSYS.GX_SYS_PERMISSIONS”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="GX_SYS_PERMISSIONS">
+          <Property Name="ID" Type="long" />
+          <Property Name="PERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PERDESC" Type="nvarchar2" MaxLength="200" />
+          <Property Name="PERSTATUS" Type="number" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="MODIFYTIME" Type="date" />
+        </EntityType>-->
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_SYS_ROLE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_SYS_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="ROLENAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ROLEDESC" Type="nvarchar2" MaxLength="200" />
+    <Property Name="ROLESTATUS" Type="char" MaxLength="1" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="50" />
+    <Property Name="MODIFYTIME" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“GXSYS.GX_SYS_ROLEMENU”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="GX_SYS_ROLEMENU">
+          <Property Name="ID" Type="long" />
+          <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="MENUID" Type="number" Precision="38" Scale="0" />
+        </EntityType>-->
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“GXSYS.GX_SYS_ROLEPERRELATE”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="GX_SYS_ROLEPERRELATE">
+          <Property Name="ID" Type="long" />
+          <Property Name="GX__ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PERID" Type="number" Precision="38" Scale="0" />
+        </EntityType>-->
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_SYS_USER”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_SYS_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="USERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="USERCODE" Type="nvarchar2" MaxLength="30" />
+    <Property Name="USERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="USERPWD" Type="nvarchar2" MaxLength="20" />
+    <Property Name="USERMOBILE" Type="nvarchar2" MaxLength="11" />
+    <Property Name="USEREMAIL" Type="nvarchar2" MaxLength="50" />
+    <Property Name="USERSEX" Type="char" MaxLength="1" />
+    <Property Name="USERSTATUS" Type="number" Precision="38" Scale="0" />
+    <Property Name="LOGINIP" Type="nvarchar2" MaxLength="30" />
+    <Property Name="LOGINTIME" Type="date" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_SYS_USERROLERELATE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_SYS_USERROLERELATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="GX__ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="USERID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_SYSTEMLOG”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_SYSTEMLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="MENUURL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="TIMEFLAG" Type="date" />
+    <Property Name="ACTNAME" Type="nvarchar2" MaxLength="200" />
+    <Property Name="CONTENTS" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="ACTUSERCODE" Type="nvarchar2" MaxLength="40" />
+    <Property Name="ACTRESULT" Type="nvarchar2" MaxLength="2000" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_TASKWORK”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_TASKWORK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="USERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="XLZXID" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_WFACTIVITYINSTANCE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_WFACTIVITYINSTANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="PROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="APPNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="APPINSTANCECODE" Type="nvarchar2" MaxLength="30" />
+    <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ACTIVITYTYPE" Type="number" Precision="5" Scale="0" />
+    <Property Name="ACTIVITYSTATE" Type="number" Precision="5" Scale="0" />
+    <Property Name="ASSIGNEDTOUSERIDS" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="ASSIGNEDTOUSERNAMES" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="BACKWARDTYPE" Type="number" Precision="5" Scale="0" />
+    <Property Name="BACKSRCACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="GATEWAYDIRECTIONTYPEID" Type="number" Precision="5" Scale="0" />
+    <Property Name="CANRENEWINSTANCE" Type="number" Precision="38" Scale="0" />
+    <Property Name="TOKENSREQUIRED" Type="number" Precision="38" Scale="0" />
+    <Property Name="TOKENSHAD" Type="number" Precision="38" Scale="0" />
+    <Property Name="COMPLEXTYPE" Type="number" Precision="5" Scale="0" />
+    <Property Name="MIHOSTACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="COMPLETEORDER" Type="float" Precision="126" Scale="0" />
+    <Property Name="SIGNFORWARDTYPE" Type="number" Precision="5" Scale="0" />
+    <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDDATETIME" Type="date" />
+    <Property Name="LASTUPDATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="LASTUPDATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="LASTUPDATEDDATETIME" Type="date" />
+    <Property Name="ENDEDDATETIME" Type="date" />
+    <Property Name="ENDEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ENDEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_WFPROCESS”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_WFPROCESS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PROCESSNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="VERSION" Type="nvarchar2" MaxLength="20" />
+    <Property Name="ISUSING" Type="char" MaxLength="1" />
+    <Property Name="XMLFILENAME" Type="nvarchar2" MaxLength="200" />
+    <Property Name="XMLFILEPATH" Type="nvarchar2" MaxLength="200" />
+    <Property Name="XMLCONTENT" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="DESCRIPTION" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="CREATEDDATETIME" Type="date" />
+    <Property Name="LASTUPDATEDDATETIME" Type="date" />
+    <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_WFPROCESSINSTANCE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_WFPROCESSINSTANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PROCESSNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="VERSION" Type="nvarchar2" MaxLength="20" />
+    <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="APPNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="APPINSTANCECODE" Type="nvarchar2" MaxLength="30" />
+    <Property Name="PROCESSSTATE" Type="number" Precision="38" Scale="0" />
+    <Property Name="PARENTPROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PARENTPROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="INVOKEDACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="INVOKEDACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDDATETIME" Type="date" />
+    <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="LASTUPDATEDDATETIME" Type="date" />
+    <Property Name="LASTUPDATEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="LASTUPDATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ENDEDDATETIME" Type="date" />
+    <Property Name="ENDEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="ENDEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“GXSYS.GX_WFTASK”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="GX_WFTASK">
+          <Property Name="ID" Type="long" />
+          <Property Name="ACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="APPNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="ACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="TASKTYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="TASKSTATE" Type="number" Precision="38" Scale="0" />
+          <Property Name="ASSIGNEDTOUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ASSIGNEDTOUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDDATETIME" Type="date" />
+          <Property Name="LASTUPDATEDDATETIME" Type="date" />
+          <Property Name="LASTUPDATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LASTUPDATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ENDEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ENDEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ENDEDDATETIME" Type="date" />
+          <Property Name="RECORDSTATUSINVALID" Type="char" MaxLength="1" />
+          <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+        </EntityType>-->
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_WFTRANSITIONINSTANCE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_WFTRANSITIONINSTANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="TRANSITIONGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="TRANSITIONTYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FLYINGTYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FROMACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="FROMACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="FROMACTIVITYTYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FROMACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="TOACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="TOACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="TOACTIVITYTYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="TOACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CONDITIONPARSERESULT" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="CREATEDDATETIME" Type="date" />
+    <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+    <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="APPINSTANCECODE" Type="nvarchar2" MaxLength="30" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_XLZX”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_XLZX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+    <Property Name="NAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="STATUS" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYTIME" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“GXSYS.GX_XMYSXX”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="GX_XMYSXX">
+          <Property Name="ID" Type="long" />
+          <Property Name="HTBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="GCMC" Type="nvarchar2" MaxLength="200" />
+          <Property Name="GCBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SGDWMC" Type="nvarchar2" MaxLength="50" />
+          <Property Name="JLDWDM" Type="nvarchar2" MaxLength="50" />
+          <Property Name="YSZT" Type="number" Precision="38" Scale="0" />
+          <Property Name="HTSJ" Type="date" />
+          <Property Name="CREATETIME" Type="date" />
+        </EntityType>-->
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GXSYS.GX_YSZLFILE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="GX_YSZLFILE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="long" Nullable="false" />
+    <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+    <Property Name="TYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FILENAME" Type="nvarchar2" MaxLength="200" />
+    <Property Name="FILEURL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="FILESIZE" Type="number" Precision="38" Scale="0" />
+    <Property Name="FILEZT" Type="char" MaxLength="1" />
+    <Property Name="UPLOADTIME" Type="date" />
+    <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="ADELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETETIME" Type="date" />
+  </EntityType>
+  <EntityContainer Name="GxEntitiesStoreContainer">
+    <EntitySet Name="GX_DICT_CONFIG" EntityType="Self.GX_DICT_CONFIG" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_DICT_CONFIG"."ID" AS "ID", 
+"GX_DICT_CONFIG"."TYPE" AS "TYPE", 
+"GX_DICT_CONFIG"."CODE" AS "CODE", 
+"GX_DICT_CONFIG"."NAME" AS "NAME", 
+"GX_DICT_CONFIG"."STATUS" AS "STATUS", 
+"GX_DICT_CONFIG"."PARENTID" AS "PARENTID", 
+"GX_DICT_CONFIG"."SORT" AS "SORT", 
+"GX_DICT_CONFIG"."CREATEBY" AS "CREATEBY", 
+"GX_DICT_CONFIG"."CREATETIME" AS "CREATETIME", 
+"GX_DICT_CONFIG"."MODIFYBY" AS "MODIFYBY", 
+"GX_DICT_CONFIG"."MODIFYTIME" AS "MODIFYTIME", 
+"GX_DICT_CONFIG"."DELETEBY" AS "DELETEBY", 
+"GX_DICT_CONFIG"."DELETETIME" AS "DELETETIME"
+FROM "GXSYS"."GX_DICT_CONFIG" "GX_DICT_CONFIG"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_GKXX" EntityType="Self.GX_GKXX" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_GKXX"."ID" AS "ID", 
+"GX_GKXX"."GKXXID" AS "GKXXID", 
+"GX_GKXX"."GKBH" AS "GKBH", 
+"GX_GKXX"."GKCL" AS "GKCL", 
+"GX_GKXX"."SYZT" AS "SYZT", 
+"GX_GKXX"."ZKHS" AS "ZKHS", 
+"GX_GKXX"."ZKLS" AS "ZKLS", 
+"GX_GKXX"."ZKSL" AS "ZKSL", 
+"GX_GKXX"."GKSZH" AS "GKSZH", 
+"GX_GKXX"."GKSZL" AS "GKSZL", 
+"GX_GKXX"."CREATEBY" AS "CREATEBY", 
+"GX_GKXX"."CREATETIME" AS "CREATETIME", 
+"GX_GKXX"."MODIFYBY" AS "MODIFYBY", 
+"GX_GKXX"."MODIFYTIME" AS "MODIFYTIME"
+FROM "GXSYS"."GX_GKXX" "GX_GKXX"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_GXRJRELATION" EntityType="Self.GX_GXRJRELATION" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_GXRJRELATION"."ID" AS "ID", 
+"GX_GXRJRELATION"."GXXXID" AS "GXXXID", 
+"GX_GXRJRELATION"."RJXXID" AS "RJXXID", 
+"GX_GXRJRELATION"."UPS" AS "UPS", 
+"GX_GXRJRELATION"."ISNEW" AS "ISNEW", 
+"GX_GXRJRELATION"."JYJGCBH" AS "JYJGCBH", 
+"GX_GXRJRELATION"."SSGCJH" AS "SSGCJH"
+FROM "GXSYS"."GX_GXRJRELATION" "GX_GXRJRELATION"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_GXXX" EntityType="Self.GX_GXXX" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_GXXX"."ID" AS "ID", 
+"GX_GXXX"."XMYSXXID" AS "XMYSXXID", 
+"GX_GXXX"."GCBH" AS "GCBH", 
+"GX_GXXX"."GXWZ" AS "GXWZ", 
+"GX_GXXX"."GXCD" AS "GXCD", 
+"GX_GXXX"."DXLX" AS "DXLX", 
+"GX_GXXX"."GXLX" AS "GXLX", 
+"GX_GXXX"."JSZT" AS "JSZT", 
+"GX_GXXX"."YWLX" AS "YWLX", 
+"GX_GXXX"."GJZ" AS "GJZ", 
+"GX_GXXX"."XNZC" AS "XNZC", 
+"GX_GXXX"."GKCL" AS "GKCL", 
+"GX_GXXX"."SYZT" AS "SYZT", 
+"GX_GXXX"."GKHS" AS "GKHS", 
+"GX_GXXX"."GKLS" AS "GKLS", 
+"GX_GXXX"."PLSX" AS "PLSX", 
+"GX_GXXX"."GXZT" AS "GXZT", 
+"GX_GXXX"."CREATEBY" AS "CREATEBY", 
+"GX_GXXX"."CREATETIME" AS "CREATETIME", 
+"GX_GXXX"."MODIFYBY" AS "MODIFYBY", 
+"GX_GXXX"."MODIFYTIME" AS "MODIFYTIME", 
+"GX_GXXX"."DELETEBY" AS "DELETEBY", 
+"GX_GXXX"."DELETETIME" AS "DELETETIME"
+FROM "GXSYS"."GX_GXXX" "GX_GXXX"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_LEAVEOPINION" EntityType="Self.GX_LEAVEOPINION" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_LEAVEOPINION"."ID" AS "ID", 
+"GX_LEAVEOPINION"."APPINSTANCEID" AS "APPINSTANCEID", 
+"GX_LEAVEOPINION"."ACTIVITYID" AS "ACTIVITYID", 
+"GX_LEAVEOPINION"."ACTIVITYNAME" AS "ACTIVITYNAME", 
+"GX_LEAVEOPINION"."REMARK" AS "REMARK", 
+"GX_LEAVEOPINION"."CHANGEDTIME" AS "CHANGEDTIME", 
+"GX_LEAVEOPINION"."CHANGEDUSERID" AS "CHANGEDUSERID", 
+"GX_LEAVEOPINION"."CHANGEDUSERNAME" AS "CHANGEDUSERNAME"
+FROM "GXSYS"."GX_LEAVEOPINION" "GX_LEAVEOPINION"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_PHOTOGALLERY" EntityType="Self.GX_PHOTOGALLERY" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_PHOTOGALLERY"."ID" AS "ID", 
+"GX_PHOTOGALLERY"."PARENTID" AS "PARENTID", 
+"GX_PHOTOGALLERY"."TPBH" AS "TPBH", 
+"GX_PHOTOGALLERY"."URL" AS "URL", 
+"GX_PHOTOGALLERY"."TJSJ" AS "TJSJ", 
+"GX_PHOTOGALLERY"."SFYX" AS "SFYX", 
+"GX_PHOTOGALLERY"."SORT" AS "SORT"
+FROM "GXSYS"."GX_PHOTOGALLERY" "GX_PHOTOGALLERY"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_RJXX" EntityType="Self.GX_RJXX" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_RJXX"."ID" AS "ID", 
+"GX_RJXX"."XMYSXXID" AS "XMYSXXID", 
+"GX_RJXX"."GCBH" AS "GCBH", 
+"GX_RJXX"."RJBH" AS "RJBH", 
+"GX_RJXX"."RJMC" AS "RJMC", 
+"GX_RJXX"."GCRJBH" AS "GCRJBH", 
+"GX_RJXX"."JGSL" AS "JGSL", 
+"GX_RJXX"."DXLX" AS "DXLX", 
+"GX_RJXX"."RSJCC" AS "RSJCC", 
+"GX_RJXX"."JGLX" AS "JGLX", 
+"GX_RJXX"."GJZ" AS "GJZ", 
+"GX_RJXX"."LONGITUDE" AS "LONGITUDE", 
+"GX_RJXX"."LATITUDE" AS "LATITUDE", 
+"GX_RJXX"."RJZT" AS "RJZT", 
+"GX_RJXX"."MODIFYBY" AS "MODIFYBY", 
+"GX_RJXX"."MODIFYTIME" AS "MODIFYTIME", 
+"GX_RJXX"."CREATETIME" AS "CREATETIME", 
+"GX_RJXX"."CREATEBY" AS "CREATEBY", 
+"GX_RJXX"."DELETETIME" AS "DELETETIME", 
+"GX_RJXX"."DELETEBY" AS "DELETEBY"
+FROM "GXSYS"."GX_RJXX" "GX_RJXX"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_SYS_MENU" EntityType="Self.GX_SYS_MENU" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_SYS_MENU"."ID" AS "ID", 
+"GX_SYS_MENU"."MODELID" AS "MODELID", 
+"GX_SYS_MENU"."MENUNAMC" AS "MENUNAMC", 
+"GX_SYS_MENU"."MENUURL" AS "MENUURL", 
+"GX_SYS_MENU"."MENUBZ" AS "MENUBZ", 
+"GX_SYS_MENU"."MENUPARENTID" AS "MENUPARENTID", 
+"GX_SYS_MENU"."MENUSTATUS" AS "MENUSTATUS", 
+"GX_SYS_MENU"."CREATEBY" AS "CREATEBY", 
+"GX_SYS_MENU"."CREATETIME" AS "CREATETIME", 
+"GX_SYS_MENU"."MODIFYBY" AS "MODIFYBY", 
+"GX_SYS_MENU"."MODIFYTIME" AS "MODIFYTIME", 
+"GX_SYS_MENU"."DELETEBY" AS "DELETEBY", 
+"GX_SYS_MENU"."DELETETIME" AS "DELETETIME"
+FROM "GXSYS"."GX_SYS_MENU" "GX_SYS_MENU"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_SYS_MODELS" EntityType="Self.GX_SYS_MODELS" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_SYS_MODELS"."ID" AS "ID", 
+"GX_SYS_MODELS"."NAME" AS "NAME", 
+"GX_SYS_MODELS"."REMARK" AS "REMARK", 
+"GX_SYS_MODELS"."FLAG" AS "FLAG", 
+"GX_SYS_MODELS"."CREATEBY" AS "CREATEBY", 
+"GX_SYS_MODELS"."CREATETIME" AS "CREATETIME", 
+"GX_SYS_MODELS"."DELETEBY" AS "DELETEBY", 
+"GX_SYS_MODELS"."DELETETIME" AS "DELETETIME", 
+"GX_SYS_MODELS"."MODIFYBY" AS "MODIFYBY", 
+"GX_SYS_MODELS"."MODIFYTIME" AS "MODIFYTIME"
+FROM "GXSYS"."GX_SYS_MODELS" "GX_SYS_MODELS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_SYS_ROLE" EntityType="Self.GX_SYS_ROLE" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_SYS_ROLE"."ID" AS "ID", 
+"GX_SYS_ROLE"."ROLENAME" AS "ROLENAME", 
+"GX_SYS_ROLE"."ROLEDESC" AS "ROLEDESC", 
+"GX_SYS_ROLE"."ROLESTATUS" AS "ROLESTATUS", 
+"GX_SYS_ROLE"."CREATEBY" AS "CREATEBY", 
+"GX_SYS_ROLE"."CREATETIME" AS "CREATETIME", 
+"GX_SYS_ROLE"."MODIFYBY" AS "MODIFYBY", 
+"GX_SYS_ROLE"."MODIFYTIME" AS "MODIFYTIME"
+FROM "GXSYS"."GX_SYS_ROLE" "GX_SYS_ROLE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_SYS_USER" EntityType="Self.GX_SYS_USER" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_SYS_USER"."ID" AS "ID", 
+"GX_SYS_USER"."USERID" AS "USERID", 
+"GX_SYS_USER"."USERCODE" AS "USERCODE", 
+"GX_SYS_USER"."USERNAME" AS "USERNAME", 
+"GX_SYS_USER"."USERPWD" AS "USERPWD", 
+"GX_SYS_USER"."USERMOBILE" AS "USERMOBILE", 
+"GX_SYS_USER"."USEREMAIL" AS "USEREMAIL", 
+"GX_SYS_USER"."USERSEX" AS "USERSEX", 
+"GX_SYS_USER"."USERSTATUS" AS "USERSTATUS", 
+"GX_SYS_USER"."LOGINIP" AS "LOGINIP", 
+"GX_SYS_USER"."LOGINTIME" AS "LOGINTIME", 
+"GX_SYS_USER"."CREATEBY" AS "CREATEBY", 
+"GX_SYS_USER"."CREATETIME" AS "CREATETIME", 
+"GX_SYS_USER"."MODIFYBY" AS "MODIFYBY", 
+"GX_SYS_USER"."MODIFYTIME" AS "MODIFYTIME", 
+"GX_SYS_USER"."DELETEBY" AS "DELETEBY", 
+"GX_SYS_USER"."DELETETIME" AS "DELETETIME"
+FROM "GXSYS"."GX_SYS_USER" "GX_SYS_USER"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_SYS_USERROLERELATE" EntityType="Self.GX_SYS_USERROLERELATE" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_SYS_USERROLERELATE"."ID" AS "ID", 
+"GX_SYS_USERROLERELATE"."GX__ID" AS "GX__ID", 
+"GX_SYS_USERROLERELATE"."USERID" AS "USERID", 
+"GX_SYS_USERROLERELATE"."ROLEID" AS "ROLEID"
+FROM "GXSYS"."GX_SYS_USERROLERELATE" "GX_SYS_USERROLERELATE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_SYSTEMLOG" EntityType="Self.GX_SYSTEMLOG" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_SYSTEMLOG"."ID" AS "ID", 
+"GX_SYSTEMLOG"."MENUURL" AS "MENUURL", 
+"GX_SYSTEMLOG"."TIMEFLAG" AS "TIMEFLAG", 
+"GX_SYSTEMLOG"."ACTNAME" AS "ACTNAME", 
+"GX_SYSTEMLOG"."CONTENTS" AS "CONTENTS", 
+"GX_SYSTEMLOG"."ACTUSERCODE" AS "ACTUSERCODE", 
+"GX_SYSTEMLOG"."ACTRESULT" AS "ACTRESULT"
+FROM "GXSYS"."GX_SYSTEMLOG" "GX_SYSTEMLOG"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_TASKWORK" EntityType="Self.GX_TASKWORK" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_TASKWORK"."ID" AS "ID", 
+"GX_TASKWORK"."XMYSXXID" AS "XMYSXXID", 
+"GX_TASKWORK"."USERID" AS "USERID", 
+"GX_TASKWORK"."XLZXID" AS "XLZXID"
+FROM "GXSYS"."GX_TASKWORK" "GX_TASKWORK"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_WFACTIVITYINSTANCE" EntityType="Self.GX_WFACTIVITYINSTANCE" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_WFACTIVITYINSTANCE"."ID" AS "ID", 
+"GX_WFACTIVITYINSTANCE"."PROCESSINSTANCEID" AS "PROCESSINSTANCEID", 
+"GX_WFACTIVITYINSTANCE"."APPINSTANCEID" AS "APPINSTANCEID", 
+"GX_WFACTIVITYINSTANCE"."APPNAME" AS "APPNAME", 
+"GX_WFACTIVITYINSTANCE"."APPINSTANCECODE" AS "APPINSTANCECODE", 
+"GX_WFACTIVITYINSTANCE"."PROCESSGUID" AS "PROCESSGUID", 
+"GX_WFACTIVITYINSTANCE"."ACTIVITYGUID" AS "ACTIVITYGUID", 
+"GX_WFACTIVITYINSTANCE"."ACTIVITYNAME" AS "ACTIVITYNAME", 
+"GX_WFACTIVITYINSTANCE"."ACTIVITYTYPE" AS "ACTIVITYTYPE", 
+"GX_WFACTIVITYINSTANCE"."ACTIVITYSTATE" AS "ACTIVITYSTATE", 
+"GX_WFACTIVITYINSTANCE"."ASSIGNEDTOUSERIDS" AS "ASSIGNEDTOUSERIDS", 
+"GX_WFACTIVITYINSTANCE"."ASSIGNEDTOUSERNAMES" AS "ASSIGNEDTOUSERNAMES", 
+"GX_WFACTIVITYINSTANCE"."BACKWARDTYPE" AS "BACKWARDTYPE", 
+"GX_WFACTIVITYINSTANCE"."BACKSRCACTIVITYINSTANCEID" AS "BACKSRCACTIVITYINSTANCEID", 
+"GX_WFACTIVITYINSTANCE"."GATEWAYDIRECTIONTYPEID" AS "GATEWAYDIRECTIONTYPEID", 
+"GX_WFACTIVITYINSTANCE"."CANRENEWINSTANCE" AS "CANRENEWINSTANCE", 
+"GX_WFACTIVITYINSTANCE"."TOKENSREQUIRED" AS "TOKENSREQUIRED", 
+"GX_WFACTIVITYINSTANCE"."TOKENSHAD" AS "TOKENSHAD", 
+"GX_WFACTIVITYINSTANCE"."COMPLEXTYPE" AS "COMPLEXTYPE", 
+"GX_WFACTIVITYINSTANCE"."MIHOSTACTIVITYINSTANCEID" AS "MIHOSTACTIVITYINSTANCEID", 
+"GX_WFACTIVITYINSTANCE"."COMPLETEORDER" AS "COMPLETEORDER", 
+"GX_WFACTIVITYINSTANCE"."SIGNFORWARDTYPE" AS "SIGNFORWARDTYPE", 
+"GX_WFACTIVITYINSTANCE"."CREATEDBYUSERID" AS "CREATEDBYUSERID", 
+"GX_WFACTIVITYINSTANCE"."CREATEDBYUSERNAME" AS "CREATEDBYUSERNAME", 
+"GX_WFACTIVITYINSTANCE"."CREATEDDATETIME" AS "CREATEDDATETIME", 
+"GX_WFACTIVITYINSTANCE"."LASTUPDATEDBYUSERID" AS "LASTUPDATEDBYUSERID", 
+"GX_WFACTIVITYINSTANCE"."LASTUPDATEDBYUSERNAME" AS "LASTUPDATEDBYUSERNAME", 
+"GX_WFACTIVITYINSTANCE"."LASTUPDATEDDATETIME" AS "LASTUPDATEDDATETIME", 
+"GX_WFACTIVITYINSTANCE"."ENDEDDATETIME" AS "ENDEDDATETIME", 
+"GX_WFACTIVITYINSTANCE"."ENDEDBYUSERID" AS "ENDEDBYUSERID", 
+"GX_WFACTIVITYINSTANCE"."ENDEDBYUSERNAME" AS "ENDEDBYUSERNAME", 
+"GX_WFACTIVITYINSTANCE"."RECORDSTATUSINVALID" AS "RECORDSTATUSINVALID", 
+"GX_WFACTIVITYINSTANCE"."ROWVERSIONID" AS "ROWVERSIONID"
+FROM "GXSYS"."GX_WFACTIVITYINSTANCE" "GX_WFACTIVITYINSTANCE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_WFPROCESS" EntityType="Self.GX_WFPROCESS" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_WFPROCESS"."ID" AS "ID", 
+"GX_WFPROCESS"."PROCESSGUID" AS "PROCESSGUID", 
+"GX_WFPROCESS"."PROCESSNAME" AS "PROCESSNAME", 
+"GX_WFPROCESS"."VERSION" AS "VERSION", 
+"GX_WFPROCESS"."ISUSING" AS "ISUSING", 
+"GX_WFPROCESS"."XMLFILENAME" AS "XMLFILENAME", 
+"GX_WFPROCESS"."XMLFILEPATH" AS "XMLFILEPATH", 
+"GX_WFPROCESS"."XMLCONTENT" AS "XMLCONTENT", 
+"GX_WFPROCESS"."DESCRIPTION" AS "DESCRIPTION", 
+"GX_WFPROCESS"."CREATEDDATETIME" AS "CREATEDDATETIME", 
+"GX_WFPROCESS"."LASTUPDATEDDATETIME" AS "LASTUPDATEDDATETIME", 
+"GX_WFPROCESS"."ROWVERSIONID" AS "ROWVERSIONID"
+FROM "GXSYS"."GX_WFPROCESS" "GX_WFPROCESS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_WFPROCESSINSTANCE" EntityType="Self.GX_WFPROCESSINSTANCE" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_WFPROCESSINSTANCE"."ID" AS "ID", 
+"GX_WFPROCESSINSTANCE"."PROCESSGUID" AS "PROCESSGUID", 
+"GX_WFPROCESSINSTANCE"."PROCESSNAME" AS "PROCESSNAME", 
+"GX_WFPROCESSINSTANCE"."VERSION" AS "VERSION", 
+"GX_WFPROCESSINSTANCE"."APPINSTANCEID" AS "APPINSTANCEID", 
+"GX_WFPROCESSINSTANCE"."APPNAME" AS "APPNAME", 
+"GX_WFPROCESSINSTANCE"."APPINSTANCECODE" AS "APPINSTANCECODE", 
+"GX_WFPROCESSINSTANCE"."PROCESSSTATE" AS "PROCESSSTATE", 
+"GX_WFPROCESSINSTANCE"."PARENTPROCESSINSTANCEID" AS "PARENTPROCESSINSTANCEID", 
+"GX_WFPROCESSINSTANCE"."PARENTPROCESSGUID" AS "PARENTPROCESSGUID", 
+"GX_WFPROCESSINSTANCE"."INVOKEDACTIVITYINSTANCEID" AS "INVOKEDACTIVITYINSTANCEID", 
+"GX_WFPROCESSINSTANCE"."INVOKEDACTIVITYGUID" AS "INVOKEDACTIVITYGUID", 
+"GX_WFPROCESSINSTANCE"."CREATEDDATETIME" AS "CREATEDDATETIME", 
+"GX_WFPROCESSINSTANCE"."CREATEDBYUSERID" AS "CREATEDBYUSERID", 
+"GX_WFPROCESSINSTANCE"."CREATEDBYUSERNAME" AS "CREATEDBYUSERNAME", 
+"GX_WFPROCESSINSTANCE"."LASTUPDATEDDATETIME" AS "LASTUPDATEDDATETIME", 
+"GX_WFPROCESSINSTANCE"."LASTUPDATEDBYUSERID" AS "LASTUPDATEDBYUSERID", 
+"GX_WFPROCESSINSTANCE"."LASTUPDATEDBYUSERNAME" AS "LASTUPDATEDBYUSERNAME", 
+"GX_WFPROCESSINSTANCE"."ENDEDDATETIME" AS "ENDEDDATETIME", 
+"GX_WFPROCESSINSTANCE"."ENDEDBYUSERID" AS "ENDEDBYUSERID", 
+"GX_WFPROCESSINSTANCE"."ENDEDBYUSERNAME" AS "ENDEDBYUSERNAME", 
+"GX_WFPROCESSINSTANCE"."RECORDSTATUSINVALID" AS "RECORDSTATUSINVALID", 
+"GX_WFPROCESSINSTANCE"."ROWVERSIONID" AS "ROWVERSIONID"
+FROM "GXSYS"."GX_WFPROCESSINSTANCE" "GX_WFPROCESSINSTANCE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_WFTRANSITIONINSTANCE" EntityType="Self.GX_WFTRANSITIONINSTANCE" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_WFTRANSITIONINSTANCE"."ID" AS "ID", 
+"GX_WFTRANSITIONINSTANCE"."TRANSITIONGUID" AS "TRANSITIONGUID", 
+"GX_WFTRANSITIONINSTANCE"."PROCESSINSTANCEID" AS "PROCESSINSTANCEID", 
+"GX_WFTRANSITIONINSTANCE"."PROCESSGUID" AS "PROCESSGUID", 
+"GX_WFTRANSITIONINSTANCE"."TRANSITIONTYPE" AS "TRANSITIONTYPE", 
+"GX_WFTRANSITIONINSTANCE"."FLYINGTYPE" AS "FLYINGTYPE", 
+"GX_WFTRANSITIONINSTANCE"."FROMACTIVITYINSTANCEID" AS "FROMACTIVITYINSTANCEID", 
+"GX_WFTRANSITIONINSTANCE"."FROMACTIVITYGUID" AS "FROMACTIVITYGUID", 
+"GX_WFTRANSITIONINSTANCE"."FROMACTIVITYTYPE" AS "FROMACTIVITYTYPE", 
+"GX_WFTRANSITIONINSTANCE"."FROMACTIVITYNAME" AS "FROMACTIVITYNAME", 
+"GX_WFTRANSITIONINSTANCE"."TOACTIVITYINSTANCEID" AS "TOACTIVITYINSTANCEID", 
+"GX_WFTRANSITIONINSTANCE"."TOACTIVITYGUID" AS "TOACTIVITYGUID", 
+"GX_WFTRANSITIONINSTANCE"."TOACTIVITYTYPE" AS "TOACTIVITYTYPE", 
+"GX_WFTRANSITIONINSTANCE"."TOACTIVITYNAME" AS "TOACTIVITYNAME", 
+"GX_WFTRANSITIONINSTANCE"."CONDITIONPARSERESULT" AS "CONDITIONPARSERESULT", 
+"GX_WFTRANSITIONINSTANCE"."CREATEDBYUSERID" AS "CREATEDBYUSERID", 
+"GX_WFTRANSITIONINSTANCE"."CREATEDBYUSERNAME" AS "CREATEDBYUSERNAME", 
+"GX_WFTRANSITIONINSTANCE"."CREATEDDATETIME" AS "CREATEDDATETIME", 
+"GX_WFTRANSITIONINSTANCE"."RECORDSTATUSINVALID" AS "RECORDSTATUSINVALID", 
+"GX_WFTRANSITIONINSTANCE"."ROWVERSIONID" AS "ROWVERSIONID", 
+"GX_WFTRANSITIONINSTANCE"."APPINSTANCEID" AS "APPINSTANCEID", 
+"GX_WFTRANSITIONINSTANCE"."APPINSTANCECODE" AS "APPINSTANCECODE"
+FROM "GXSYS"."GX_WFTRANSITIONINSTANCE" "GX_WFTRANSITIONINSTANCE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_XLZX" EntityType="Self.GX_XLZX" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_XLZX"."ID" AS "ID", 
+"GX_XLZX"."ROLEID" AS "ROLEID", 
+"GX_XLZX"."NAME" AS "NAME", 
+"GX_XLZX"."STATUS" AS "STATUS", 
+"GX_XLZX"."CREATEBY" AS "CREATEBY", 
+"GX_XLZX"."CREATETIME" AS "CREATETIME", 
+"GX_XLZX"."MODIFYBY" AS "MODIFYBY", 
+"GX_XLZX"."MODIFYTIME" AS "MODIFYTIME", 
+"GX_XLZX"."DELETEBY" AS "DELETEBY", 
+"GX_XLZX"."DELETETIME" AS "DELETETIME"
+FROM "GXSYS"."GX_XLZX" "GX_XLZX"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GX_YSZLFILE" EntityType="Self.GX_YSZLFILE" store:Type="Tables" store:Schema="GXSYS">
+      <DefiningQuery>SELECT 
+"GX_YSZLFILE"."ID" AS "ID", 
+"GX_YSZLFILE"."XMYSXXID" AS "XMYSXXID", 
+"GX_YSZLFILE"."TYPE" AS "TYPE", 
+"GX_YSZLFILE"."FILENAME" AS "FILENAME", 
+"GX_YSZLFILE"."FILEURL" AS "FILEURL", 
+"GX_YSZLFILE"."FILESIZE" AS "FILESIZE", 
+"GX_YSZLFILE"."FILEZT" AS "FILEZT", 
+"GX_YSZLFILE"."UPLOADTIME" AS "UPLOADTIME", 
+"GX_YSZLFILE"."CREATEBY" AS "CREATEBY", 
+"GX_YSZLFILE"."ADELETEBY" AS "ADELETEBY", 
+"GX_YSZLFILE"."DELETETIME" AS "DELETETIME"
+FROM "GXSYS"."GX_YSZLFILE" "GX_YSZLFILE"</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

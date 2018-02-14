@@ -12,14 +12,11 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_taskwork
+    public partial class GX_TASKWORK
     {
-        public int Id_任务分配表标识 { get; set; }
-        public Nullable<int> Id { get; set; }
-        public Nullable<int> gx__Id { get; set; }
-        public Nullable<int> gx__Id2 { get; set; }
-        public Nullable<int> xmysxxid { get; set; }
-        public string userid { get; set; }
-        public Nullable<int> xlzxId { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> XMYSXXID { get; set; }
+        public string USERID { get; set; }
+        public Nullable<decimal> XLZXID { get; set; }
     }
 }

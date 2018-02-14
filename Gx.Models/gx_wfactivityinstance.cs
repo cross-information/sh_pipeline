@@ -12,42 +12,40 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_wfactivityinstance
+    public partial class GX_WFACTIVITYINSTANCE
     {
-        public int Id { get; set; }
-        public Nullable<int> gx__Id { get; set; }
-        public Nullable<int> gx__Id2 { get; set; }
-        public Nullable<int> ProcessInstanceID { get; set; }
-        public Nullable<int> AppinstanceId { get; set; }
-        public string AppName { get; set; }
-        public string AppInstanceCode { get; set; }
-        public string ProcessGUID { get; set; }
-        public string ActivityGUID { get; set; }
-        public string ActivityName { get; set; }
-        public Nullable<short> ActivityType { get; set; }
-        public Nullable<short> ActivityState { get; set; }
-        public string AssignedToUserIDs { get; set; }
-        public string AssignedToUserNames { get; set; }
-        public Nullable<short> BackwardType_退回类型 { get; set; }
-        public Nullable<int> BackSrcActivityInstanceID { get; set; }
-        public Nullable<short> GatewayDirectionTypeID { get; set; }
-        public Nullable<byte> CanRenewInstance { get; set; }
-        public Nullable<int> TokensRequired { get; set; }
-        public Nullable<int> TokensHad { get; set; }
-        public Nullable<short> ComplexType { get; set; }
-        public Nullable<int> MIHostActivityInstanceID { get; set; }
-        public Nullable<double> CompleteOrder { get; set; }
-        public Nullable<short> SignForwardType { get; set; }
-        public string CreatedByUserID { get; set; }
-        public string CreatedByUserName { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
-        public string LastUpdatedByUserID { get; set; }
-        public string LastUpdatedByUserName { get; set; }
-        public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
-        public Nullable<System.DateTime> EndedDateTime { get; set; }
-        public string EndedByUserID { get; set; }
-        public string EndedByUserName { get; set; }
-        public Nullable<byte> RecordStatusInvalid { get; set; }
-        public byte[] RowVersionID { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> PROCESSINSTANCEID { get; set; }
+        public Nullable<decimal> APPINSTANCEID { get; set; }
+        public string APPNAME { get; set; }
+        public string APPINSTANCECODE { get; set; }
+        public string PROCESSGUID { get; set; }
+        public string ACTIVITYGUID { get; set; }
+        public string ACTIVITYNAME { get; set; }
+        public Nullable<short> ACTIVITYTYPE { get; set; }
+        public Nullable<short> ACTIVITYSTATE { get; set; }
+        public string ASSIGNEDTOUSERIDS { get; set; }
+        public string ASSIGNEDTOUSERNAMES { get; set; }
+        public Nullable<short> BACKWARDTYPE { get; set; }
+        public Nullable<decimal> BACKSRCACTIVITYINSTANCEID { get; set; }
+        public Nullable<short> GATEWAYDIRECTIONTYPEID { get; set; }
+        public Nullable<decimal> CANRENEWINSTANCE { get; set; }
+        public Nullable<decimal> TOKENSREQUIRED { get; set; }
+        public Nullable<decimal> TOKENSHAD { get; set; }
+        public Nullable<short> COMPLEXTYPE { get; set; }
+        public Nullable<decimal> MIHOSTACTIVITYINSTANCEID { get; set; }
+        public Nullable<decimal> COMPLETEORDER { get; set; }
+        public Nullable<short> SIGNFORWARDTYPE { get; set; }
+        public string CREATEDBYUSERID { get; set; }
+        public string CREATEDBYUSERNAME { get; set; }
+        public Nullable<System.DateTime> CREATEDDATETIME { get; set; }
+        public string LASTUPDATEDBYUSERID { get; set; }
+        public string LASTUPDATEDBYUSERNAME { get; set; }
+        public Nullable<System.DateTime> LASTUPDATEDDATETIME { get; set; }
+        public Nullable<System.DateTime> ENDEDDATETIME { get; set; }
+        public string ENDEDBYUSERID { get; set; }
+        public string ENDEDBYUSERNAME { get; set; }
+        public Nullable<decimal> RECORDSTATUSINVALID { get; set; }
+        public Nullable<System.DateTime> ROWVERSIONID { get; set; }
     }
 }

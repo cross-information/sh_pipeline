@@ -12,10 +12,10 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_sys_rolemenu
+    public partial class GX_SYS_ROLEMENU
     {
-        public int Id { get; set; }
-        public Nullable<int> roleid { get; set; }
-        public Nullable<int> menuid { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> ROLEID { get; set; }
+        public Nullable<decimal> MENUID { get; set; }
     }
 }

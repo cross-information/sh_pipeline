@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Gx.Models.GX_SYS_MODELS
+@using (Html.BeginForm("Edit", "GxSysModels", FormMethod.Post))
+{
+    <div style="padding: 10px;">
+        <input type="hidden" name="Id" value="@Model.ID"/>
+        <ul class="form_ul">
+            <li>
+                <label>大类名称：</label>
+                <input type="text" class="easyui-validatebox" name="NAME" style="width:250px;" value="@Model.NAME" />
+            </li>
+            <li>
+                <label>大类排序：</label>
+                <textarea style="width: 250px;" rows="5" name="REMARK">@Model.REMARK</textarea>
+            </li>  
+             <li>
+                <label>数据状态：</label>
+                <select name="MENUSTATUS" id="MENUSTATUS">
+                    <option value="1" @Html.Raw(Model.FLAG==1?"selected='selected'":"")>冻结</option>
+                    <option value="0" @Html.Raw(Model.FLAG==0?"selected='selected'":"")>启用</option>
+                </select> 
+             </li>  
+        </ul>
+    </div> 
+}

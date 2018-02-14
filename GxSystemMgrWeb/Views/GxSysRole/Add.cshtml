@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Add", "GxSysRole", FormMethod.Post))
+{
+    <div style="padding: 10px;">
+        <input type="hidden" name="Id"/>
+        <ul class="form_ul">
+            <li>
+                <label>角色名称：</label>
+                <input type="text" class="easyui-validatebox" name="ROLENAME" style="width:180px;" required="true" validtype="length[2,18]" />
+            </li>
+            <li>
+                <label>角色状态：</label>
+                <select name="ROLESTATUS" id="ROLESTATUS" style="width: 180px;">
+                    <option value="1">冻结</option>
+                    <option value="0">启用</option>
+                </select>  
+            </li>
+            <li>
+                <label>描述：</label>
+                <textarea id="ROLEDESC" name="ROLEDESC" rows="5" cols="50"></textarea>
+            </li>
+        </ul>
+    </div> 
+}
+
+ 
+

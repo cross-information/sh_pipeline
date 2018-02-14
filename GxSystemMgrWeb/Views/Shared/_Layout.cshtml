@@ -2,15 +2,37 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="0">
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    @RenderBody()
+    @*<link href="@Url.Content("~/_plus/artDialog4.1.4/_doc/demo.css?v="+Html.Raw(DateTime.UtcNow.ToString("yyyyMMddhhmmss")))" rel="stylesheet" />*@
+    @*<link href="@Url.Content("~/_plus/bootstrap-3.3.6/css/bootstrap.min.css?v="+Html.Raw(DateTime.UtcNow.ToString("yyyyMMddhhmmss")))" rel="stylesheet" />*@
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js?v="+Html.Raw(DateTime.UtcNow.ToString("yyyyMMddhhmmss")))"></script>
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+    @*<link href="@Url.Content("~/_plus/artDialog4.1.4/skins/default.css?v="+Html.Raw(DateTime.UtcNow.ToString("yyyyMMddhhmmss")))" rel="stylesheet" />
+    <script src="@Url.Content("~/_plus/artDialog4.1.4/jquery.artDialog.js?v="+Html.Raw(DateTime.UtcNow.ToString("yyyyMMddhhmmss")))"></script>
+    <script src="@Url.Content("~/_plus/artDialog4.1.4/plugins/iframeTools.source.js?v="+Html.Raw(DateTime.UtcNow.ToString("yyyyMMddhhmmss")))"></script>*@
+    @*<script src="@Url.Content("~/_plus/bootstrap-3.3.6/js/bootstrap.min.js?v="+Html.Raw(DateTime.UtcNow.ToString("yyyyMMddhhmmss")))"></script>*@
+    
+    <script type="text/javascript" src="~/_plus/jquery-easyui/jquery.easyui.min.js?v=@DateTime.Now.Ticks"></script>
+    <script type="text/javascript" src="~/_plus/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="~/Scripts/base.js"></script>
+    <script type="text/javascript" src="~/Scripts/easyui-helper.js"></script>
+    
+    <link href="~/_plus/jquery-easyui/themes/default/easyui.css?v=@DateTime.Now.Ticks" rel="stylesheet" />
+    <link href="~/_plus/jquery-easyui/themes/icon.css?v=@DateTime.Now.Ticks" rel="stylesheet" />
+    <link href="~/_plus/jquery-easyui/demo/demo.css" rel="stylesheet" />
+    <link href="~/Content/base.css" rel="stylesheet" />
+
+    <link href="~/Content/easyui-ext.css?v=@DateTime.Now.Ticks" rel="stylesheet" />
+    <link href="~/Content/base.css?v=@DateTime.Now.Ticks" rel="stylesheet" />
+    <link href="~/Content/css/Basic.css" rel="stylesheet" />
+</head>
+<body class="easyui-layout" style="overflow-y: hidden">
+    @RenderBody()
 </body>
 </html>

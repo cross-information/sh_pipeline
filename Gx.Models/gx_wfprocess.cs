@@ -12,19 +12,19 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_wfprocess
+    public partial class GX_WFPROCESS
     {
-        public int Id { get; set; }
-        public string processguid { get; set; }
-        public string processname { get; set; }
-        public string version { get; set; }
-        public Nullable<bool> isusing { get; set; }
-        public string XmlFileName { get; set; }
-        public string XmlFilePath { get; set; }
-        public string XmlContent { get; set; }
-        public string Description { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
-        public Nullable<System.DateTime> LastUpdatedDateTime { get; set; }
-        public byte[] RowVersionID { get; set; }
+        public decimal ID { get; set; }
+        public string PROCESSGUID { get; set; }
+        public string PROCESSNAME { get; set; }
+        public string VERSION { get; set; }
+        public string ISUSING { get; set; }
+        public string XMLFILENAME { get; set; }
+        public string XMLFILEPATH { get; set; }
+        public string XMLCONTENT { get; set; }
+        public string DESCRIPTION { get; set; }
+        public Nullable<System.DateTime> CREATEDDATETIME { get; set; }
+        public Nullable<System.DateTime> LASTUPDATEDDATETIME { get; set; }
+        public Nullable<System.DateTime> ROWVERSIONID { get; set; }
     }
 }

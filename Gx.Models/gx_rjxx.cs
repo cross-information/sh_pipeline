@@ -12,27 +12,27 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_rjxx
+    public partial class GX_RJXX
     {
-        public Nullable<int> xmysxxid { get; set; }
-        public string gcbh { get; set; }
-        public string rjbh { get; set; }
-        public string rjmc { get; set; }
-        public string gcrjbh { get; set; }
-        public Nullable<int> jgsl { get; set; }
-        public string dxlx { get; set; }
-        public string rsjcc { get; set; }
-        public string jglx { get; set; }
-        public string gjz { get; set; }
-        public string longitude { get; set; }
-        public string latitude { get; set; }
-        public Nullable<bool> rjzt { get; set; }
-        public string modify { get; set; }
-        public Nullable<System.DateTime> modifyTime { get; set; }
-        public Nullable<System.DateTime> createTime { get; set; }
-        public string createby { get; set; }
-        public Nullable<System.DateTime> deletetime { get; set; }
-        public string deleteby { get; set; }
-        public int Id { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> XMYSXXID { get; set; }
+        public string GCBH { get; set; }
+        public string RJBH { get; set; }
+        public string RJMC { get; set; }
+        public string GCRJBH { get; set; }
+        public Nullable<decimal> JGSL { get; set; }
+        public string DXLX { get; set; }
+        public string RSJCC { get; set; }
+        public string JGLX { get; set; }
+        public string GJZ { get; set; }
+        public string LONGITUDE { get; set; }
+        public string LATITUDE { get; set; }
+        public string RJZT { get; set; }
+        public string MODIFYBY { get; set; }
+        public Nullable<System.DateTime> MODIFYTIME { get; set; }
+        public Nullable<System.DateTime> CREATETIME { get; set; }
+        public string CREATEBY { get; set; }
+        public Nullable<System.DateTime> DELETETIME { get; set; }
+        public string DELETEBY { get; set; }
     }
 }

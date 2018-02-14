@@ -36,6 +36,22 @@
     <Reference Include="JGB.Common.Units">
       <HintPath>..\Library\JGB.Common.Units.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <HintPath>..\packages\Oracle.DataAccess.x86.2.112.1.0\lib\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.Web">
+      <HintPath>..\packages\odac.client.x64.1.112.3.20\lib\net40\Oracle.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,40 +67,56 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepositiory\BaseDataRepository.cs" />
-    <Compile Include="Gx.Context.cs">
+    <Compile Include="GxSysEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Gx.Context.tt</DependentUpon>
+      <DependentUpon>GxSysEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Gx.Entities.Designer.cs">
+    <Compile Include="GxSysEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Gx.Entities.edmx</DependentUpon>
+      <DependentUpon>GxSysEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GxDictConfigRepository.cs" />
+    <Compile Include="Repository\GxLeaveOpinionRepository.cs" />
+    <Compile Include="Repository\GxRjxxRepository.cs" />
+    <Compile Include="Repository\GxSysRoleMenuRepository.cs" />
+    <Compile Include="Repository\GxSysMenuRepository.cs" />
+    <Compile Include="Repository\GxSysModelsRepository.cs" />
+    <Compile Include="Repository\GxSysPerMissionsRepository.cs" />
+    <Compile Include="Repository\GxSysRoleMenu.cs" />
+    <Compile Include="Repository\GxSysRoleperRelate.cs" />
+    <Compile Include="Repository\GxSysRoleRepository.cs" />
+    <Compile Include="Repository\GxSysUserRepository.cs" />
+    <Compile Include="Repository\GxSysUserrolerelate.cs" />
+    <Compile Include="Repository\GXUserDeptRepository.cs" />
+    <Compile Include="Repository\GxWfactivityinstanceRepository.cs" />
+    <Compile Include="Repository\GxWfprocessinstanceRepository.cs" />
+    <Compile Include="Repository\GxWfprocessRepository.cs" />
+    <Compile Include="Repository\GxWftaskRepository.cs" />
+    <Compile Include="Repository\GxWftransitionInstanceRepository.cs" />
+    <Compile Include="Repository\GxXlzxRepository.cs" />
+    <Compile Include="Repository\GxPhotogalleryRepository.cs" />
+    <Compile Include="Repository\GxXmysxxRepository.cs" />
+    <Compile Include="Repository\GxxxRepository.cs" />
+    <Compile Include="Repository\GxYszlfileRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Gx.Entities.edmx">
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="GxSysEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Gx.Entities.Designer.cs</LastGenOutput>
+      <LastGenOutput>GxSysEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="Gx.Entities.edmx.diagram">
-      <DependentUpon>Gx.Entities.edmx</DependentUpon>
+    <None Include="GxSysEntities.edmx.diagram">
+      <DependentUpon>GxSysEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Gx.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Gx.Entities.edmx</DependentUpon>
-      <LastGenOutput>Gx.Context.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -97,6 +129,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WebServiice\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GxSysEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GxSysEntities.edmx</DependentUpon>
+      <LastGenOutput>GxSysEntities.Context.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

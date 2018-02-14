@@ -12,32 +12,37 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_gxxx
+    public partial class GX_GXXX
     {
-        public int Id { get; set; }
-        public int xmysxxid { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> XMYSXXID { get; set; }
         public string GCBH { get; set; }
-        public string gxwz { get; set; }
-        public Nullable<double> gxcd { get; set; }
-        public string dxlx { get; set; }
-        public string gxlx { get; set; }
-        public string jszt { get; set; }
-        public string ywlx { get; set; }
-        public string gjz { get; set; }
-        public string xnzc { get; set; }
-        public string gkcl { get; set; }
-        public Nullable<int> syzt { get; set; }
-        public Nullable<int> gkhs { get; set; }
-        public Nullable<int> gkls { get; set; }
-        public Nullable<int> plsx { get; set; }
-        public string qjwz { get; set; }
-        public string zjwz { get; set; }
-        public Nullable<bool> gxzt { get; set; }
-        public string createby { get; set; }
-        public Nullable<System.DateTime> createtime { get; set; }
-        public string modify { get; set; }
-        public Nullable<System.DateTime> modifytime { get; set; }
-        public string deleteby { get; set; }
-        public Nullable<System.DateTime> deletetime { get; set; }
+        public string GXWZ { get; set; }
+        public Nullable<decimal> GXCD { get; set; }
+        public string DXLX { get; set; }
+        public string GXLX { get; set; }
+        public string JSZT { get; set; }
+        public string YWLX { get; set; }
+        public string GJZ { get; set; }
+        public string XNZC { get; set; }
+        public string GKCL { get; set; }
+        public Nullable<decimal> SYZT { get; set; }
+        public Nullable<decimal> GKHS { get; set; }
+        public Nullable<decimal> GKLS { get; set; }
+        public Nullable<decimal> PLSX { get; set; }
+        public string GXZT { get; set; }
+        public string CREATEBY { get; set; }
+        public Nullable<System.DateTime> CREATETIME { get; set; }
+        public string MODIFYBY { get; set; }
+        public Nullable<System.DateTime> MODIFYTIME { get; set; }
+        public string DELETEBY { get; set; }
+        public Nullable<System.DateTime> DELETETIME { get; set; }
+        public string GH { get; set; }
+        public Nullable<decimal> JJ { get; set; }
+        public string STQK { get; set; }
+        public string QJ { get; set; }
+        public string ZJ { get; set; }
+        public string QJGKWZ { get; set; }
+        public string ZJGKWZ { get; set; }
     }
 }

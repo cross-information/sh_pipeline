@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div region="center" style="padding: 10px; border: none;">
+    <div id="mm" style="padding: 10px; height: auto;">
+        <label>合同基本编号：</label>
+        <input type="text" class="easyui-validatebox" name="HTJBBH" style="width:120px;" />
+        <label>工程编号：</label>
+        <input type="text" class="easyui-validatebox" name="GCBH" style="width:120px;" />
+        <label>工程名称：</label>
+        <input type="text" class="easyui-validatebox" name="GCMC" style="width:180px;" />
+        <a href="javascript:search.open();" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">查询</a>
+    </div>
+    <table id="tt" class="easyui-datagrid" data-options="rownumbers:true,title:'项目信息',url:'@Url.Action("ProjectList","GxProject")',fit:true,fitColumns: true,iconCls:'icon-search',toolbar:'#mm', pagination:true,idField:'ID', remoteSort:false,pageList:pageList">
+        <thead>
+            <tr>
+                <th data-options="field:'HTBH',width:100,sortable:true">合同基础编号</th>
+                <th data-options="field:'GCBH',width:100,sortable:true">工程编号</th>
+                <th data-options="field:'GCMC',width:158,sortable:true">工程名称</th>
+                <th data-options="field:'SGDWMC',width:100,sortable:true">施工单位</th>
+                <th data-options="field:'JLDWDM',width:100,sortable:true">建立单位</th>
+                <th data-options="field:'YSZT',width:100,formatter:$YSstatus">验收状态</th>
+                <th data-options="field:'HTSJ',width:100,formatter:$date">合同时间</th>
+                <th data-options="field:'undefined',width:160,align:'center',formatter:$fun">功能操作</th>
+                <th data-options="field:'functions',width:80,align:'center',formatter:$lcfun">流程操作</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div id="window_xxlr"></div>
+<div id="window_yszlgl"></div>
+<div id="window_rwfp"></div>
+
+<div id="window_lcjl"></div>
+<div id="window_save"></div>
+
+<script type="text/javascript">
+
+    var $YSstatus = function(v, d, r) {
+        if (d.YSZT == 0) {
+            return "已验收";
+        }
+        else {
+            return "未验收";
+        }
+    };
+
+    var $fun = function (v, d, r) {
+        var html = '<input type="button" id="btnSave" name = "btnSave" onclick="javascript:xxlr.open(\'' + d.ID + '\')" value="信息录入" />&nbsp;';
+        html += '<input type="button" id="btnSave" name = "btnSave" onclick="javascript:yszlgl.open(\'' + d.ID + '\')" value="验收资料管理" /><BR/>';
+        html += '<input type="button" id="btnSave" name = "btnSave" onclick="javascript:rwfp.open(\'' + d.ID + '\')" value="查看任务分配" />';
+        return html;
+    };
+    
+    var $lcfun = function (v, d, r) {
+        var html = "<div style='line-heigth:28px;'>"
+        html += '<input type="button" id="btnSave" name = "btnSave" onclick="" value="流程记录" /><br>';
+        html += '<input type="button" id="btnSave" name = "btnSave" onclick="javascript:save(\'' + d.ID + '\')" value="提交" />';
+        html += "</div>";
+        return html;
+    };
+    
+    var xxlr = {
+        open: function (id) {
+            var url = '@Url.Action("Gxxx", "Gxxx")/?gcbdid=' + id;
+            location.href = url;
+        }
+    };
+    
+    var yszlgl = {
+        open: function(id) {
+            var url = '@Url.Action("FileView", "GxProject")/?gcxmid=' + id;
+            $('#window_yszlgl').dialog({
+                title: '验收资料管理',
+                height: 410,
+                width: 750,
+                modal: true,
+                href: url,
+                buttons: [
+                    {
+                        text: '关闭窗口',
+                        iconCls: 'icon-cancel',
+                        handler: function() {
+                            $("#window_yszlgl").dialog('close');
+                        }
+                    }
+                ]
+            });
+        }
+    };
+    
+    var rwfp = {
+        open: function (id) {
+            var url = '@Url.Action("TaskResignView", "GxProject")/?gcxmid=' + id;
+            $('#window_rwfp').dialog({
+                title: '查看任务分配',
+                height: 231,
+                width: 295,
+                modal: true,
+                href: url,
+                buttons: [
+                    {
+                        text: '确定',
+                        iconCls: 'icon-ok',
+                        handler: function () {
+                            $('#window_rwfp form').form('submit', {
+                                success: function (data) {
+                                    debugger 
+                                    if (!data.IsError) {
+                                        alertInfo(data.Message);
+                                    } else {
+                                        alertError(data.Message);
+                                    }
+                                    $("#window_rwfp").dialog('close');
+                                }
+                            });
+                        }
+                    },
+                    {
+                        text: '取消',
+                        iconCls: 'icon-cancel',
+                        handler: function () {
+                            $("#window_rwfp").dialog('close');
+                        }
+                    }
+                ]
+            });
+        }
+    };
+
+    //页面提交按钮事件
+    function save(obj) {
+        $.ajax({
+            url: '@Url.Action("Save","GxProject")/?id=' + obj,
+            type: "POST",
+            dataType: "json",
+            async: true,
+            contentType: "application/json; charset=utf-8",
+            success: function(data) {
+                debugger
+                var ret = JSON.stringify(data);
+                if (!ret.IsError) {
+                    alertInfo(ret.Message);
+                } else {
+                    alertError(ret.Message);
+                }
+            }
+        });
+    }
+
+    var pageList = [20, 40, 60, 80, 100];
+</script>

@@ -12,15 +12,15 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_LeaveOpinion
+    public partial class GX_LEAVEOPINION
     {
-        public int Id { get; set; }
-        public Nullable<int> AppInstanceID { get; set; }
-        public string ActivityID { get; set; }
-        public string ActivityName { get; set; }
-        public string Remark { get; set; }
-        public Nullable<System.DateTime> ChangedTime { get; set; }
-        public string ChangedUserID { get; set; }
-        public string ChangedUserName { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> APPINSTANCEID { get; set; }
+        public string ACTIVITYID { get; set; }
+        public string ACTIVITYNAME { get; set; }
+        public string REMARK { get; set; }
+        public Nullable<System.DateTime> CHANGEDTIME { get; set; }
+        public string CHANGEDUSERID { get; set; }
+        public string CHANGEDUSERNAME { get; set; }
     }
 }

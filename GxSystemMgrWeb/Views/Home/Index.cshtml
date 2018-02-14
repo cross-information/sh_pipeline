@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "管线管理系统首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} 
+<script type="text/javascript" src="~/Scripts/easyui-menu.js"></script>
+<div region="north" split="true" border="false" style="overflow: hidden; color: #fff; height: 72px; padding: 0 10px; background-image: url(@Url.Content("~/images/banner-2.jpg"))">
+    <span style="float: left; padding: 2px 0px 0px 2px; font-size: 18pt">
+        <img src="@Url.Content("~/images/logo.png")" />
+    </span>
+    <span style="float: right; padding: 36px 0px 2px 0px; color: #000000;">
+        当前时间：<span id="clock"></span>
+        欢迎您,
+        <a href="javascript:void(0)" onclick="OpenMyAccout.open()">@ViewBag.UserName</a>&nbsp;|&nbsp;
+        <a href="@Url.Action("LogOut", "Passport")">注销</a>
+    </span>
+</div>
+<div id="window_MyAccont"></div>
+<script type="text/javascript">
+    var init = self.setInterval("clock()", 50);
+
+    function clock() {
+        var time = new Date().Format("yyyy-MM-dd hh:mm:ss");
+        $("#clock").html(time);
+    }
+
+    // 对Date的扩展，将 Date 转化为指定格式的String
+    // 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+    // 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+    // 例子：
+    // (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+    // (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    };
+
+    var OpenMyAccout = {
+        url: '/Passport/MyAccount',
+        open: function () {
+            $('#window_MyAccont').dialog({
+                title: '更改密码',
+                height: 240,
+                width: 410,
+                modal: true,
+                href: OpenMyAccout.url,
+                buttons: [
+                    {
+                        text: '确定',
+                        iconCls: 'icon-ok',
+                        handler: function () {
+                            $('#window_MyAccont form').form('submit', {
+                                success: function (data) {
+                                    var d = $.parseJSON(data);
+                                    alertInfo(d.Message);
+                                    OpenMyAccout.close();
+                                }
+                            });
+                        }
+                    },
+                    {
+                        text: '取消',
+                        iconCls: 'icon-cancel',
+                        handler: function () {
+                            OpenMyAccout.close();
+                        }
+                    }
+                ]
+            });
+        },
+        close: function () {
+            $('#window_MyAccont').dialog('close');
+        }
+    };
+</script>
+
+<style type="text/css">
+    .nav div{ background-image: url("@Url.Content("~/images/menubg.jpg")");}
+</style>
+
+<div region="west" split="true" title="导航菜单" style="width: 180px; background-image: url(@Url.Content("~/images/menubg.jpg"))" id="west">
+    <div id="nav" class="easyui-accordion" fit="true" border="false" style=" background-image:url(@Url.Content("~/images/menubg.jpg"));">
+    </div>
+</div>
+<div id="mainPanle" region="center" style="background: #eee; overflow-y: hidden">
+    <div id="tabs" class="easyui-tabs" fit="true" border="false">
+        <div title="首页" style="padding: 0; overflow: hidden;">
+            @*<iframe scrolling="auto" frameborder="0" src="/Home/Demo" style="width: 100%; height: 100%;"></iframe>*@
+            <p style="font-size: 18px; padding-left: 10px;">欢迎使用后台管理系统，如发现使用问题请联系技术修正，谢谢！</p>
+        </div>
+    </div>
+</div>
+<div region="south" split="true" style="height: 30px;">
+    <div class="footer" style="text-align: right; padding-right: 20px;">
+        Copyright © 2018. chengyudong.com All Rights Reserved.
+    </div>
+</div>
+<div id="mm" class="easyui-menu" style="width: 150px;">
+    <div id="mm-tabupdate">
+        刷新
+    </div>
+    <div class="menu-sep">
+    </div>
+    <div id="mm-tabclose">
+        关闭
+    </div>
+    <div id="mm-tabcloseall">
+        全部关闭
+    </div>
+    <div id="mm-tabcloseother">
+        除此之外全部关闭
+    </div>
+    <div class="menu-sep">
+    </div>
+    <div id="mm-tabcloseright">
+        当前页右侧全部关闭
+    </div>
+    <div id="mm-tabcloseleft">
+        当前页左侧全部关闭
+    </div>
+    <div class="menu-sep">
+    </div>
+    <div id="mm-exit">
+        退出菜单
+    </div>
+</div>
+<div id="myaccount">
+
+</div>
+
+

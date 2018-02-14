@@ -12,11 +12,10 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_sys_roleperRelate
+    public partial class GX_SYS_ROLEPERRELATE
     {
-        public int Id { get; set; }
-        public Nullable<int> gx__Id { get; set; }
-        public Nullable<int> roleId { get; set; }
-        public Nullable<int> perid { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> ROLEID { get; set; }
+        public Nullable<decimal> PERID { get; set; }
     }
 }

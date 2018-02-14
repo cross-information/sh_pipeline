@@ -30,8 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="JGB.Common.Units">
+      <HintPath>D:\JGBObjectProject\CIACCollection\JGBXM\JGBXmBjNew\Library\JGB.Common.Units.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,7 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GxDictConfigBusiness.cs" />
+    <Compile Include="GxGxxxBusiness.cs" />
+    <Compile Include="GxLeaveOpinionBusiness.cs" />
+    <Compile Include="GxPhotogalleryBusiness.cs" />
+    <Compile Include="GxProjectBusiness.cs" />
+    <Compile Include="GxSysRoleMenuBusniess.cs" />
+    <Compile Include="GxSysMenuBusniess.cs" />
+    <Compile Include="GxSysModelsBusniess.cs" />
+    <Compile Include="GXSysRoleBusiness.cs" />
+    <Compile Include="GxSysUserBusiness.cs" />
+    <Compile Include="GxSysUserRoleBusiness.cs" />
+    <Compile Include="GxXlzxBusiness.cs" />
+    <Compile Include="GxYsxmxxBusiness.cs" />
+    <Compile Include="GxYszlfileBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GxRjxxBusiness.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gx.CommonUnits\Gx.CommonUnits.csproj">
+      <Project>{D3978C56-702A-4C1A-9DF9-1F5FECAA159D}</Project>
+      <Name>Gx.CommonUnits</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gx.DataAccess\Gx.DataAccess.csproj">
+      <Project>{E361D0FF-39B3-4598-8A26-06C87475116D}</Project>
+      <Name>Gx.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gx.Models\Gx.Models.csproj">
+      <Project>{F3715919-D98B-4D2A-AB0F-45056EF4E306}</Project>
+      <Name>Gx.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

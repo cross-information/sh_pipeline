@@ -12,17 +12,17 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_xlzx
+    public partial class GX_XLZX
     {
-        public int Id { get; set; }
-        public int roleid { get; set; }
-        public string name { get; set; }
-        public Nullable<int> status { get; set; }
-        public string createby { get; set; }
-        public Nullable<System.DateTime> createtime { get; set; }
-        public string modify { get; set; }
-        public Nullable<System.DateTime> modifytime { get; set; }
-        public string deleteby { get; set; }
-        public Nullable<System.DateTime> deletetime { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> ROLEID { get; set; }
+        public string NAME { get; set; }
+        public Nullable<decimal> STATUS { get; set; }
+        public string CREATEBY { get; set; }
+        public Nullable<System.DateTime> CREATETIME { get; set; }
+        public string MODIFYBY { get; set; }
+        public Nullable<System.DateTime> MODIFYTIME { get; set; }
+        public string DELETEBY { get; set; }
+        public Nullable<System.DateTime> DELETETIME { get; set; }
     }
 }

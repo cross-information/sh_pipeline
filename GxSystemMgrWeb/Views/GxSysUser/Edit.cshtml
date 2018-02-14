@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "管线管理系统首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} 
+
+@model Gx.Models.GX_SYS_USER
+ 
+@using (Html.BeginForm("Edit", "GxSysUser", FormMethod.Post))
+{
+    <input type="hidden" name="Id" value="@Model.USERID"/>
+    <div style="padding: 10px;">
+        <ul class="form_ul">
+            <li>
+                <label>登录名：</label>
+                <input type="text" class="easyui-validatebox" name="USERID" style="width: 250px;" required="true" value="@Model.USERID" />
+            </li>
+            <li>
+                <label>密码：</label>
+                <input type="password" class="easyui-validatebox" name="USERPWD" value="@Model.USERPWD" style="width: 250px;" validtype="length[6,18]" />
+                <input type="hidden" name="pwd" value="@Model.USERPWD"/>
+            </li>
+            <li>
+                <label>真实姓名：</label>
+                <input type="text" class="easyui-validatebox" name="USERNAME" style="width: 250px;" required="true" validtype="chinese" value="@Model.USERNAME" />
+            </li>
+             <li>
+                <label>手机号码：</label>
+                <input type="text" class="easyui-validatebox" name="USERMOBILE" style="width: 250px;" required="true" value="@Model.USERMOBILE" />
+            </li>
+            <li>
+                <label>邮件地址：</label>
+                <input type="email" class="easyui-validatebox" name="USEREMAIL" style="width: 250px;" value="@Model.USEREMAIL" />
+            </li>
+            @*<li>
+                <label>用户角色：</label>
+                <input name="LoginRole" id="LoginRole" class="easyui-combobox" data-options="url:'/Sys_Role/GetRoles',valueField:'Value',textField:'Text',value:'@Model.LoginRoleId'" />
+            </li>*@
+            @*<li>
+                <label>用户角色：</label>
+                <select name="UserType" id="UserType">
+                    <option value="1">施工单位</option>
+                    <option value="2">监理单位</option> 
+                    <option value="3">跟测单位</option>
+                    <option value="4">网建验收部负责人</option> 
+                    <option value="5">网建验收验收员</option>
+                    <option value="6">线路分中心</option> 
+                    <option value="7">资产管理中心</option>
+                    <option value="8">系统管理员</option> 
+                </select>
+            </li> *@
+            <li>
+                <label>状态：</label>
+                <select name="USERSTATUS" id="USERSTATUS">
+                    <option value="10" @(Model.USERSTATUS==10 ? "selected=\"selected\"":"")>正常</option>
+                    <option value="2" @(Model.USERSTATUS==2 ? "selected=\"selected\"":"")>禁止登陆</option>
+                    <option value="1" @(Model.USERSTATUS==1 ? "selected=\"selected\"":"")>已删除</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $("#USERSTATUS").combobox();
+        $("#USERSTATUS").combobox('setValue', '@Model.USERSTATUS');
+    </script>
+}

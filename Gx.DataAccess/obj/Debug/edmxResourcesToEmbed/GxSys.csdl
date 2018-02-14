@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GxEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GX_DICT_CONFIG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TYPE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PARENTID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SORT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYTIME" Type="DateTime" />
+    <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DELETETIME" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="GX_GKXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GKXXID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="GKBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GKCL" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="SYZT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ZKHS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ZKLS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ZKSL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="GKSZH" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="GKSZL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYTIME" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="GX_GXRJRELATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GXXXID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="RJXXID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UPS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISNEW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="JYJGCBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SSGCJH" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_GXXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="XMYSXXID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="GCBH" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="GXWZ" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="GXCD" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DXLX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GXLX" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="JSZT" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="YWLX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GJZ" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="XNZC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GKCL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SYZT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="GKHS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="GKLS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PLSX" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="GXZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYTIME" Type="DateTime" />
+    <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DELETETIME" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="GX_LEAVEOPINION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APPINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ACTIVITYID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REMARK" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="CHANGEDTIME" Type="DateTime" />
+    <Property Name="CHANGEDUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CHANGEDUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GX_PHOTOGALLERY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PARENTID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TPBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TJSJ" Type="DateTime" />
+    <Property Name="SFYX" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SORT" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_RJXX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="XMYSXXID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="GCBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RJBH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="RJMC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GCRJBH" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="JGSL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DXLX" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RSJCC" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="JGLX" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="GJZ" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LATITUDE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="RJZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYTIME" Type="DateTime" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DELETETIME" Type="DateTime" />
+    <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GX_SYS_MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MODELID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MENUNAMC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MENUURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MENUBZ" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MENUPARENTID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MENUSTATUS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYTIME" Type="DateTime" />
+    <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DELETETIME" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="GX_SYS_MODELS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REMARK" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FLAG" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DELETETIME" Type="DateTime" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYTIME" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="GX_SYS_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROLENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROLEDESC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ROLESTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CREATEBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYTIME" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="GX_SYS_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USERCODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERPWD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USERMOBILE" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="USEREMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERSEX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="USERSTATUS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LOGINIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="LOGINTIME" Type="DateTime" />
+    <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYTIME" Type="DateTime" />
+    <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DELETETIME" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="GX_SYS_USERROLERELATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GX__ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="USERID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ROLEID" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_SYSTEMLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MENUURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TIMEFLAG" Type="DateTime" />
+    <Property Name="ACTNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CONTENTS" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="ACTUSERCODE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="ACTRESULT" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GX_TASKWORK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="XMYSXXID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="USERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="XLZXID" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="GX_WFACTIVITYINSTANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PROCESSINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APPINSTANCECODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ACTIVITYGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACTIVITYTYPE" Type="Int16" />
+    <Property Name="ACTIVITYSTATE" Type="Int16" />
+    <Property Name="ASSIGNEDTOUSERIDS" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="ASSIGNEDTOUSERNAMES" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="BACKWARDTYPE" Type="Int16" />
+    <Property Name="BACKSRCACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="GATEWAYDIRECTIONTYPEID" Type="Int16" />
+    <Property Name="CANRENEWINSTANCE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TOKENSREQUIRED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TOKENSHAD" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="COMPLEXTYPE" Type="Int16" />
+    <Property Name="MIHOSTACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="COMPLETEORDER" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SIGNFORWARDTYPE" Type="Int16" />
+    <Property Name="CREATEDBYUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDDATETIME" Type="DateTime" />
+    <Property Name="LASTUPDATEDBYUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LASTUPDATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LASTUPDATEDDATETIME" Type="DateTime" />
+    <Property Name="ENDEDDATETIME" Type="DateTime" />
+    <Property Name="ENDEDBYUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ENDEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RECORDSTATUSINVALID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="GX_WFPROCESS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROCESSNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VERSION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ISUSING" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="XMLFILENAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XMLFILEPATH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XMLCONTENT" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDDATETIME" Type="DateTime" />
+    <Property Name="LASTUPDATEDDATETIME" Type="DateTime" />
+    <Property Name="ROWVERSIONID" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="GX_WFPROCESSINSTANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROCESSNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VERSION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="APPINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APPINSTANCECODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PROCESSSTATE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PARENTPROCESSINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PARENTPROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="INVOKEDACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="INVOKEDACTIVITYGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDDATETIME" Type="DateTime" />
+    <Property Name="CREATEDBYUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LASTUPDATEDDATETIME" Type="DateTime" />
+    <Property Name="LASTUPDATEDBYUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LASTUPDATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ENDEDDATETIME" Type="DateTime" />
+    <Property Name="ENDEDBYUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ENDEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RECORDSTATUSINVALID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="GX_WFTRANSITIONINSTANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TRANSITIONGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROCESSINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TRANSITIONTYPE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FLYINGTYPE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROMACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROMACTIVITYGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FROMACTIVITYTYPE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FROMACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TOACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TOACTIVITYGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TOACTIVITYTYPE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TOACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONDITIONPARSERESULT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CREATEDBYUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDDATETIME" Type="DateTime" />
+    <Property Name="RECORDSTATUSINVALID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ROWVERSIONID" Type="DateTime" Precision="6" />
+    <Property Name="APPINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="APPINSTANCECODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GX_XLZX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROLEID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYTIME" Type="DateTime" />
+    <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DELETETIME" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="GX_YSZLFILE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="XMYSXXID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TYPE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FILENAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FILEURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FILESIZE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FILEZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UPLOADTIME" Type="DateTime" />
+    <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ADELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DELETETIME" Type="DateTime" />
+  </EntityType>
+  <EntityContainer Name="GxSysEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GX_DICT_CONFIG" EntityType="Self.GX_DICT_CONFIG" />
+    <EntitySet Name="GX_GKXX" EntityType="Self.GX_GKXX" />
+    <EntitySet Name="GX_GXRJRELATION" EntityType="Self.GX_GXRJRELATION" />
+    <EntitySet Name="GX_GXXX" EntityType="Self.GX_GXXX" />
+    <EntitySet Name="GX_LEAVEOPINION" EntityType="Self.GX_LEAVEOPINION" />
+    <EntitySet Name="GX_PHOTOGALLERY" EntityType="Self.GX_PHOTOGALLERY" />
+    <EntitySet Name="GX_RJXX" EntityType="Self.GX_RJXX" />
+    <EntitySet Name="GX_SYS_MENU" EntityType="Self.GX_SYS_MENU" />
+    <EntitySet Name="GX_SYS_MODELS" EntityType="Self.GX_SYS_MODELS" />
+    <EntitySet Name="GX_SYS_ROLE" EntityType="Self.GX_SYS_ROLE" />
+    <EntitySet Name="GX_SYS_USER" EntityType="Self.GX_SYS_USER" />
+    <EntitySet Name="GX_SYS_USERROLERELATE" EntityType="Self.GX_SYS_USERROLERELATE" />
+    <EntitySet Name="GX_SYSTEMLOG" EntityType="Self.GX_SYSTEMLOG" />
+    <EntitySet Name="GX_TASKWORK" EntityType="Self.GX_TASKWORK" />
+    <EntitySet Name="GX_WFACTIVITYINSTANCE" EntityType="Self.GX_WFACTIVITYINSTANCE" />
+    <EntitySet Name="GX_WFPROCESS" EntityType="Self.GX_WFPROCESS" />
+    <EntitySet Name="GX_WFPROCESSINSTANCE" EntityType="Self.GX_WFPROCESSINSTANCE" />
+    <EntitySet Name="GX_WFTRANSITIONINSTANCE" EntityType="Self.GX_WFTRANSITIONINSTANCE" />
+    <EntitySet Name="GX_XLZX" EntityType="Self.GX_XLZX" />
+    <EntitySet Name="GX_YSZLFILE" EntityType="Self.GX_YSZLFILE" />
+  </EntityContainer>
+</Schema>

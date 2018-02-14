@@ -1,0 +1,178 @@
+﻿.hide {
+    display: none;
+}
+
+:focus {
+    outline: none;
+}
+
+input[type=text],
+input[type=password],
+textarea,
+.easyui_border {
+    border: 1px solid #95B8E7;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.form_ul {
+    margin: 0;
+    padding: 0;
+}
+
+    .form_ul li {
+        padding: 0;
+    }
+
+        .form_ul li .w250 {
+            width: 250px;
+        }
+
+        .form_ul li .w300 {
+            width: 400px;
+        }
+
+        .form_ul li textarea {
+            height: 50px;
+        }
+
+        .form_ul li label {
+            height: 30px;
+            line-height: 30px;
+            width: 100px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+        }
+
+            .form_ul li label.rt {
+                text-align: right;
+            }
+
+.form_table {
+    width: 800px;
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+    .form_table th {
+        font-weight: normal;
+        padding: 5px 0;
+        width: 80px;
+        text-align: right;
+    }
+
+    .form_table td {
+        padding: 5px 0;
+    }
+
+        .form_table td input[type=checkbox] {
+            vertical-align: middle;
+        }
+
+        .form_table td .w500 {
+            width: 500px;
+        }
+
+        .form_table td .w200 {
+            width: 150px;
+        }
+
+.file_hide {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: visible;
+}
+
+.preview {
+    display: none;
+    width: 100px;
+    height: 70px;
+}
+
+.imgpreview {
+    display: none;
+    height: 130px;
+    width: 90px;
+    border: 1px #5f9ea0 dashed;
+}
+
+.imgpreviewdis { 
+    height: 130px;
+    width: 90px;
+    border: 1px #5f9ea0 dashed;
+}
+
+.splitline {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #95B8E7;
+}
+
+.picmng {
+    overflow: hidden;
+}
+
+    .picmng .imgitem {
+        width: 104px;
+        height: 94px;
+        border: 1px solid #ddd;
+        position: relative;
+        z-index: 1;
+        float: left;
+        margin: 5px 5px 5px 5px;
+        overflow: hidden;
+    }
+
+    .picmng .wait {
+        border: 1px solid #20b2aa;
+    }
+
+    .picmng .imgitem img {
+        width: 100px;
+        height: 70px;
+        position: absolute;
+        z-index: 2;
+        left: 2px;
+        top: 2px;
+    }
+
+    .picmng .imgitem .fl {
+        position: absolute;
+        z-index: -1;
+        left: -500px;
+        top: -500px;
+    }
+
+    .picmng .imgitem .del, .picmng .imgitem .cover {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        position: absolute;
+        z-index: 3;
+        bottom: 0px;
+        right: 2px;
+        background: url(/content/images/del.png) no-repeat center;
+    }
+
+    .picmng .imgitem .cover {
+        right: 22px;
+        background: url(/content/images/cover.png) no-repeat center;
+    }
+
+    .picmng .imgitem .iscover {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        z-index: 5;
+        left: 1px;
+        top: 1px;
+        background: url(/content/images/iscover.png) no-repeat;
+    }

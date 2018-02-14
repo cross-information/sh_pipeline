@@ -30,7 +30,7 @@ namespace Gx.DataAccess.Repository
         /// <param name="isNewContext">是否需要新建连接</param>
         public RepositoryBase(bool isNewContext = false)
         {
-            this.context = isNewContext ? new GxEntities() : UnitOfWork.Instance.Context;
+            this.context = isNewContext ? new GxSysEntities() : UnitOfWork.Instance.Context;
         }
 
         public RepositoryBase()

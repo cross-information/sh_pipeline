@@ -12,29 +12,29 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_wftransitionInstance
+    public partial class GX_WFTRANSITIONINSTANCE
     {
-        public int Id { get; set; }
-        public string TransitionGUID { get; set; }
-        public Nullable<int> ProcessInstanceID { get; set; }
-        public string ProcessGUID { get; set; }
-        public Nullable<byte> TransitionType { get; set; }
-        public Nullable<byte> FlyingType { get; set; }
-        public Nullable<int> FromActivityInstanceID { get; set; }
-        public string FromActivityGUID { get; set; }
-        public Nullable<short> FromActivityType { get; set; }
-        public string FromActivityName { get; set; }
-        public Nullable<int> ToActivityInstanceID { get; set; }
-        public string ToActivityGUID { get; set; }
-        public Nullable<short> ToActivityType { get; set; }
-        public string ToActivityName { get; set; }
-        public Nullable<byte> ConditionParseResult { get; set; }
-        public string CreatedByUserID { get; set; }
-        public string CreatedByUserName { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
-        public Nullable<byte> RecordStatusInvalid { get; set; }
-        public byte[] RowVersionID { get; set; }
-        public Nullable<int> AppinstanceId { get; set; }
-        public string AppInstanceCode { get; set; }
+        public decimal ID { get; set; }
+        public string TRANSITIONGUID { get; set; }
+        public Nullable<decimal> PROCESSINSTANCEID { get; set; }
+        public string PROCESSGUID { get; set; }
+        public Nullable<decimal> TRANSITIONTYPE { get; set; }
+        public Nullable<decimal> FLYINGTYPE { get; set; }
+        public Nullable<decimal> FROMACTIVITYINSTANCEID { get; set; }
+        public string FROMACTIVITYGUID { get; set; }
+        public Nullable<decimal> FROMACTIVITYTYPE { get; set; }
+        public string FROMACTIVITYNAME { get; set; }
+        public Nullable<decimal> TOACTIVITYINSTANCEID { get; set; }
+        public string TOACTIVITYGUID { get; set; }
+        public Nullable<decimal> TOACTIVITYTYPE { get; set; }
+        public string TOACTIVITYNAME { get; set; }
+        public Nullable<decimal> CONDITIONPARSERESULT { get; set; }
+        public string CREATEDBYUSERID { get; set; }
+        public string CREATEDBYUSERNAME { get; set; }
+        public Nullable<System.DateTime> CREATEDDATETIME { get; set; }
+        public Nullable<decimal> RECORDSTATUSINVALID { get; set; }
+        public Nullable<System.DateTime> ROWVERSIONID { get; set; }
+        public Nullable<decimal> APPINSTANCEID { get; set; }
+        public string APPINSTANCECODE { get; set; }
     }
 }

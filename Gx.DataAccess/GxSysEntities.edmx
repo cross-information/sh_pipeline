@@ -1,0 +1,1458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GxEntities.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GX_DICT_CONFIG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="STATUS" Type="char" MaxLength="1" />
+          <Property Name="PARENTID" Type="number" Precision="38" Scale="0" />
+          <Property Name="SORT" Type="number" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="MODIFYTIME" Type="date" />
+          <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="DELETETIME" Type="date" />
+          <Property Name="DICTDESC" Type="nvarchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="GX_GKXX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="GXXXID" Type="number" Precision="38" Scale="0" />
+          <Property Name="GKBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="GKCL" Type="nvarchar2" MaxLength="40" />
+          <Property Name="SYZT" Type="number" Precision="38" Scale="0" />
+          <Property Name="ZKHS" Type="number" Precision="38" Scale="0" />
+          <Property Name="ZKLS" Type="number" Precision="38" Scale="0" />
+          <Property Name="ZKSL" Type="number" Precision="38" Scale="0" />
+          <Property Name="GKSZH" Type="number" Precision="38" Scale="0" />
+          <Property Name="GKSZL" Type="number" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="MODIFYTIME" Type="date" />
+        </EntityType>
+        <EntityType Name="GX_GXRJRELATION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="GXXXID" Type="number" Precision="38" Scale="0" />
+          <Property Name="RJXXID" Type="number" Precision="38" Scale="0" />
+          <Property Name="UPS" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ISNEW" Type="char" MaxLength="1" />
+          <Property Name="JYJGCBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SSGCJH" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_GXXX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+          <Property Name="GCBH" Type="nvarchar2" MaxLength="40" />
+          <Property Name="GXWZ" Type="nvarchar2" MaxLength="40" />
+          <Property Name="GXCD" Type="float" Precision="126" Scale="0" />
+          <Property Name="DXLX" Type="nvarchar2" MaxLength="20" />
+          <Property Name="GXLX" Type="nvarchar2" MaxLength="40" />
+          <Property Name="JSZT" Type="nvarchar2" MaxLength="40" />
+          <Property Name="YWLX" Type="nvarchar2" MaxLength="20" />
+          <Property Name="GJZ" Type="nvarchar2" MaxLength="22" />
+          <Property Name="XNZC" Type="nvarchar2" MaxLength="10" />
+          <Property Name="GKCL" Type="nvarchar2" MaxLength="20" />
+          <Property Name="SYZT" Type="number" Precision="38" Scale="0" />
+          <Property Name="GKHS" Type="number" Precision="38" Scale="0" />
+          <Property Name="GKLS" Type="number" Precision="38" Scale="0" />
+          <Property Name="PLSX" Type="number" Precision="38" Scale="0" />
+          <Property Name="GXZT" Type="char" MaxLength="1" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="MODIFYTIME" Type="date" />
+          <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="DELETETIME" Type="date" />
+          <Property Name="GH" Type="nvarchar2" MaxLength="40" />
+          <Property Name="JJ" Type="number" Precision="38" Scale="0" />
+          <Property Name="STQK" Type="char" MaxLength="1" />
+          <Property Name="QJ" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ZJ" Type="nvarchar2" MaxLength="50" />
+          <Property Name="QJGKWZ" Type="nvarchar2" MaxLength="10" />
+          <Property Name="ZJGKWZ" Type="nvarchar2" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="GX_LEAVEOPINION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ACTIVITYID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="REMARK" Type="nvarchar2" MaxLength="2000" />
+          <Property Name="CHANGEDTIME" Type="date" />
+          <Property Name="CHANGEDUSERID" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CHANGEDUSERNAME" Type="nvarchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GX_PHOTOGALLERY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PARENTID" Type="number" Precision="38" Scale="0" />
+          <Property Name="TPBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="URL" Type="nvarchar2" MaxLength="200" />
+          <Property Name="TJSJ" Type="date" />
+          <Property Name="SFYX" Type="number" Precision="38" Scale="0" />
+          <Property Name="SORT" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_RJXX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+          <Property Name="GCBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="RJBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="RJMC" Type="nvarchar2" MaxLength="100" />
+          <Property Name="GCRJBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="JGSL" Type="number" Precision="38" Scale="0" />
+          <Property Name="DXLX" Type="nvarchar2" MaxLength="40" />
+          <Property Name="RSJCC" Type="nvarchar2" MaxLength="40" />
+          <Property Name="JGLX" Type="nvarchar2" MaxLength="40" />
+          <Property Name="GJZ" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LONGITUDE" Type="nvarchar2" MaxLength="30" />
+          <Property Name="LATITUDE" Type="nvarchar2" MaxLength="30" />
+          <Property Name="RJZT" Type="char" MaxLength="1" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="MODIFYTIME" Type="date" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="DELETETIME" Type="date" />
+          <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="GX_SYS_MENU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MODELID" Type="number" Precision="38" Scale="0" />
+          <Property Name="MENUNAMC" Type="nvarchar2" MaxLength="50" />
+          <Property Name="MENUURL" Type="nvarchar2" MaxLength="200" />
+          <Property Name="MENUBZ" Type="nvarchar2" MaxLength="200" />
+          <Property Name="MENUPARENTID" Type="number" Precision="38" Scale="0" />
+          <Property Name="MENUSTATUS" Type="number" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="MODIFYTIME" Type="date" />
+          <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="DELETETIME" Type="date" />
+        </EntityType>
+        <EntityType Name="GX_SYS_MODELS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="REMARK" Type="nvarchar2" MaxLength="200" />
+          <Property Name="FLAG" Type="number" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="DELETETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="MODIFYTIME" Type="date" />
+        </EntityType>
+        <EntityType Name="GX_SYS_PERMISSIONS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PERDESC" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PERSTATUS" Type="number" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="MODIFYTIME" Type="date" />
+        </EntityType>
+        <EntityType Name="GX_SYS_ROLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ROLENAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ROLEDESC" Type="nvarchar2" MaxLength="200" />
+          <Property Name="ROLESTATUS" Type="char" MaxLength="1" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="MODIFYTIME" Type="date" />
+        </EntityType>
+        <EntityType Name="GX_SYS_ROLEMENU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="MENUID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_SYS_ROLEPERRELATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PERID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_SYS_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USERID" Type="nvarchar2" MaxLength="20" />
+          <Property Name="USERCODE" Type="nvarchar2" MaxLength="30" />
+          <Property Name="USERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="USERPWD" Type="nvarchar2" MaxLength="50" />
+          <Property Name="USERMOBILE" Type="nvarchar2" MaxLength="11" />
+          <Property Name="USEREMAIL" Type="nvarchar2" MaxLength="50" />
+          <Property Name="USERSEX" Type="char" MaxLength="1" />
+          <Property Name="USERSTATUS" Type="number" Precision="38" Scale="0" />
+          <Property Name="LOGINIP" Type="nvarchar2" MaxLength="30" />
+          <Property Name="LOGINTIME" Type="date" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="MODIFYTIME" Type="date" />
+          <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="DELETETIME" Type="date" />
+        </EntityType>
+        <EntityType Name="GX_SYS_USERROLERELATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="GX__ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="USERID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_SYSTEMLOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MENUURL" Type="nvarchar2" MaxLength="200" />
+          <Property Name="TIMEFLAG" Type="date" />
+          <Property Name="ACTNAME" Type="nvarchar2" MaxLength="200" />
+          <Property Name="CONTENTS" Type="nvarchar2" MaxLength="2000" />
+          <Property Name="ACTUSERCODE" Type="nvarchar2" MaxLength="40" />
+          <Property Name="ACTRESULT" Type="nvarchar2" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="GX_TASKWORK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+          <Property Name="USERID" Type="nvarchar2" MaxLength="20" />
+          <Property Name="XLZXID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_WFACTIVITYINSTANCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="APPNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="APPINSTANCECODE" Type="nvarchar2" MaxLength="30" />
+          <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="ACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ACTIVITYTYPE" Type="number" Precision="5" Scale="0" />
+          <Property Name="ACTIVITYSTATE" Type="number" Precision="5" Scale="0" />
+          <Property Name="ASSIGNEDTOUSERIDS" Type="nvarchar2" MaxLength="2000" />
+          <Property Name="ASSIGNEDTOUSERNAMES" Type="nvarchar2" MaxLength="2000" />
+          <Property Name="BACKWARDTYPE" Type="number" Precision="5" Scale="0" />
+          <Property Name="BACKSRCACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="GATEWAYDIRECTIONTYPEID" Type="number" Precision="5" Scale="0" />
+          <Property Name="CANRENEWINSTANCE" Type="number" Precision="38" Scale="0" />
+          <Property Name="TOKENSREQUIRED" Type="number" Precision="38" Scale="0" />
+          <Property Name="TOKENSHAD" Type="number" Precision="38" Scale="0" />
+          <Property Name="COMPLEXTYPE" Type="number" Precision="5" Scale="0" />
+          <Property Name="MIHOSTACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="COMPLETEORDER" Type="float" Precision="126" Scale="0" />
+          <Property Name="SIGNFORWARDTYPE" Type="number" Precision="5" Scale="0" />
+          <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDDATETIME" Type="date" />
+          <Property Name="LASTUPDATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LASTUPDATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LASTUPDATEDDATETIME" Type="date" />
+          <Property Name="ENDEDDATETIME" Type="date" />
+          <Property Name="ENDEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ENDEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+        </EntityType>
+        <EntityType Name="GX_WFPROCESS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="PROCESSNAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="VERSION" Type="nvarchar2" MaxLength="20" />
+          <Property Name="ISUSING" Type="char" MaxLength="1" />
+          <Property Name="XMLFILENAME" Type="nvarchar2" MaxLength="200" />
+          <Property Name="XMLFILEPATH" Type="nvarchar2" MaxLength="200" />
+          <Property Name="XMLCONTENT" Type="nvarchar2" MaxLength="2000" />
+          <Property Name="DESCRIPTION" Type="nvarchar2" MaxLength="2000" />
+          <Property Name="CREATEDDATETIME" Type="date" />
+          <Property Name="LASTUPDATEDDATETIME" Type="date" />
+          <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+        </EntityType>
+        <EntityType Name="GX_WFPROCESSINSTANCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="PROCESSNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="VERSION" Type="nvarchar2" MaxLength="20" />
+          <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="APPNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="APPINSTANCECODE" Type="nvarchar2" MaxLength="30" />
+          <Property Name="PROCESSSTATE" Type="number" Precision="38" Scale="0" />
+          <Property Name="PARENTPROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PARENTPROCESSGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="INVOKEDACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="INVOKEDACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="CREATEDDATETIME" Type="date" />
+          <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LASTUPDATEDDATETIME" Type="date" />
+          <Property Name="LASTUPDATEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+          <Property Name="LASTUPDATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ENDEDDATETIME" Type="date" />
+          <Property Name="ENDEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+          <Property Name="ENDEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+        </EntityType>
+        <EntityType Name="GX_WFTASK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="APPNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="ACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="TASKTYPE" Type="number" Precision="5" Scale="0" />
+          <Property Name="TASKSTATE" Type="number" Precision="5" Scale="0" />
+          <Property Name="ASSIGNEDTOUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ASSIGNEDTOUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDDATETIME" Type="date" />
+          <Property Name="LASTUPDATEDDATETIME" Type="date" />
+          <Property Name="LASTUPDATEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+          <Property Name="LASTUPDATEDBYUSERNAME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="ENDEDBYUSERID" Type="nvarchar2" MaxLength="20" />
+          <Property Name="ENDEDBYUSERNAME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="ENDEDDATETIME" Type="date" />
+          <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+        </EntityType>
+        <EntityType Name="GX_WFTRANSITIONINSTANCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TRANSITIONGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="PROCESSINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="TRANSITIONTYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="FLYINGTYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="FROMACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="FROMACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="FROMACTIVITYTYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="FROMACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="TOACTIVITYINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="TOACTIVITYGUID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="TOACTIVITYTYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="TOACTIVITYNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CONDITIONPARSERESULT" Type="number" Precision="38" Scale="0" />
+          <Property Name="CREATEDBYUSERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDBYUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDDATETIME" Type="date" />
+          <Property Name="RECORDSTATUSINVALID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ROWVERSIONID" Type="timestamp" Precision="6" />
+          <Property Name="APPINSTANCEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="APPINSTANCECODE" Type="nvarchar2" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="GX_XLZX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ROLEID" Type="number" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="STATUS" Type="number" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="MODIFYTIME" Type="date" />
+          <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="DELETETIME" Type="date" />
+        </EntityType>
+        <EntityType Name="GX_XMYSXX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HTBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="GCMC" Type="nvarchar2" MaxLength="100" />
+          <Property Name="GCBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SGDWMC" Type="nvarchar2" MaxLength="100" />
+          <Property Name="JLDWDM" Type="nvarchar2" MaxLength="50" />
+          <Property Name="YSZT" Type="number" Precision="38" Scale="0" />
+          <Property Name="HTSJ" Type="date" />
+          <Property Name="CREATETIME" Type="date" />
+          <Property Name="YSRY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="XLZX" Type="nvarchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GX_YSZLFILE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="XMYSXXID" Type="number" Precision="38" Scale="0" />
+          <Property Name="TYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="FILENAME" Type="nvarchar2" MaxLength="200" />
+          <Property Name="FILEURL" Type="nvarchar2" MaxLength="200" />
+          <Property Name="FILESIZE" Type="number" Precision="38" Scale="0" />
+          <Property Name="FILEZT" Type="char" MaxLength="1" />
+          <Property Name="UPLOADTIME" Type="date" />
+          <Property Name="CREATEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="ADELETEBY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="DELETETIME" Type="date" />
+        </EntityType>
+        <EntityContainer Name="GxEntitiesStoreContainer">
+          <EntitySet Name="GX_DICT_CONFIG" EntityType="Self.GX_DICT_CONFIG" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_GKXX" EntityType="Self.GX_GKXX" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_GXRJRELATION" EntityType="Self.GX_GXRJRELATION" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_GXXX" EntityType="Self.GX_GXXX" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_LEAVEOPINION" EntityType="Self.GX_LEAVEOPINION" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_PHOTOGALLERY" EntityType="Self.GX_PHOTOGALLERY" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_RJXX" EntityType="Self.GX_RJXX" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_SYS_MENU" EntityType="Self.GX_SYS_MENU" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_SYS_MODELS" EntityType="Self.GX_SYS_MODELS" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_SYS_PERMISSIONS" EntityType="Self.GX_SYS_PERMISSIONS" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_SYS_ROLE" EntityType="Self.GX_SYS_ROLE" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_SYS_ROLEMENU" EntityType="Self.GX_SYS_ROLEMENU" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_SYS_ROLEPERRELATE" EntityType="Self.GX_SYS_ROLEPERRELATE" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_SYS_USER" EntityType="Self.GX_SYS_USER" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_SYS_USERROLERELATE" EntityType="Self.GX_SYS_USERROLERELATE" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_SYSTEMLOG" EntityType="Self.GX_SYSTEMLOG" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_TASKWORK" EntityType="Self.GX_TASKWORK" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_WFACTIVITYINSTANCE" EntityType="Self.GX_WFACTIVITYINSTANCE" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_WFPROCESS" EntityType="Self.GX_WFPROCESS" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_WFPROCESSINSTANCE" EntityType="Self.GX_WFPROCESSINSTANCE" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_WFTASK" EntityType="Self.GX_WFTASK" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_WFTRANSITIONINSTANCE" EntityType="Self.GX_WFTRANSITIONINSTANCE" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_XLZX" EntityType="Self.GX_XLZX" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_XMYSXX" EntityType="Self.GX_XMYSXX" Schema="GXSYS" store:Type="Tables" />
+          <EntitySet Name="GX_YSZLFILE" EntityType="Self.GX_YSZLFILE" Schema="GXSYS" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GxEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GxSysEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GX_DICT_CONFIG" EntityType="GxEntities.GX_DICT_CONFIG" />
+          <EntitySet Name="GX_GKXX" EntityType="GxEntities.GX_GKXX" />
+          <EntitySet Name="GX_GXRJRELATION" EntityType="GxEntities.GX_GXRJRELATION" />
+          <EntitySet Name="GX_GXXX" EntityType="GxEntities.GX_GXXX" />
+          <EntitySet Name="GX_LEAVEOPINION" EntityType="GxEntities.GX_LEAVEOPINION" />
+          <EntitySet Name="GX_PHOTOGALLERY" EntityType="GxEntities.GX_PHOTOGALLERY" />
+          <EntitySet Name="GX_RJXX" EntityType="GxEntities.GX_RJXX" />
+          <EntitySet Name="GX_SYS_MENU" EntityType="GxEntities.GX_SYS_MENU" />
+          <EntitySet Name="GX_SYS_MODELS" EntityType="GxEntities.GX_SYS_MODELS" />
+          <EntitySet Name="GX_SYS_PERMISSIONS" EntityType="GxEntities.GX_SYS_PERMISSIONS" />
+          <EntitySet Name="GX_SYS_ROLE" EntityType="GxEntities.GX_SYS_ROLE" />
+          <EntitySet Name="GX_SYS_ROLEMENU" EntityType="GxEntities.GX_SYS_ROLEMENU" />
+          <EntitySet Name="GX_SYS_ROLEPERRELATE" EntityType="GxEntities.GX_SYS_ROLEPERRELATE" />
+          <EntitySet Name="GX_SYS_USER" EntityType="GxEntities.GX_SYS_USER" />
+          <EntitySet Name="GX_SYS_USERROLERELATE" EntityType="GxEntities.GX_SYS_USERROLERELATE" />
+          <EntitySet Name="GX_SYSTEMLOG" EntityType="GxEntities.GX_SYSTEMLOG" />
+          <EntitySet Name="GX_TASKWORK" EntityType="GxEntities.GX_TASKWORK" />
+          <EntitySet Name="GX_WFACTIVITYINSTANCE" EntityType="GxEntities.GX_WFACTIVITYINSTANCE" />
+          <EntitySet Name="GX_WFPROCESS" EntityType="GxEntities.GX_WFPROCESS" />
+          <EntitySet Name="GX_WFPROCESSINSTANCE" EntityType="GxEntities.GX_WFPROCESSINSTANCE" />
+          <EntitySet Name="GX_WFTASK" EntityType="GxEntities.GX_WFTASK" />
+          <EntitySet Name="GX_WFTRANSITIONINSTANCE" EntityType="GxEntities.GX_WFTRANSITIONINSTANCE" />
+          <EntitySet Name="GX_XLZX" EntityType="GxEntities.GX_XLZX" />
+          <EntitySet Name="GX_XMYSXX" EntityType="GxEntities.GX_XMYSXX" />
+          <EntitySet Name="GX_YSZLFILE" EntityType="GxEntities.GX_YSZLFILE" />
+        </EntityContainer>
+        <EntityType Name="GX_DICT_CONFIG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PARENTID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SORT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+          <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DELETETIME" Type="DateTime" />
+          <Property Name="DICTDESC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GX_GKXX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="GXXXID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GKBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GKCL" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="SYZT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ZKHS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ZKLS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ZKSL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GKSZH" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GKSZL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="GX_GXRJRELATION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="GXXXID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RJXXID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="UPS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ISNEW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="JYJGCBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SSGCJH" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_GXXX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="XMYSXXID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GCBH" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="GXWZ" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="GXCD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DXLX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GXLX" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="JSZT" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="YWLX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GJZ" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="XNZC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="GKCL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SYZT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GKHS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GKLS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLSX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GXZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+          <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DELETETIME" Type="DateTime" />
+          <Property Name="GH" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="JJ" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="STQK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="QJ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZJ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QJGKWZ" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ZJGKWZ" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GX_LEAVEOPINION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="APPINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ACTIVITYID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REMARK" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGEDTIME" Type="DateTime" />
+          <Property Name="CHANGEDUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGEDUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GX_PHOTOGALLERY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PARENTID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TPBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TJSJ" Type="DateTime" />
+          <Property Name="SFYX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SORT" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_RJXX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="XMYSXXID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GCBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RJBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RJMC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GCRJBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JGSL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DXLX" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="RSJCC" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="JGLX" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="GJZ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LONGITUDE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LATITUDE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="RJZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DELETETIME" Type="DateTime" />
+          <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GX_SYS_MENU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="MODELID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MENUNAMC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MENUURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MENUBZ" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MENUPARENTID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MENUSTATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+          <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DELETETIME" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="GX_SYS_MODELS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REMARK" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FLAG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DELETETIME" Type="DateTime" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="GX_SYS_PERMISSIONS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PERDESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PERSTATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="GX_SYS_ROLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ROLENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLEDESC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ROLESTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CREATEBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="GX_SYS_ROLEMENU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ROLEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MENUID" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_SYS_ROLEPERRELATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ROLEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PERID" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_SYS_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="USERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USERCODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERPWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERMOBILE" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="USEREMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERSEX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="USERSTATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LOGINIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LOGINTIME" Type="DateTime" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+          <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DELETETIME" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="GX_SYS_USERROLERELATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="GX__ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="USERID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ROLEID" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_SYSTEMLOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="MENUURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TIMEFLAG" Type="DateTime" />
+          <Property Name="ACTNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CONTENTS" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ACTUSERCODE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ACTRESULT" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GX_TASKWORK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="XMYSXXID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="USERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="XLZXID" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="GX_WFACTIVITYINSTANCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PROCESSINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="APPINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="APPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APPINSTANCECODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVITYGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVITYTYPE" Type="Int16" />
+          <Property Name="ACTIVITYSTATE" Type="Int16" />
+          <Property Name="ASSIGNEDTOUSERIDS" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ASSIGNEDTOUSERNAMES" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="BACKWARDTYPE" Type="Int16" />
+          <Property Name="BACKSRCACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GATEWAYDIRECTIONTYPEID" Type="Int16" />
+          <Property Name="CANRENEWINSTANCE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TOKENSREQUIRED" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TOKENSHAD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="COMPLEXTYPE" Type="Int16" />
+          <Property Name="MIHOSTACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="COMPLETEORDER" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SIGNFORWARDTYPE" Type="Int16" />
+          <Property Name="CREATEDBYUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDATETIME" Type="DateTime" />
+          <Property Name="LASTUPDATEDBYUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LASTUPDATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LASTUPDATEDDATETIME" Type="DateTime" />
+          <Property Name="ENDEDDATETIME" Type="DateTime" />
+          <Property Name="ENDEDBYUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ENDEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RECORDSTATUSINVALID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ROWVERSIONID" Type="DateTime" Precision="6" />
+        </EntityType>
+        <EntityType Name="GX_WFPROCESS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PROCESSNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VERSION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ISUSING" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="XMLFILENAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="XMLFILEPATH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="XMLCONTENT" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDATETIME" Type="DateTime" />
+          <Property Name="LASTUPDATEDDATETIME" Type="DateTime" />
+          <Property Name="ROWVERSIONID" Type="DateTime" Precision="6" />
+        </EntityType>
+        <EntityType Name="GX_WFPROCESSINSTANCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PROCESSNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VERSION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="APPINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="APPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APPINSTANCECODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PROCESSSTATE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PARENTPROCESSINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PARENTPROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="INVOKEDACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="INVOKEDACTIVITYGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDATETIME" Type="DateTime" />
+          <Property Name="CREATEDBYUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LASTUPDATEDDATETIME" Type="DateTime" />
+          <Property Name="LASTUPDATEDBYUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LASTUPDATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ENDEDDATETIME" Type="DateTime" />
+          <Property Name="ENDEDBYUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ENDEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RECORDSTATUSINVALID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ROWVERSIONID" Type="DateTime" Precision="6" />
+        </EntityType>
+        <EntityType Name="GX_WFTASK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PROCESSINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="APPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APPINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVITYGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TASKTYPE" Type="Int16" />
+          <Property Name="TASKSTATE" Type="Int16" />
+          <Property Name="ASSIGNEDTOUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASSIGNEDTOUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDBYUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDATETIME" Type="DateTime" />
+          <Property Name="LASTUPDATEDDATETIME" Type="DateTime" />
+          <Property Name="LASTUPDATEDBYUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LASTUPDATEDBYUSERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ENDEDBYUSERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ENDEDBYUSERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ENDEDDATETIME" Type="DateTime" />
+          <Property Name="RECORDSTATUSINVALID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ROWVERSIONID" Type="DateTime" Precision="6" />
+        </EntityType>
+        <EntityType Name="GX_WFTRANSITIONINSTANCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TRANSITIONGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PROCESSINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PROCESSGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSITIONTYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FLYINGTYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FROMACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FROMACTIVITYGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FROMACTIVITYTYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FROMACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TOACTIVITYINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TOACTIVITYGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TOACTIVITYTYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TOACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CONDITIONPARSERESULT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CREATEDBYUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDBYUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDATETIME" Type="DateTime" />
+          <Property Name="RECORDSTATUSINVALID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ROWVERSIONID" Type="DateTime" Precision="6" />
+          <Property Name="APPINSTANCEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="APPINSTANCECODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GX_XLZX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ROLEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFYTIME" Type="DateTime" />
+          <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DELETETIME" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="GX_XMYSXX">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HTBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GCMC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GCBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SGDWMC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="JLDWDM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YSZT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="HTSJ" Type="DateTime" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="YSRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="XLZX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GX_YSZLFILE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="XMYSXXID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FILENAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FILEURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FILESIZE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FILEZT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UPLOADTIME" Type="DateTime" />
+          <Property Name="CREATEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ADELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DELETETIME" Type="DateTime" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GxEntitiesStoreContainer" CdmEntityContainer="GxSysEntities">
+          <EntitySetMapping Name="GX_DICT_CONFIG">
+            <EntityTypeMapping TypeName="GxEntities.GX_DICT_CONFIG">
+              <MappingFragment StoreEntitySet="GX_DICT_CONFIG">
+                <ScalarProperty Name="DICTDESC" ColumnName="DICTDESC" />
+                <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+                <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="SORT" ColumnName="SORT" />
+                <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_GKXX">
+            <EntityTypeMapping TypeName="GxEntities.GX_GKXX">
+              <MappingFragment StoreEntitySet="GX_GKXX">
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="GKSZL" ColumnName="GKSZL" />
+                <ScalarProperty Name="GKSZH" ColumnName="GKSZH" />
+                <ScalarProperty Name="ZKSL" ColumnName="ZKSL" />
+                <ScalarProperty Name="ZKLS" ColumnName="ZKLS" />
+                <ScalarProperty Name="ZKHS" ColumnName="ZKHS" />
+                <ScalarProperty Name="SYZT" ColumnName="SYZT" />
+                <ScalarProperty Name="GKCL" ColumnName="GKCL" />
+                <ScalarProperty Name="GKBH" ColumnName="GKBH" />
+                <ScalarProperty Name="GXXXID" ColumnName="GXXXID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_GXRJRELATION">
+            <EntityTypeMapping TypeName="GxEntities.GX_GXRJRELATION">
+              <MappingFragment StoreEntitySet="GX_GXRJRELATION">
+                <ScalarProperty Name="SSGCJH" ColumnName="SSGCJH" />
+                <ScalarProperty Name="JYJGCBH" ColumnName="JYJGCBH" />
+                <ScalarProperty Name="ISNEW" ColumnName="ISNEW" />
+                <ScalarProperty Name="UPS" ColumnName="UPS" />
+                <ScalarProperty Name="RJXXID" ColumnName="RJXXID" />
+                <ScalarProperty Name="GXXXID" ColumnName="GXXXID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_GXXX">
+            <EntityTypeMapping TypeName="GxEntities.GX_GXXX">
+              <MappingFragment StoreEntitySet="GX_GXXX">
+                <ScalarProperty Name="ZJGKWZ" ColumnName="ZJGKWZ" />
+                <ScalarProperty Name="QJGKWZ" ColumnName="QJGKWZ" />
+                <ScalarProperty Name="ZJ" ColumnName="ZJ" />
+                <ScalarProperty Name="QJ" ColumnName="QJ" />
+                <ScalarProperty Name="STQK" ColumnName="STQK" />
+                <ScalarProperty Name="JJ" ColumnName="JJ" />
+                <ScalarProperty Name="GH" ColumnName="GH" />
+                <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+                <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="GXZT" ColumnName="GXZT" />
+                <ScalarProperty Name="PLSX" ColumnName="PLSX" />
+                <ScalarProperty Name="GKLS" ColumnName="GKLS" />
+                <ScalarProperty Name="GKHS" ColumnName="GKHS" />
+                <ScalarProperty Name="SYZT" ColumnName="SYZT" />
+                <ScalarProperty Name="GKCL" ColumnName="GKCL" />
+                <ScalarProperty Name="XNZC" ColumnName="XNZC" />
+                <ScalarProperty Name="GJZ" ColumnName="GJZ" />
+                <ScalarProperty Name="YWLX" ColumnName="YWLX" />
+                <ScalarProperty Name="JSZT" ColumnName="JSZT" />
+                <ScalarProperty Name="GXLX" ColumnName="GXLX" />
+                <ScalarProperty Name="DXLX" ColumnName="DXLX" />
+                <ScalarProperty Name="GXCD" ColumnName="GXCD" />
+                <ScalarProperty Name="GXWZ" ColumnName="GXWZ" />
+                <ScalarProperty Name="GCBH" ColumnName="GCBH" />
+                <ScalarProperty Name="XMYSXXID" ColumnName="XMYSXXID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_LEAVEOPINION">
+            <EntityTypeMapping TypeName="GxEntities.GX_LEAVEOPINION">
+              <MappingFragment StoreEntitySet="GX_LEAVEOPINION">
+                <ScalarProperty Name="CHANGEDUSERNAME" ColumnName="CHANGEDUSERNAME" />
+                <ScalarProperty Name="CHANGEDUSERID" ColumnName="CHANGEDUSERID" />
+                <ScalarProperty Name="CHANGEDTIME" ColumnName="CHANGEDTIME" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+                <ScalarProperty Name="ACTIVITYID" ColumnName="ACTIVITYID" />
+                <ScalarProperty Name="APPINSTANCEID" ColumnName="APPINSTANCEID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_PHOTOGALLERY">
+            <EntityTypeMapping TypeName="GxEntities.GX_PHOTOGALLERY">
+              <MappingFragment StoreEntitySet="GX_PHOTOGALLERY">
+                <ScalarProperty Name="SORT" ColumnName="SORT" />
+                <ScalarProperty Name="SFYX" ColumnName="SFYX" />
+                <ScalarProperty Name="TJSJ" ColumnName="TJSJ" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="TPBH" ColumnName="TPBH" />
+                <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_RJXX">
+            <EntityTypeMapping TypeName="GxEntities.GX_RJXX">
+              <MappingFragment StoreEntitySet="GX_RJXX">
+                <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+                <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="RJZT" ColumnName="RJZT" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="GJZ" ColumnName="GJZ" />
+                <ScalarProperty Name="JGLX" ColumnName="JGLX" />
+                <ScalarProperty Name="RSJCC" ColumnName="RSJCC" />
+                <ScalarProperty Name="DXLX" ColumnName="DXLX" />
+                <ScalarProperty Name="JGSL" ColumnName="JGSL" />
+                <ScalarProperty Name="GCRJBH" ColumnName="GCRJBH" />
+                <ScalarProperty Name="RJMC" ColumnName="RJMC" />
+                <ScalarProperty Name="RJBH" ColumnName="RJBH" />
+                <ScalarProperty Name="GCBH" ColumnName="GCBH" />
+                <ScalarProperty Name="XMYSXXID" ColumnName="XMYSXXID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_SYS_MENU">
+            <EntityTypeMapping TypeName="GxEntities.GX_SYS_MENU">
+              <MappingFragment StoreEntitySet="GX_SYS_MENU">
+                <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+                <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="MENUSTATUS" ColumnName="MENUSTATUS" />
+                <ScalarProperty Name="MENUPARENTID" ColumnName="MENUPARENTID" />
+                <ScalarProperty Name="MENUBZ" ColumnName="MENUBZ" />
+                <ScalarProperty Name="MENUURL" ColumnName="MENUURL" />
+                <ScalarProperty Name="MENUNAMC" ColumnName="MENUNAMC" />
+                <ScalarProperty Name="MODELID" ColumnName="MODELID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_SYS_MODELS">
+            <EntityTypeMapping TypeName="GxEntities.GX_SYS_MODELS">
+              <MappingFragment StoreEntitySet="GX_SYS_MODELS">
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+                <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_SYS_PERMISSIONS">
+            <EntityTypeMapping TypeName="GxEntities.GX_SYS_PERMISSIONS">
+              <MappingFragment StoreEntitySet="GX_SYS_PERMISSIONS">
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="PERSTATUS" ColumnName="PERSTATUS" />
+                <ScalarProperty Name="PERDESC" ColumnName="PERDESC" />
+                <ScalarProperty Name="PERNAME" ColumnName="PERNAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_SYS_ROLE">
+            <EntityTypeMapping TypeName="GxEntities.GX_SYS_ROLE">
+              <MappingFragment StoreEntitySet="GX_SYS_ROLE">
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="ROLESTATUS" ColumnName="ROLESTATUS" />
+                <ScalarProperty Name="ROLEDESC" ColumnName="ROLEDESC" />
+                <ScalarProperty Name="ROLENAME" ColumnName="ROLENAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_SYS_ROLEMENU">
+            <EntityTypeMapping TypeName="GxEntities.GX_SYS_ROLEMENU">
+              <MappingFragment StoreEntitySet="GX_SYS_ROLEMENU">
+                <ScalarProperty Name="MENUID" ColumnName="MENUID" />
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_SYS_ROLEPERRELATE">
+            <EntityTypeMapping TypeName="GxEntities.GX_SYS_ROLEPERRELATE">
+              <MappingFragment StoreEntitySet="GX_SYS_ROLEPERRELATE">
+                <ScalarProperty Name="PERID" ColumnName="PERID" />
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_SYS_USER">
+            <EntityTypeMapping TypeName="GxEntities.GX_SYS_USER">
+              <MappingFragment StoreEntitySet="GX_SYS_USER">
+                <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+                <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="LOGINTIME" ColumnName="LOGINTIME" />
+                <ScalarProperty Name="LOGINIP" ColumnName="LOGINIP" />
+                <ScalarProperty Name="USERSTATUS" ColumnName="USERSTATUS" />
+                <ScalarProperty Name="USERSEX" ColumnName="USERSEX" />
+                <ScalarProperty Name="USEREMAIL" ColumnName="USEREMAIL" />
+                <ScalarProperty Name="USERMOBILE" ColumnName="USERMOBILE" />
+                <ScalarProperty Name="USERPWD" ColumnName="USERPWD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="USERCODE" ColumnName="USERCODE" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_SYS_USERROLERELATE">
+            <EntityTypeMapping TypeName="GxEntities.GX_SYS_USERROLERELATE">
+              <MappingFragment StoreEntitySet="GX_SYS_USERROLERELATE">
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="GX__ID" ColumnName="GX__ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_SYSTEMLOG">
+            <EntityTypeMapping TypeName="GxEntities.GX_SYSTEMLOG">
+              <MappingFragment StoreEntitySet="GX_SYSTEMLOG">
+                <ScalarProperty Name="ACTRESULT" ColumnName="ACTRESULT" />
+                <ScalarProperty Name="ACTUSERCODE" ColumnName="ACTUSERCODE" />
+                <ScalarProperty Name="CONTENTS" ColumnName="CONTENTS" />
+                <ScalarProperty Name="ACTNAME" ColumnName="ACTNAME" />
+                <ScalarProperty Name="TIMEFLAG" ColumnName="TIMEFLAG" />
+                <ScalarProperty Name="MENUURL" ColumnName="MENUURL" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_TASKWORK">
+            <EntityTypeMapping TypeName="GxEntities.GX_TASKWORK">
+              <MappingFragment StoreEntitySet="GX_TASKWORK">
+                <ScalarProperty Name="XLZXID" ColumnName="XLZXID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="XMYSXXID" ColumnName="XMYSXXID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_WFACTIVITYINSTANCE">
+            <EntityTypeMapping TypeName="GxEntities.GX_WFACTIVITYINSTANCE">
+              <MappingFragment StoreEntitySet="GX_WFACTIVITYINSTANCE">
+                <ScalarProperty Name="ROWVERSIONID" ColumnName="ROWVERSIONID" />
+                <ScalarProperty Name="RECORDSTATUSINVALID" ColumnName="RECORDSTATUSINVALID" />
+                <ScalarProperty Name="ENDEDBYUSERNAME" ColumnName="ENDEDBYUSERNAME" />
+                <ScalarProperty Name="ENDEDBYUSERID" ColumnName="ENDEDBYUSERID" />
+                <ScalarProperty Name="ENDEDDATETIME" ColumnName="ENDEDDATETIME" />
+                <ScalarProperty Name="LASTUPDATEDDATETIME" ColumnName="LASTUPDATEDDATETIME" />
+                <ScalarProperty Name="LASTUPDATEDBYUSERNAME" ColumnName="LASTUPDATEDBYUSERNAME" />
+                <ScalarProperty Name="LASTUPDATEDBYUSERID" ColumnName="LASTUPDATEDBYUSERID" />
+                <ScalarProperty Name="CREATEDDATETIME" ColumnName="CREATEDDATETIME" />
+                <ScalarProperty Name="CREATEDBYUSERNAME" ColumnName="CREATEDBYUSERNAME" />
+                <ScalarProperty Name="CREATEDBYUSERID" ColumnName="CREATEDBYUSERID" />
+                <ScalarProperty Name="SIGNFORWARDTYPE" ColumnName="SIGNFORWARDTYPE" />
+                <ScalarProperty Name="COMPLETEORDER" ColumnName="COMPLETEORDER" />
+                <ScalarProperty Name="MIHOSTACTIVITYINSTANCEID" ColumnName="MIHOSTACTIVITYINSTANCEID" />
+                <ScalarProperty Name="COMPLEXTYPE" ColumnName="COMPLEXTYPE" />
+                <ScalarProperty Name="TOKENSHAD" ColumnName="TOKENSHAD" />
+                <ScalarProperty Name="TOKENSREQUIRED" ColumnName="TOKENSREQUIRED" />
+                <ScalarProperty Name="CANRENEWINSTANCE" ColumnName="CANRENEWINSTANCE" />
+                <ScalarProperty Name="GATEWAYDIRECTIONTYPEID" ColumnName="GATEWAYDIRECTIONTYPEID" />
+                <ScalarProperty Name="BACKSRCACTIVITYINSTANCEID" ColumnName="BACKSRCACTIVITYINSTANCEID" />
+                <ScalarProperty Name="BACKWARDTYPE" ColumnName="BACKWARDTYPE" />
+                <ScalarProperty Name="ASSIGNEDTOUSERNAMES" ColumnName="ASSIGNEDTOUSERNAMES" />
+                <ScalarProperty Name="ASSIGNEDTOUSERIDS" ColumnName="ASSIGNEDTOUSERIDS" />
+                <ScalarProperty Name="ACTIVITYSTATE" ColumnName="ACTIVITYSTATE" />
+                <ScalarProperty Name="ACTIVITYTYPE" ColumnName="ACTIVITYTYPE" />
+                <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+                <ScalarProperty Name="ACTIVITYGUID" ColumnName="ACTIVITYGUID" />
+                <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+                <ScalarProperty Name="APPINSTANCECODE" ColumnName="APPINSTANCECODE" />
+                <ScalarProperty Name="APPNAME" ColumnName="APPNAME" />
+                <ScalarProperty Name="APPINSTANCEID" ColumnName="APPINSTANCEID" />
+                <ScalarProperty Name="PROCESSINSTANCEID" ColumnName="PROCESSINSTANCEID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_WFPROCESS">
+            <EntityTypeMapping TypeName="GxEntities.GX_WFPROCESS">
+              <MappingFragment StoreEntitySet="GX_WFPROCESS">
+                <ScalarProperty Name="ROWVERSIONID" ColumnName="ROWVERSIONID" />
+                <ScalarProperty Name="LASTUPDATEDDATETIME" ColumnName="LASTUPDATEDDATETIME" />
+                <ScalarProperty Name="CREATEDDATETIME" ColumnName="CREATEDDATETIME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="XMLCONTENT" ColumnName="XMLCONTENT" />
+                <ScalarProperty Name="XMLFILEPATH" ColumnName="XMLFILEPATH" />
+                <ScalarProperty Name="XMLFILENAME" ColumnName="XMLFILENAME" />
+                <ScalarProperty Name="ISUSING" ColumnName="ISUSING" />
+                <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+                <ScalarProperty Name="PROCESSNAME" ColumnName="PROCESSNAME" />
+                <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_WFPROCESSINSTANCE">
+            <EntityTypeMapping TypeName="GxEntities.GX_WFPROCESSINSTANCE">
+              <MappingFragment StoreEntitySet="GX_WFPROCESSINSTANCE">
+                <ScalarProperty Name="ROWVERSIONID" ColumnName="ROWVERSIONID" />
+                <ScalarProperty Name="RECORDSTATUSINVALID" ColumnName="RECORDSTATUSINVALID" />
+                <ScalarProperty Name="ENDEDBYUSERNAME" ColumnName="ENDEDBYUSERNAME" />
+                <ScalarProperty Name="ENDEDBYUSERID" ColumnName="ENDEDBYUSERID" />
+                <ScalarProperty Name="ENDEDDATETIME" ColumnName="ENDEDDATETIME" />
+                <ScalarProperty Name="LASTUPDATEDBYUSERNAME" ColumnName="LASTUPDATEDBYUSERNAME" />
+                <ScalarProperty Name="LASTUPDATEDBYUSERID" ColumnName="LASTUPDATEDBYUSERID" />
+                <ScalarProperty Name="LASTUPDATEDDATETIME" ColumnName="LASTUPDATEDDATETIME" />
+                <ScalarProperty Name="CREATEDBYUSERNAME" ColumnName="CREATEDBYUSERNAME" />
+                <ScalarProperty Name="CREATEDBYUSERID" ColumnName="CREATEDBYUSERID" />
+                <ScalarProperty Name="CREATEDDATETIME" ColumnName="CREATEDDATETIME" />
+                <ScalarProperty Name="INVOKEDACTIVITYGUID" ColumnName="INVOKEDACTIVITYGUID" />
+                <ScalarProperty Name="INVOKEDACTIVITYINSTANCEID" ColumnName="INVOKEDACTIVITYINSTANCEID" />
+                <ScalarProperty Name="PARENTPROCESSGUID" ColumnName="PARENTPROCESSGUID" />
+                <ScalarProperty Name="PARENTPROCESSINSTANCEID" ColumnName="PARENTPROCESSINSTANCEID" />
+                <ScalarProperty Name="PROCESSSTATE" ColumnName="PROCESSSTATE" />
+                <ScalarProperty Name="APPINSTANCECODE" ColumnName="APPINSTANCECODE" />
+                <ScalarProperty Name="APPNAME" ColumnName="APPNAME" />
+                <ScalarProperty Name="APPINSTANCEID" ColumnName="APPINSTANCEID" />
+                <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+                <ScalarProperty Name="PROCESSNAME" ColumnName="PROCESSNAME" />
+                <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_WFTASK">
+            <EntityTypeMapping TypeName="GxEntities.GX_WFTASK">
+              <MappingFragment StoreEntitySet="GX_WFTASK">
+                <ScalarProperty Name="ROWVERSIONID" ColumnName="ROWVERSIONID" />
+                <ScalarProperty Name="RECORDSTATUSINVALID" ColumnName="RECORDSTATUSINVALID" />
+                <ScalarProperty Name="ENDEDDATETIME" ColumnName="ENDEDDATETIME" />
+                <ScalarProperty Name="ENDEDBYUSERNAME" ColumnName="ENDEDBYUSERNAME" />
+                <ScalarProperty Name="ENDEDBYUSERID" ColumnName="ENDEDBYUSERID" />
+                <ScalarProperty Name="LASTUPDATEDBYUSERNAME" ColumnName="LASTUPDATEDBYUSERNAME" />
+                <ScalarProperty Name="LASTUPDATEDBYUSERID" ColumnName="LASTUPDATEDBYUSERID" />
+                <ScalarProperty Name="LASTUPDATEDDATETIME" ColumnName="LASTUPDATEDDATETIME" />
+                <ScalarProperty Name="CREATEDDATETIME" ColumnName="CREATEDDATETIME" />
+                <ScalarProperty Name="CREATEDBYUSERNAME" ColumnName="CREATEDBYUSERNAME" />
+                <ScalarProperty Name="CREATEDBYUSERID" ColumnName="CREATEDBYUSERID" />
+                <ScalarProperty Name="ASSIGNEDTOUSERNAME" ColumnName="ASSIGNEDTOUSERNAME" />
+                <ScalarProperty Name="ASSIGNEDTOUSERID" ColumnName="ASSIGNEDTOUSERID" />
+                <ScalarProperty Name="TASKSTATE" ColumnName="TASKSTATE" />
+                <ScalarProperty Name="TASKTYPE" ColumnName="TASKTYPE" />
+                <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+                <ScalarProperty Name="ACTIVITYGUID" ColumnName="ACTIVITYGUID" />
+                <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+                <ScalarProperty Name="APPINSTANCEID" ColumnName="APPINSTANCEID" />
+                <ScalarProperty Name="APPNAME" ColumnName="APPNAME" />
+                <ScalarProperty Name="PROCESSINSTANCEID" ColumnName="PROCESSINSTANCEID" />
+                <ScalarProperty Name="ACTIVITYINSTANCEID" ColumnName="ACTIVITYINSTANCEID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_WFTRANSITIONINSTANCE">
+            <EntityTypeMapping TypeName="GxEntities.GX_WFTRANSITIONINSTANCE">
+              <MappingFragment StoreEntitySet="GX_WFTRANSITIONINSTANCE">
+                <ScalarProperty Name="APPINSTANCECODE" ColumnName="APPINSTANCECODE" />
+                <ScalarProperty Name="APPINSTANCEID" ColumnName="APPINSTANCEID" />
+                <ScalarProperty Name="ROWVERSIONID" ColumnName="ROWVERSIONID" />
+                <ScalarProperty Name="RECORDSTATUSINVALID" ColumnName="RECORDSTATUSINVALID" />
+                <ScalarProperty Name="CREATEDDATETIME" ColumnName="CREATEDDATETIME" />
+                <ScalarProperty Name="CREATEDBYUSERNAME" ColumnName="CREATEDBYUSERNAME" />
+                <ScalarProperty Name="CREATEDBYUSERID" ColumnName="CREATEDBYUSERID" />
+                <ScalarProperty Name="CONDITIONPARSERESULT" ColumnName="CONDITIONPARSERESULT" />
+                <ScalarProperty Name="TOACTIVITYNAME" ColumnName="TOACTIVITYNAME" />
+                <ScalarProperty Name="TOACTIVITYTYPE" ColumnName="TOACTIVITYTYPE" />
+                <ScalarProperty Name="TOACTIVITYGUID" ColumnName="TOACTIVITYGUID" />
+                <ScalarProperty Name="TOACTIVITYINSTANCEID" ColumnName="TOACTIVITYINSTANCEID" />
+                <ScalarProperty Name="FROMACTIVITYNAME" ColumnName="FROMACTIVITYNAME" />
+                <ScalarProperty Name="FROMACTIVITYTYPE" ColumnName="FROMACTIVITYTYPE" />
+                <ScalarProperty Name="FROMACTIVITYGUID" ColumnName="FROMACTIVITYGUID" />
+                <ScalarProperty Name="FROMACTIVITYINSTANCEID" ColumnName="FROMACTIVITYINSTANCEID" />
+                <ScalarProperty Name="FLYINGTYPE" ColumnName="FLYINGTYPE" />
+                <ScalarProperty Name="TRANSITIONTYPE" ColumnName="TRANSITIONTYPE" />
+                <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+                <ScalarProperty Name="PROCESSINSTANCEID" ColumnName="PROCESSINSTANCEID" />
+                <ScalarProperty Name="TRANSITIONGUID" ColumnName="TRANSITIONGUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_XLZX">
+            <EntityTypeMapping TypeName="GxEntities.GX_XLZX">
+              <MappingFragment StoreEntitySet="GX_XLZX">
+                <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+                <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+                <ScalarProperty Name="MODIFYTIME" ColumnName="MODIFYTIME" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_XMYSXX">
+            <EntityTypeMapping TypeName="GxEntities.GX_XMYSXX">
+              <MappingFragment StoreEntitySet="GX_XMYSXX">
+                <ScalarProperty Name="XLZX" ColumnName="XLZX" />
+                <ScalarProperty Name="YSRY" ColumnName="YSRY" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="HTSJ" ColumnName="HTSJ" />
+                <ScalarProperty Name="YSZT" ColumnName="YSZT" />
+                <ScalarProperty Name="JLDWDM" ColumnName="JLDWDM" />
+                <ScalarProperty Name="SGDWMC" ColumnName="SGDWMC" />
+                <ScalarProperty Name="GCBH" ColumnName="GCBH" />
+                <ScalarProperty Name="GCMC" ColumnName="GCMC" />
+                <ScalarProperty Name="HTBH" ColumnName="HTBH" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GX_YSZLFILE">
+            <EntityTypeMapping TypeName="GxEntities.GX_YSZLFILE">
+              <MappingFragment StoreEntitySet="GX_YSZLFILE">
+                <ScalarProperty Name="DELETETIME" ColumnName="DELETETIME" />
+                <ScalarProperty Name="ADELETEBY" ColumnName="ADELETEBY" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="UPLOADTIME" ColumnName="UPLOADTIME" />
+                <ScalarProperty Name="FILEZT" ColumnName="FILEZT" />
+                <ScalarProperty Name="FILESIZE" ColumnName="FILESIZE" />
+                <ScalarProperty Name="FILEURL" ColumnName="FILEURL" />
+                <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="XMYSXXID" ColumnName="XMYSXXID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

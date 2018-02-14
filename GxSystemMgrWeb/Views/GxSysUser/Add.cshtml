@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "管线管理系统首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} 
+@using (Html.BeginForm("Add", "GxSysUser", FormMethod.Post))
+{
+    <div style="padding: 10px;">
+        <ul class="form_ul">
+            <li>
+                <label>登录名：</label>
+                <input type="text" class="easyui-validatebox" name="USERID" style="width: 250px;" required="true" validtype="username" />
+            </li>
+            <li>
+                <label>密码：</label>
+                <input type="password" class="easyui-validatebox" name="USERPWD" style="width: 250px;" required="true" validtype="length[6,18]" /> 
+            </li>
+            <li>
+                <label>真实姓名：</label>
+                <input type="text" class="easyui-validatebox" name="USERNAME" style="width: 250px;" required="true" validtype="chinese" />
+            </li>
+            <li>
+                <label>手机号码：</label>
+                <input type="text" class="easyui-validatebox" name="USERMOBILE" style="width: 250px;" required="true" />
+            </li>
+            <li>
+                <label>邮件地址：</label>
+                <input type="email" class="easyui-validatebox" name="USEREMAIL" style="width: 250px;" required="true"/>
+            </li>
+            @*<li>
+                <label>用户角色：</label> 
+                <input name="LoginRole" id="LoginRole" class="easyui-combobox" data-options="url:'/Sys_Role/GetRoles',valueField:'Value',textField:'Text',value:''" />
+            </li> *@
+            @*<li>
+                <label>用户角色：</label>
+                <select name="UserType" id="UserType">
+                    <option value="1">施工单位</option>
+                    <option value="2">监理单位</option> 
+                    <option value="3">跟测单位</option>
+                    <option value="4">网建验收部负责人</option> 
+                    <option value="5">网建验收验收员</option>
+                    <option value="6">线路分中心</option> 
+                    <option value="7">资产管理中心</option>
+                    <option value="8">系统管理员</option> 
+                </select>
+            </li>*@
+            <li>
+                <label>状态：</label>
+                <select name="USERSTATUS" id="USERSTATUS">
+                    <option value="10">正常</option>
+                    <option value="2">禁止登陆</option>
+                    <option value="1">已删除</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $('#USERSTATUS').combobox({ panelHeight: 'auto' });
+    </script>
+}
+

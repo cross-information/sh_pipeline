@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "Gxxx";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="width: 100%;">
+    <div style="padding-top:15px;">
+        <div style="font-family: 'Arial Negreta', 'Arial'; font-style: normal; font-size: 14px; float: left;">
+            工程编号：@ViewData["gcbh"] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            工程名称：@ViewData["gcmc"] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            施工单位：@ViewData["sgdwmc"]
+        </div>
+        <div style="float: right; padding-right: 15px;">
+            <a href="@Url.Action("Gxxx","Gxxx")/?gcbdid=@ViewData["xmgcid"]" class="easyui-linkbutton">管线列表管理</a>
+            <a href="@Url.Action("Index","Gxrjxx")/?gcxmid=@ViewData["xmgcid"]" class="easyui-linkbutton">人井管理</a>
+        </div>
+    </div>
+    <div style="clear: both; width: 100%;"></div>
+    <div style="clear: both; width: 100%;" >
+        <div style="float: left; width: 42%;">
+            <img src="/images/ditu.jpg" style="width: 100%; height: 100%;"/>
+        </div>
+        <div style="float: left; width: 58%;">
+            <div region="center" style="padding: 10px; border: none;">
+                <div id="mmt" style="padding: 10px; height: auto;">
+                    管线编号：<input id="txtGxbh" class="easyui-textbox" data-options="iconCls:'icon-search'" style="width:100px">
+                    使通情况：<select id="slSTQK" class="easyui-combobox" name="STQK" style="width:60px;">
+                             <option value="0">全部</option>
+                             <option value="1">是</option>
+                             <option value="2">否</option>
+                            </select>
+                    <a id="btnSearch" href="javascript:querygxxx()" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+                    <a id="btnAdd" href="javascript:void(0)" onclick="addGxxx()" class="easyui-linkbutton" data-options="iconCls:'icon-add'">新增管线</a>
+                </div>
+                <table id="ttGxxx" class="easyui-datagrid" data-options="rownumbers:true,title:'管线信息列表',url:'@Url.Action("List", "Gxxx")/?gcbdid=@ViewData["xmgcid"]',fitColumns: true,iconCls:'icon-search',toolbar:'#mmt',pagination:true,idField:'Id',pageList:pageList">
+                    <thead>
+                        <tr>
+                            @*<th data-options="field:'chk',width:50,checkbox:true"></th>*@
+                            <th data-options="field:'GCBH',width:80,align:'center',formatter:$CXBHTitle">管线编号</th>
+                            <th data-options="field:'GH',width:80,align:'center'">管号</th>
+                            <th data-options="field:'undefined',width:150,align:'center',formatter:$rjwz">起止井号</th>
+                            <th data-options="field:'STQK',width:80,align:'center',formatter:$stqk">试通情况</th>
+                            @*<th data-options="field:'undefinedBz',width:60,align:'center'">备注</th>*@
+                            <th data-options="field:'undefinedw',width:150,formatter:$func">操作</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="window_addGxxx"></div>
+<div id="window_EditGxxx"></div>
+<div id="window_LookGxxx"></div>
+<script type="text/javascript">
+    var pageList = [10, 15, 20, 30, 50];
+
+    //查询管线信息
+    function querygxxx() {
+        $('#tt').datagrid('load', {
+            gxbh: $("#txtGxbh").val(),
+            stqk: $('#slSTQK').val()
+        });
+    }
+
+    function $CXBHTitle(v, d, r) {
+        return "<span title='" + v + "'>" + v + "</span>";
+    }
+
+    //起止井号
+    var $rjwz = function (v, d, r) {
+        return "起：" + d.QJ + '</br>' + "止：" + d.ZJ;
+    };
+
+    var $stqk = function(v, d, r) {
+        return v == "0" ? "是" : "否";
+    };
+
+    var $func = function (v, d, r) {
+        var html = '<input type="button" id="btnDelete" name = "btnDelete" onclick="javascript:delGxxx(\'' + d.ID + '\')" value="删除" />&nbsp;';
+        html += '<input type="button" id="btnDetail" name = "btnDetail" onclick="javascript:lookdetail.open(\'' + d.ID + '\')" value="详情" />&nbsp;';
+        html += '<input type="button" id="btnUpdate" name = "btnUpdate" onclick="javascript:updateMgr.open(\'' + d.ID + '\')" value="修改" />';
+        return html;
+    };
+
+   @* function addGxxx() {
+        location.href = "@Url.Action("Gkxx", "Gxxx")/?ysid=@ViewData["xmgcid"]";
+    }*@
+
+    var addGxxx = {
+        url: '@Url.Action("Gkxx", "Gxxx")/?ysid=@ViewData["xmgcid"]',
+        open: function () {
+            $('#window_addGxxx').dialog({
+                title: '新增管线信息',
+                height: 420,
+                width: 970,
+                modal: true,
+                href: addGxxx.url
+            });
+        },
+        close: function () {
+            $('#ttGxxx').datagrid('reload');
+            $('#window_addGxxx').dialog('close');
+        }
+    };
+
+    //查看详情
+    var lookdetail = {
+        open: function (id) {
+            var url = '@Url.Action("LookDetail", "Gxxx")/?id=' + id;
+            $('#window_LookGxxx').dialog({
+                title: '查看管线信息',
+                height: 420,
+                width: 970,
+                modal: true,
+                href: url,
+                buttons: [
+                    {
+                        text: '取消',
+                        iconCls: 'icon-cancel',
+                        handler: function () {
+                            lookdetail.close();
+                        }
+                    }
+                ]
+            });
+        },
+        close: function () {
+            $('#ttGxxx').datagrid('reload');
+            $('#window_LookGxxx').dialog('close');
+        }
+    };
+
+    //修改按钮事件
+    var updateMgr = {
+        open: function (id) {
+            var url = '@Url.Action("Edit", "Gxxx")/?id=' + id;
+            $('#window_EditGxxx').dialog({
+                title: '编辑管线信息',
+                height: 420,
+                width: 970,
+                modal: true,
+                href: url
+            });
+        },
+        close: function () {
+            $('#ttGxxx').datagrid('reload');
+            $('#window_EditGxxx').dialog('close');
+        }
+    };
+
+    var delGxxx = function (obj) {
+        $.messager.confirm('操作提示', '你确定要删除选中的数据？', function(r) {
+            if (r) {
+                $.ajaxRequest('@Url.Action("DeletGxxx", "Gxxx")/?id=' + obj, "", function (data) {
+                    if (data.IsError) {
+                        alertError(data.Message);
+                    } else {
+                        alertInfo(data.Message);
+                    }
+                    $('#ttGxxx').datagrid('reload');
+                    $('#ttGxxx').datagrid('unselectAll');
+                });
+            }
+        });
+    };
+</script>

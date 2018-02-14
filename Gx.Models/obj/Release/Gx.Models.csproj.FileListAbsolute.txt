@@ -1,0 +1,5 @@
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Models\bin\Release\Gx.Models.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Models\bin\Release\Gx.Models.pdb
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Models\obj\Release\Gx.Models.csprojResolveAssemblyReference.cache
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Models\obj\Release\Gx.Models.dll
+E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.Models\obj\Release\Gx.Models.pdb

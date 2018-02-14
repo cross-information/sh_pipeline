@@ -12,14 +12,14 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_systemlog
+    public partial class GX_SYSTEMLOG
     {
-        public int Id { get; set; }
-        public string menuurl { get; set; }
-        public Nullable<System.DateTime> timeflag { get; set; }
-        public string actname { get; set; }
-        public string contents { get; set; }
-        public string actusercode { get; set; }
-        public string actresult { get; set; }
+        public decimal ID { get; set; }
+        public string MENUURL { get; set; }
+        public Nullable<System.DateTime> TIMEFLAG { get; set; }
+        public string ACTNAME { get; set; }
+        public string CONTENTS { get; set; }
+        public string ACTUSERCODE { get; set; }
+        public string ACTRESULT { get; set; }
     }
 }

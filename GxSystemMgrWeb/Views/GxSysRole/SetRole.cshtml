@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "SetRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div region="center" style="padding: 10px; border: none;">
+    <div id="mmt" style="padding: 10px; height: auto;">
+        <a href="javascript:addUserRole.open();" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">设置角色</a>
+        <a href="javascript:delUserRole();" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</a>
+        <a href="javascript:CloseUserRole() " class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">关闭</a>
+    </div>
+    <table id="ttUserRole" class="easyui-datagrid"
+        data-options="rownumbers:true,title:'用户角色列表',url:'@Url.Action("UserRoleList","GxSysRole")/?userid=@ViewData["UserId"]',iconCls:'icon-search',toolbar:'#mmt',
+            pagination:true,idField:'Id',pageList:pageList">
+        <thead>
+            <tr>
+                <th data-options="field:'chk',checkbox:true"></th>
+                <th data-options="field:'Id',width:230,sortable:true">编号</th>
+                <th data-options="field:'RoleName',width:170,align:'center',sortable:true">角色名称</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div id="window_addUserRole"></div>
+<script type="text/javascript">
+    var CloseUserRole = function() {
+        $('#window_role').dialog('close');
+    }
+    
+    var addUserRole = {
+        url: '@Url.Action("AddRoleUser","GxSysRole")/?userid=@ViewData["UserId"]',
+        open: function () {
+            $('#window_addUserRole').dialog({
+                title: '添加角色',
+                height: 360,
+                width: 430,
+                modal: true,
+                href: addUserRole.url,
+                buttons: [
+                    {
+                        text: '确定',
+                        iconCls: 'icon-ok',
+                        handler: function() {
+                            $('#window_addUserRole form').form('submit', {
+                                success: function (data) { 
+                                    var d = JSON.stringify(data);
+                                    if (d.IsError) {
+                                        alertError(d.Message);
+                                    } else {
+                                        alertInfo('添加成功');
+                                        addUserRole.close();
+                                        $('#ttUserRole').datagrid('reload');
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    {
+                        text: '取消',
+                        iconCls: 'icon-cancel',
+                        handler: function() {
+                            addUserRole.close();
+                            $('#ttUserRole').datagrid('reload');
+                        }
+                    }
+                ]
+            });
+        },
+        close: function() {
+            $('#ttUserRole').datagrid('reload');
+            $('#window_role').dialog('close');
+        }
+    };
+
+    var delUserRole = function() {
+        var selectRows = $('#ttUserRole').datagrid('getSelections');
+        if (selectRows.length > 0) {
+            var delKeys = [];
+            for (var i = 0; i < selectRows.length; i++) {
+                delKeys.push(selectRows[i].Sys_RolesID);
+            }
+            if (delKeys.length > 0) {
+                $.messager.confirm('操作提示', '你确定要删除选中的数据？', function(r) {
+                    if (r) {
+                        $.ajaxRequest('@Url.Action("DelUserRole","GxSysRole")', $.toJSON(delKeys), function(data) {
+                            if (data.IsError) {
+                                alertError(data.Message);
+                            } else {
+                                alertInfo(data.Message);
+                            }
+                            $('#ttUserRole').datagrid('reload');
+                            $('#ttUserRole').datagrid('unselectAll');
+                        });
+                    }
+                });
+            }
+        } else {
+            alertWarning('请选择要删除的数据！');
+        }
+    };
+</script>

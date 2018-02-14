@@ -12,20 +12,20 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_dict_config
+    public partial class GX_DICT_CONFIG
     {
-        public int Id { get; set; }
-        public Nullable<int> type { get; set; }
-        public string code { get; set; }
-        public string name { get; set; }
-        public Nullable<bool> status { get; set; }
-        public Nullable<int> parentid { get; set; }
-        public Nullable<int> sort { get; set; }
-        public string createby { get; set; }
-        public Nullable<System.DateTime> createtime { get; set; }
-        public string modify { get; set; }
-        public Nullable<System.DateTime> modifytime { get; set; }
-        public string deleteby { get; set; }
-        public Nullable<System.DateTime> deletetime { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<decimal> TYPE { get; set; }
+        public string NAME { get; set; }
+        public string STATUS { get; set; }
+        public Nullable<decimal> PARENTID { get; set; }
+        public Nullable<decimal> SORT { get; set; }
+        public string CREATEBY { get; set; }
+        public Nullable<System.DateTime> CREATETIME { get; set; }
+        public string MODIFYBY { get; set; }
+        public Nullable<System.DateTime> MODIFYTIME { get; set; }
+        public string DELETEBY { get; set; }
+        public Nullable<System.DateTime> DELETETIME { get; set; }
+        public string DICTDESC { get; set; }
     }
 }

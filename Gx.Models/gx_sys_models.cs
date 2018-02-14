@@ -12,17 +12,17 @@ namespace Gx.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class gx_sys_models
+    public partial class GX_SYS_MODELS
     {
-        public int Id { get; set; }
-        public string naem { get; set; }
-        public string desc { get; set; }
-        public Nullable<int> status { get; set; }
-        public string createby { get; set; }
-        public Nullable<System.DateTime> createtime { get; set; }
-        public string deleteby { get; set; }
-        public Nullable<System.DateTime> deletetime { get; set; }
-        public string modify { get; set; }
-        public Nullable<System.DateTime> modifytime { get; set; }
+        public decimal ID { get; set; }
+        public string NAME { get; set; }
+        public string REMARK { get; set; }
+        public Nullable<decimal> FLAG { get; set; }
+        public string CREATEBY { get; set; }
+        public Nullable<System.DateTime> CREATETIME { get; set; }
+        public string DELETEBY { get; set; }
+        public Nullable<System.DateTime> DELETETIME { get; set; }
+        public string MODIFYBY { get; set; }
+        public Nullable<System.DateTime> MODIFYTIME { get; set; }
     }
 }
