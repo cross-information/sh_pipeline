@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <WebView
+        android:id="@+id/webkit"
+        android:layout_above="@+id/ll_bottom1"
+        android:background="#FF8C00"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </WebView>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom1"
+        android:layout_above="@+id/ll_bottom2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/buttonstyle"
+            android:text="ZoomIn"
+            android:onClick="onZoomIn" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="ZoomOut"
+            android:onClick="onZoomOut" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="GetZoom"
+            android:onClick="onGetZoom" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="SetZoom"
+            android:onClick="onSetZoom" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="SetCenter"
+            android:onClick="onSetCenter" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_bottom2"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/buttonstyle"
+            android:text="GetExtent"
+            android:onClick="onGetExtent" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="Undo"
+            android:onClick="onUndo" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="Redo"
+            android:onClick="onRedo" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="EditWell"
+            android:onClick="onEditWell" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="GetWellUpdates"
+            android:textSize="6sp"
+            android:onClick="onGetWellUpdates" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

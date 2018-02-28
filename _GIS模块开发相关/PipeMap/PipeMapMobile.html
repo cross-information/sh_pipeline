@@ -12,7 +12,7 @@
 	        width: 1000px;
 	        height: 400px;
 	    } */
-	  .tooltip {
+	    .tooltip {
         position: relative;
         background: rgba(0, 0, 0, 0.5);
         border-radius: 4px;
@@ -44,7 +44,7 @@
       .tooltip-static:before {
         border-top-color: #ffcc33;
       }
-
+      
       #tags, #shortdesc, .hidden {
   		display: none;
 	  }
@@ -60,18 +60,17 @@
 		var mapUrl = "http://116.62.209.93/ArcGIS/rest/services/shanghai/MapServer";	// 地图的地址
 		// var wsUrl = "http://localhost/shpipe/";	// WebService 的访问路径
 		var wsUrl = location.origin + "/shpipe/";	// WebService 的访问路径
-		map = new PipeMap("map", mapUrl, wsUrl);
-		map.setSelectCallback(function(wellId) {	// 设置选中管井的消息回调
-			console.log("selectCallback:" + wellId);
+		map = new PipeMap("map", mapUrl, wsUrl, {
+			noTranslate: true
 		});
-		map.setDragCallback(function(wellId, coords) {	// 设置拖动管井的消息回调, Web方式
-			console.log("dragCallback:" + wellId + " [" + coords + "]");
+		map.setSelectCallback(function(wellId) {	// 设置选中管井的消息回调
+			alert("#selectCallback:" + wellId);
 		});
 		map.setMapExtentCallback(function(s) {		// 设置地图显示范围改变的消息回调
-			console.log("mapExtentCallback:" + s);
+			alert("#mapExtentCallback:" + s);
 		});
 		map.setEditWellCallback(function(wellId, coords) {	// 设置管井位置编辑完成的消息回调, 手机App方式
-			console.log("editWellCallback:" + wellId + " [" + coords + "]");
+			alert("#editWellCallback:" + wellId + " [" + coords + "]");
 		});
 	});
 	
