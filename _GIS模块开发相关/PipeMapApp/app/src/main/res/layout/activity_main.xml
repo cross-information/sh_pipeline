@@ -53,24 +53,24 @@
 
         <Button
             style="@style/buttonstyle"
-            android:text="Undo"
-            android:onClick="onUndo" />
-
-        <Button
-            style="@style/buttonstyle"
-            android:text="Redo"
-            android:onClick="onRedo" />
-
-        <Button
-            style="@style/buttonstyle"
-            android:text="EditWell"
-            android:onClick="onEditWell" />
-
-        <Button
-            style="@style/buttonstyle"
-            android:text="GetWellUpdates"
+            android:text="GetCenterLonLat"
             android:textSize="6sp"
-            android:onClick="onGetWellUpdates" />
+            android:onClick="onGetCenterLonLat" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="GPS"
+            android:onClick="onGPS" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="开定位模式"
+            android:onClick="onSetPositionModeOn" />
+
+        <Button
+            style="@style/buttonstyle"
+            android:text="关定位模式"
+            android:onClick="onSetPositionModeOff" />
 
     </LinearLayout>
 

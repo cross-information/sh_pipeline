@@ -1,1 +1,9 @@
-Web端还有少许功能待完善, 具体使用见PipeMap.html
+﻿
+
+--> 模块：PipeMapApp
+map.getCenterLonLat()	// 返回地图显示中心的经纬度坐标
+	map.setCenterLonLat([114.3, 30.6])	// 设置地图的显示中心点经纬度坐标
+	map.setEditWellCallback()	// 设置在定位模式下, 当点击定位图标时触发回调函数, 见上面的代码, wellId 目前没用
+	map.setPositionMode(ture)	// 显示定位图标, 当点击定位图标时触发用setEditWellCallback函数设置的callback
+	map.setPositionMode(false)	// 隐藏定位图标
+具体见http://116.62.209.93/shpipe/PipeMap/PipeMapMobile.html源文件

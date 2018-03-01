@@ -3,3 +3,8 @@ E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.CommonUnits\bin\Debug\Gx.C
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.CommonUnits\obj\Debug\Gx.CommonUnits.dll
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.CommonUnits\obj\Debug\Gx.CommonUnits.pdb
 E:\东伏项目备份\Gx_System\trunk\GxInfoSystem\Gx.CommonUnits\obj\Debug\Gx.CommonUnits.csprojResolveAssemblyReference.cache
+C:\Users\CrossUser1\Source\Repos\sh_pipeline\Gx.CommonUnits\bin\Debug\Gx.CommonUnits.dll
+C:\Users\CrossUser1\Source\Repos\sh_pipeline\Gx.CommonUnits\bin\Debug\Gx.CommonUnits.pdb
+C:\Users\CrossUser1\Source\Repos\sh_pipeline\Gx.CommonUnits\obj\Debug\Gx.CommonUnits.csprojResolveAssemblyReference.cache
+C:\Users\CrossUser1\Source\Repos\sh_pipeline\Gx.CommonUnits\obj\Debug\Gx.CommonUnits.dll
+C:\Users\CrossUser1\Source\Repos\sh_pipeline\Gx.CommonUnits\obj\Debug\Gx.CommonUnits.pdb
