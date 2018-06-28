@@ -18,6 +18,7 @@ namespace Slickflow.Module.Resource
         public static ResourceService Create()
         {
             var resService = new ResourceService();
+
             return resService;
         }
     }
